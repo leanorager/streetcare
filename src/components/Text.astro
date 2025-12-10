@@ -1,11 +1,20 @@
 ---
 // Henter parametrene fra Astro.props
-const { teksttype="brødtekst", stylingclasses=""} = Astro.props; 
- 
+const { teksttype = "p_base_reg", stylingclasses = "" } = Astro.props;
+
+// Fælles styling for ALLE teksttyper
+const baseClasses = "text-black";
+
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
-"konsultativ": "text-sm text-italic",
-"brødtekst": "text-xl my-4",
+  p_small_reg: "text-[14px] lg:text-[14px] font-normal",
+  p_base_reg: "text-[16px] lg:text-[16px] font-normal",
+  p_base_med: "text-[16px] lg:text-[16px] font-medium",
+  p_large_reg: "text-[18px] lg:text-[18px] font-normal",
+  p_large_med: "text-[18px] lg:text-[18px] font-medium",
 };
 ---
-<p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>
+
+<p class:list={[baseClasses, sizeClasses[teksttype], stylingclasses]}>
+  <slot />
+</p>
