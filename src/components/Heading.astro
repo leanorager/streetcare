@@ -1,20 +1,50 @@
 ---
+/**
+ * Props:
+ * htmlheading → hvilken HTML-tag (h1, h2 ...)
+ * size → styrer visuel størrelse (h1, h2 ...)
+ * font → "display" | "sans" (valgfri – auto vælger display til h1)
+ * stylingclasses → ekstra Tailwind klasser
+ */
+
 // Henter parametrene fra Astro.props
-const { htmlheading="h2", size="medium", font="sans", stylingclasses=""} = Astro.props; 
+let {
+  htmlheading = "h2",
+  size = "h2",
+  font,
+  stylingclasses = "",
+} = Astro.props;
+
 const Htmlheading = htmlheading;
- 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
+
+// Hvis font ikke er sat manuelt, vælg display-font til h1, ellers sans
+if (!font) {
+  font = size === "h1" ? "display" : "sans";
+}
+
+// Tailwind classes for de forskellige størrelser.
 const sizeClasses = {
-"large": "text-3xl lg:text-6xl",
-"medium": "text-2xl lg:text-3xl",
-"small": "text-xl",
+  h1: "text-[60px] lg:text-[120px] font-normal",
+  h2: "text-[30px] lg:text-[40px] font-medium",
+  h3: "text-[20px] lg:text-[30px] font-medium",
+  h4: "text-[24px] lg:text-[35px] font-semibold",
+  h5: "text-[18px] lg:text-[20px] font-medium",
+  h6: "text-[16px] lg:text-[16px] font-semibold",
 };
 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige skrifttyper.
+// Tailwind classes for skrifttyper
 const fontClasses = {
-"display": "font-display",
-"sans": "font-sans",
-"serif": "font-serif",
+  display: "font-display",
+  sans: "font-sans",
 };
 ---
-<Htmlheading class:list={[stylingclasses, sizeClasses[size], fontClasses[font]]}><slot /></Htmlheading>
+
+<Htmlheading
+  class:list={[
+    sizeClasses[size], // visuel størrelse
+    fontClasses[font], // display eller sans
+    stylingclasses, // evt. overrides
+  ]}
+>
+  <slot />
+</Htmlheading>
