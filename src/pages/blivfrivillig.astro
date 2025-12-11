@@ -1,0 +1,241 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout title="Bliv frivillig">
+  <main class="container mx-auto p-4">
+    <section class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+      <!-- RØD BOKS (mobil: øverst, desktop: sticky venstre) -->
+      <aside class="mb-10 lg:mb-0 lg:col-span-5">
+        <div
+          class="bg-red text-white w-[570px] max-w-full rounded-[16px]
+                 p-10 flex flex-col gap-[20px]
+                 lg:sticky lg:top-10"
+        >
+          <Heading htmlheading="h3" size="h3" stylingclasses="text-white">
+            Klar til at tage det første skridt?
+          </Heading>
+
+          <Text teksttype="p_base_reg" stylingclasses="text-white">
+            Send en mail, hvor du kort fortæller om dig selv, din baggrund og
+            hvorfor du gerne vil være frivillig hos Street Care. Du er også
+            altid velkommen til at ringe til os til en uforpligtende snak.
+          </Text>
+
+          <div class="space-y-[4px]">
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              <a href="mailto:af@streetcare.dk">af@streetcare.dk</a>
+            </Text>
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              <a href="tel:+45453142100">+45 31 14 21 00</a>
+            </Text>
+          </div>
+
+          <!-- Knapper: højrestillet, i én linje -->
+          <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
+            <Button variant="outline-light">Ring til os</Button>
+            <Button variant="outline-light">Send mail</Button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- SPACER (kun desktop – giver én kolonne mellemrum) -->
+      <div class="hidden lg:block lg:col-span-1"></div>
+
+      <!-- HØJRE SIDE MED ALT TEKSTINDHOLD -->
+      <div class="lg:col-span-6 flex flex-col gap-16">
+        <!-- INTRO -->
+        <section>
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Bliv frivillig
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Vær med dér, hvor din tid gør en konkret forskel
+          </Heading>
+
+          <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+            Som frivillig i Street Care bliver du en del af et fællesskab, der
+            hver uge møder hjemløse og udsatte i København – på gaden og i vores
+            værested. Vi har brug for engagerede, stabile og omsorgsfulde
+            frivillige over 18 år, som har lyst til at være til stede for
+            mennesker, der har det svært.
+          </Text>
+        </section>
+
+        <!-- HVAD LAVER MAN SOM FRIVILLIG -->
+        <section>
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Hvad laver man som frivillig?
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Som frivillig kan du blive en del af én eller flere af vores
+            indsatser
+          </Heading>
+
+          <div class="space-y-6">
+            <div>
+              <Text teksttype="p_base_med">Gadeplansarbejde</Text>
+              <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+                Du er med, når vi besøger byens “hænge-ud”-pladser og møder
+                mennesker i øjenhøjde med kaffe, samtaler, støtte og praktisk
+                hjælp.
+              </Text>
+            </div>
+
+            <div>
+              <Text teksttype="p_base_med">Værested på Frederiksberg</Text>
+              <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+                Du er med til at skabe et trygt, varmt og uformelt fællesskab
+                med mad, aktiviteter og nærvær.
+              </Text>
+            </div>
+
+            <div>
+              <Text teksttype="p_base_med">Mentor- og bisidderstøtte</Text>
+              <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+                Du kan følge mennesker til møder, hjælpe med breve, systemer og
+                beslutninger – og være en stabil støtteperson over tid. Fælles
+                for alle roller er, at du er til stede som medmenneske – ikke
+                som behandler eller myndighed.
+              </Text>
+            </div>
+          </div>
+        </section>
+
+        <!-- HVAD KRÆVER DET -->
+        <section>
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Hvad kræver det at være frivillig?
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Vi leder efter frivillige, som:
+          </Heading>
+
+          <div class="space-y-4">
+            <ul class="list-disc pl-5 space-y-1">
+              <li>
+                <Text teksttype="p_base_reg">Kan afsætte faste timer</Text>
+              </li>
+              <li>
+                <Text teksttype="p_base_reg">Er nærværende og lyttende</Text>
+              </li>
+              <li>
+                <Text teksttype="p_base_reg"
+                  >Har mod på at møde mennesker i sårbare situationer</Text
+                >
+              </li>
+              <li>
+                <Text teksttype="p_base_reg"
+                  >Kan samarbejde i et fællesskab</Text
+                >
+              </li>
+            </ul>
+
+            <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+              Street Cares arbejde bygger på et kristent livs- og menneskesyn og
+              en tværkirkelig profil. Det betyder ikke, at du behøver at være en
+              bestemt type kristen, men det er vigtigt, at du kan stå inde for
+              vores værdier, vores syn på mennesker og den måde, vi møder dem
+              på – med omsorg, respekt, rummelighed og håb.
+            </Text>
+          </div>
+        </section>
+
+        <!-- HVAD FÅR DU UD AF DET -->
+        <section>
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Hvad får du ud af at være frivillig?
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Som frivillig hos Street Care får du:
+          </Heading>
+
+          <ul class="list-disc pl-5 space-y-1">
+            <li>
+              <Text teksttype="p_base_reg"
+                >Meningsfulde relationer – du møder mennesker, du ellers aldrig
+                ville have mødt</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Et stærkt fællesskab – du bliver en del af et team, der bakker
+                hinanden op</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Personlig og faglig udvikling – erfaring med socialt arbejde,
+                udsathed og relationsarbejde</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Indblik i livet på kanten af samfundet – og hvad der gør en
+                forskel i praksis</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Mulighed for at bruge din livserfaring og dine kompetencer til
+                noget konkret godt</Text
+              >
+            </li>
+          </ul>
+
+          <Text teksttype="p_base_reg" stylingclasses="mt-4 text-dark-grey">
+            Din livserfaring – også hvis du selv kender til misbrug, udsathed
+            eller psykisk sårbarhed – kan være en enorm ressource for andre, når
+            du i dag står et trygt sted i dit eget liv.
+          </Text>
+        </section>
+
+        <!-- HVEM SØGER VI -->
+        <section>
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Hvem søger vi?
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Vi søger både dig, der:
+          </Heading>
+
+          <ul class="list-disc pl-5 space-y-1">
+            <li>
+              <Text teksttype="p_base_reg"
+                >Har erfaring fra socialt arbejde, kirkeligt arbejde eller
+                frivillighed</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Selv har været tæt på misbrug eller udsathed og nu har fået ro
+                på (gerne med et par års cleantid)</Text
+              >
+            </li>
+            <li>
+              <Text teksttype="p_base_reg"
+                >Er studerende, i job eller på pension, men har lyst til at give
+                noget af din tid videre</Text
+              >
+            </li>
+          </ul>
+
+          <Text teksttype="p_base_reg" stylingclasses="mt-4 text-dark-grey">
+            Det vigtigste er ikke din titel, men at du møder mennesker med
+            respekt, tålmodighed og omtanke – og har lyst til at gå et ekstra
+            skridt for dem, der har mindst at stå imod med.
+          </Text>
+        </section>
+      </div>
+    </section>
+  </main>
+</MainLayout>
