@@ -1,23 +1,16 @@
 ---
 interface Props {
-  /** Baggrundsbillede */
   imageSrc: string;
   imageAlt?: string;
 
-  /** Rød label øverst til venstre – fx "Interview" */
   labelText?: string;
-  /** Gør label til et link (valgfrit) */
   labelHref?: string;
 
-  /** Overskrift nederst i kortet */
   title: string;
-  /** Brødtekst under overskriften */
   subtitle: string;
 
-  /** Link for hele kortet / pil-ikonet (valgfrit) */
   href?: string;
 
-  /** Ekstra Tailwind-klasser udefra (valgfrit) */
   className?: string;
 }
 
@@ -34,58 +27,66 @@ const {
 
 const wrapperClasses =
   "group relative overflow-hidden rounded-[20px] bg-black text-white " +
-  "w-[440px] h-[530px]";
+  "w-[315px] h-[380px] md:w-[440px] md:h-[530px]";
 ---
 
 <article class={wrapperClasses + " " + className}>
-  {/* Baggrundsbillede */}
+  <!-- BAGGRUND + HOVER ZOOM -->
   <img
     src={imageSrc}
     alt={imageAlt}
-    class="absolute inset-0 h-full w-full object-cover"
-    loading="lazy"
+    class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
   />
 
-  {/* Mørk gradient nedefra */}
+  <!-- GRADIENT -->
   <div
-    class="pointer-events-none absolute inset-0
-           bg-gradient-to-t from-black via-black/80 to-black/10"
+    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/10"
   >
   </div>
 
-  {/* Topbar: rød label + pil */}
+  <!-- TOP: LABEL + PIL -->
   <div
-    class="absolute inset-x-0 top-0 z-10 flex items-start justify-between p-5"
+    class="absolute top-0 inset-x-0 z-10 flex items-start justify-between p-4 md:p-5"
   >
-    {/* Rød label LAVET GRÅ?*/}
+    <!-- LABEL — MOBILE: p-small-reg / DESKTOP: p-base-med -->
     {
       labelText &&
         (labelHref ? (
           <a
             href={labelHref}
-            class="inline-flex items-center rounded-full bg-grey/70 backdrop-blur-sm px-5 py-2 p-base-med"
+            class="
+            inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm
+            px-4 py-1.5 p-small-reg
+            md:px-5 md:py-2 md:p-base-med
+          "
           >
             {labelText}
           </a>
         ) : (
-          <span class="inline-flex items-center rounded-full bg-grey/70 backdrop-blur-sm px-5 py-2 p-base-med">
+          <span
+            class="
+            inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm
+            px-4 py-1.5 p-small-reg
+            md:px-5 md:py-2 md:p-base-med
+          "
+          >
             {labelText}
           </span>
         ))
     }
 
-    {/* Pil-ikon – baggrund fast, ikon roterer på hover */}
+    <!-- PIL -->
     {
       href && (
         <a
           href={href}
-          class="flex h-10 w-10 items-center justify-center 
+          class="flex h-9 w-9 md:h-10 md:w-10 items-center justify-center 
                rounded-full bg-grey/70 backdrop-blur-sm"
           aria-label="Åbn"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 origin-center transition-transform duration-300 ease-out group-hover:rotate-90"
+            class="h-4 w-4 md:h-5 md:w-5 origin-center transition-transform duration-300 ease-out group-hover:rotate-90"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -102,26 +103,19 @@ const wrapperClasses =
     }
   </div>
 
-  {/* Tekst nederst */}
-  <div class="absolute bottom-0 inset-x-0 z-10 p-5 pb-8">
-    <h2 class="mb-2 h5 leading-snug">
+  <!-- BUNDTEKST — MOBILE: p-base-med / DESKTOP: h5 -->
+  <div class="absolute bottom-0 inset-x-0 z-10 p-4 pb-6 md:p-5 md:pb-8">
+    <!-- TITLE -->
+    <h2 class="mb-1 p-base-med leading-snug md:h5">
       {title}
     </h2>
 
-    <h2 class="">
+    <!-- SUBTITLE -->
+    <h3 class="p-base-med leading-snug text-white/80 md:h5">
       {subtitle}
-    </h2>
+    </h3>
   </div>
 
-  {/* Gør hele kortet klikbart, hvis href er sat */}
-  {
-    href && (
-      <a
-        href={href}
-        class="absolute inset-0 z-0"
-        aria-hidden="true"
-        tabindex="-1"
-      />
-    )
-  }
+  <!-- HELE CARD KLIKBART -->
+  {href && <a href={href} class="absolute inset-0 z-0" aria-hidden="true" />}
 </article>
