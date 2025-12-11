@@ -7,6 +7,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Bullet from "../components/Bullet.astro";
+import NewsletterSignUp from "../components/NewsletterSignUp.astro";
 ---
 
 <MainLayout title="Titel">
@@ -100,7 +101,7 @@ import Bullet from "../components/Bullet.astro";
     <section id="gadeplansarbejde"></section>
     <section
       id="vaerestedet"
-      class="px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
     >
       <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
         <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
@@ -156,6 +157,8 @@ import Bullet from "../components/Bullet.astro";
         stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
       />
     </section>
-    <section id="nyhedsbrev"></section>
+    <section id="nyhedsbrev" class="px-4 lg:px-[60px] py-[100px]">
+      <NewsletterSignUp />
+    </section>
   </main>
 </MainLayout>
