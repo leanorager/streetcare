@@ -1,22 +1,121 @@
 ---
-// Henter parametrene fra Astro.props
-const { variant= "primary", size = "medium" } = Astro.props; 
- 
-//Definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
-const buttonStyling = "border-2 px-16 py-4"; 
- 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
+interface Props {
+  // 1 = outline sort, 2 = rød, 3 = outline off-white, 4 = hvid baggrund
+  variant?: "outline" | "solid-red" | "outline-light" | "solid-white";
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  stylingclasses?: string; // ekstra Tailwind classes
+}
+
+const {
+  variant = "solid-red",
+  href,
+  type = "button",
+  stylingclasses = "",
+} = Astro.props;
+
+// Fælles styling for alle knapper
+const baseClasses =
+  "group inline-flex items-center rounded-full " +
+  "pl-[20px] pr-[2px] py-[2px] gap-[13px] " +
+  "border-[2px] cursor-pointer transition-colors duration-200";
+
+// Tekst-styling (match p_large_med så godt som muligt)
+const textClasses = "text-[20px] leading-[1.2] font-medium";
+
+// Variant-specifik styling (brug dine CSS-variabler)
 const variantClasses = {
-"primary": "border-black hover:bg-black hover:text-white hover:-skew-x-12 transition-all duration-700", /* border-primary-500 */
-"secondary": "border-blue-500 hover:bg-blue-500 hover:border-blue-200" /* border-secondary-500 */
-};
- 
-//Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
-const sizeClasses = {
-"large": "text-4xl",
-"medium": "text-xl",
-"small": "text-large"
-};
+  // 1. Transparent, sort tekst + border, hover: sort bg + hvid tekst
+  outline:
+    "bg-transparent border-[var(--color-black)] text-[var(--color-black)] ",
+
+  // 2. Rød baggrund, off-white tekst
+  "solid-red":
+    "bg-[var(--color-red)] border-[var(--color-red)] text-[var(--color-off-white)] " +
+    "hover:bg-[var(--color-dark-red)]",
+
+  // 3. Transparent, off-white tekst + border, hover: tekst bliver dark-red
+  "outline-light":
+    "bg-transparent border-[var(--color-off-white)] text-[var(--color-off-white)] " +
+    "hover:bg-[var(--color-off-white)] hover:text-[var(--color-dark-red)]",
+
+  // 4. Hvid baggrund, rød tekst, hover: dark-red tekst
+  "solid-white":
+    "bg-[var(--color-white)] border-[var(--color-white)] text-[var(--color-red)] " +
+    "hover:text-[var(--color-dark-red)]",
+} as const;
+
+// Pil-ikoner pr. variant
+const iconSources = {
+  outline: {
+    default: "/svg/btn-arrow-red.svg",
+    hover: "/svg/btn-arrow-red-hover.svg",
+  },
+  "solid-red": {
+    default: "/svg/btn-arrow-off-white.svg",
+    hover: "/svg/btn-arrow-off-white-hover.svg",
+  },
+  "outline-light": {
+    default: "/svg/btn-arrow-off-white.svg",
+    hover: "/svg/btn-arrow-off-white-hover-border.svg",
+  },
+  "solid-white": {
+    default: "/svg/btn-arrow-red.svg",
+    hover: "/svg/btn-arrow-red-hover.svg",
+  },
+} as const;
+
+const icons = iconSources[variant];
 ---
-<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
+
+{
+  href ? (
+    <a
+      href={href}
+      class:list={[baseClasses, variantClasses[variant], stylingclasses]}
+    >
+      <span class={textClasses}>
+        <slot />
+      </span>
+
+      <span class="flex items-center">
+        <img
+          src={icons.default}
+          alt=""
+          aria-hidden="true"
+          class="block group-hover:hidden"
+        />
+        <img
+          src={icons.hover}
+          alt=""
+          aria-hidden="true"
+          class="hidden group-hover:block"
+        />
+      </span>
+    </a>
+  ) : (
+    <button
+      type={type}
+      class:list={[baseClasses, variantClasses[variant], stylingclasses]}
+    >
+      <span class={textClasses}>
+        <slot />
+      </span>
+
+      <span class="flex items-center">
+        <img
+          src={icons.default}
+          alt=""
+          aria-hidden="true"
+          class="block group-hover:hidden"
+        />
+        <img
+          src={icons.hover}
+          alt=""
+          aria-hidden="true"
+          class="hidden group-hover:block"
+        />
+      </span>
+    </button>
+  )
+}
