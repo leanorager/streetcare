@@ -1,14 +1,21 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
 interface Props {
+  /** Baggrundsbillede */
   imageSrc: string;
   imageAlt?: string;
 
+  /** Label øverst til venstre */
   labelText?: string;
   labelHref?: string;
 
+  /** Tekster nederst */
   title: string;
   subtitle: string;
 
+  /** Link for kortet / pilen */
   href?: string;
 
   className?: string;
@@ -26,56 +33,65 @@ const {
 } = Astro.props;
 
 const wrapperClasses =
+  // Mobil: 315x380, Desktop: 440x530
   "group relative overflow-hidden rounded-[20px] bg-black text-white " +
   "w-[315px] h-[380px] md:w-[440px] md:h-[530px]";
 ---
 
 <article class={wrapperClasses + " " + className}>
-  <!-- BAGGRUND + HOVER ZOOM -->
+  {/* BAGGRUNDSBILLEDE MED HOVER-ZOOM */}
   <img
     src={imageSrc}
     alt={imageAlt}
     class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+    loading="lazy"
   />
 
-  <!-- GRADIENT -->
+  {/* GRADIENT OVERLAY */}
   <div
-    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/10"
+    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/0"
   >
   </div>
 
-  <!-- TOP: LABEL + PIL -->
+  {/* TOPBAR: LABEL + PIL */}
   <div
     class="absolute top-0 inset-x-0 z-10 flex items-start justify-between p-4 md:p-5"
   >
-    <!-- LABEL — MOBILE: p-small-reg / DESKTOP: p-base-med -->
+    {/* LABEL – MOBILE: p_small_reg, DESKTOP: p_base_med */}
     {
       labelText &&
         (labelHref ? (
           <a
             href={labelHref}
-            class="
-            inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm
-            px-4 py-1.5 p-small-reg
-            md:px-5 md:py-2 md:p-base-med
-          "
+            class="inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm px-4 py-1.5 md:px-5 md:py-2"
           >
-            {labelText}
+            {/* Mobiltekst */}
+            <Text teksttype="p_small_reg" stylingclasses="text-white md:hidden">
+              {labelText}
+            </Text>
+            {/* Desktoptekst */}
+            <Text
+              teksttype="p_base_med"
+              stylingclasses="hidden text-white md:inline"
+            >
+              {labelText}
+            </Text>
           </a>
         ) : (
-          <span
-            class="
-            inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm
-            px-4 py-1.5 p-small-reg
-            md:px-5 md:py-2 md:p-base-med
-          "
-          >
-            {labelText}
-          </span>
+          <div class="inline-flex w-auto items-center rounded-full bg-grey/70 backdrop-blur-sm px-4 py-1.5 md:px-5 md:py-2">
+            {/* Mobiltekst */}
+            <Text teksttype="p_small_reg" stylingclasses="md:hidden">
+              {labelText}
+            </Text>
+            {/* Desktoptekst */}
+            <Text teksttype="p_base_med" stylingclasses="hidden md:inline">
+              {labelText}
+            </Text>
+          </div>
         ))
     }
 
-    <!-- PIL -->
+    {/* PIL MED ROTATION */}
     {
       href && (
         <a
@@ -103,19 +119,46 @@ const wrapperClasses =
     }
   </div>
 
-  <!-- BUNDTEKST — MOBILE: p-base-med / DESKTOP: h5 -->
+  {/* BUNDTEKST – MOBILE: p_base_med, DESKTOP: h5 */}
   <div class="absolute bottom-0 inset-x-0 z-10 p-4 pb-6 md:p-5 md:pb-8">
-    <!-- TITLE -->
-    <h2 class="mb-1 p-base-med leading-snug md:h5">
+    {/* TITLE */}
+    {/* Mobil: p_base_med */}
+    <Text teksttype="p_base_med" stylingclasses="mb-1  text-white md:hidden">
       {title}
-    </h2>
+    </Text>
+    {/* Desktop: h5 */}
+    <Heading
+      htmlheading="h5"
+      size="h5"
+      stylingclasses="hidden text-white md:block mb-1"
+    >
+      {title}
+    </Heading>
 
-    <!-- SUBTITLE -->
-    <h3 class="p-base-med leading-snug text-white/80 md:h5">
+    {/* SUBTITLE */}
+    {/* Mobil: p_base_med */}
+    <Text teksttype="p_base_med" stylingclasses="text-white md:hidden">
       {subtitle}
-    </h3>
+    </Text>
+    {/* Desktop: h5 */}
+    <Heading
+      htmlheading="h5"
+      size="h5"
+      stylingclasses="hidden md:block text-white"
+    >
+      {subtitle}
+    </Heading>
   </div>
 
-  <!-- HELE CARD KLIKBART -->
-  {href && <a href={href} class="absolute inset-0 z-0" aria-hidden="true" />}
+  {/* HELE KORTET KLIKBART */}
+  {
+    href && (
+      <a
+        href={href}
+        class="absolute inset-0 z-0"
+        aria-hidden="true"
+        tabindex="-1"
+      />
+    )
+  }
 </article>
