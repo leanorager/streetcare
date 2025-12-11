@@ -1,0 +1,42 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+
+interface Props {
+  // Filnavn eller path til ikonet.
+  // Fx: "work.svg" -> /svg/work.svg
+  // eller "/svg/work.svg"
+  icon: string;
+  heading: string;
+  text: string;
+  stylingclasses?: string; // ekstra Tailwind classes til ydre div
+}
+
+const { icon, heading, text, stylingclasses = "" } = Astro.props;
+
+// Hvis man kun giver filnavn, prepender vi /svg/
+const iconSrc = icon.startsWith("/") ? icon : `/svg/${icon}`;
+---
+
+<div class:list={["flex flex-col", stylingclasses]}>
+  {/* Ikon + overskrift i en række */}
+  <div class="flex items-center gap-[8px]">
+    <img
+      src={iconSrc}
+      alt=""
+      aria-hidden="true"
+      class="w-[22px] h-[22px] flex-shrink-0"
+    />
+
+    <Heading htmlheading="h3" size="h5">
+      {heading}
+    </Heading>
+  </div>
+
+  {/* Tekst 18px under overskriften */}
+  <div class="mt-[18px]">
+    <Text teksttype="p_large_reg">
+      {text}
+    </Text>
+  </div>
+</div>

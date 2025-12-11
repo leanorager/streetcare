@@ -6,11 +6,99 @@ import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+import Bullet from "../components/Bullet.astro";
 ---
 
 <MainLayout title="Titel">
-  <main class="container mx-auto p-4">
+  <main>
     <Heading htmlheading="h1">Lav noget flot!</Heading>
     <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
+    <section id="donation"></section>
+    <section id="indsats" class="px-4 py-20 lg:px-[60px]">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+        {/* VENSTRE: emnetekst + stor heading */}
+        <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Vores indsats
+          </Text>
+
+          <Heading>
+            Vi står sammen med dem, der står alene.
+            <span class="text-[var(--color-grey70)]">
+              {" "}
+              Non-profit organisationen Street Care støtter Københavns mest udsatte
+              - hjemløse, ensomme, misbrugsramte og psykisk sårbare - med nærvær,
+              fællesskab og rådgivning. Ingen skal stå alene.
+            </span>
+          </Heading>
+        </div>
+
+        {/* BULLETS – 1 kolonne på mobil, 3 kolonner på desktop */}
+        <div
+          class="lg:col-span-12
+        space-y-10
+        lg:space-y-0
+        lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+        >
+          <Bullet
+            icon="work.svg"
+            heading="Gadeplansarbejde"
+            text="Vi laver opsøgende gadeplansarbejde 3-4 dage om ugen i København."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="house.svg"
+            heading="Værested på Frederiksberg"
+            text="Vi driver et værested på Frederiksberg, hvor vi skaber et trygt, varmt og åbent fællesskab."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="person.svg"
+            heading="Mentor- og bisidderstøtte"
+            text="Mentor- og bisidderstøtte, når livet og systemet bliver svært at navigere."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="cutlery.svg"
+            heading="Fællesspisninger"
+            text="Fællesspisninger byder på gratis mad og drikke, et varmt og trygt sted og nye relationer."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="compass.svg"
+            heading="Aktiviteter og ture"
+            text="Forskellige aktiviteter og ture skaber gode minder, nye venskaber og håb for fremtiden."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="phone.svg"
+            heading="Telefonrådgivning"
+            text="Telefonrådgivning, hvor man kan få hjælp, når hverdagen brænder på."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+        </div>
+
+        {/* KNAP – centreret mobil, højre på desktop */}
+        <div
+          class="mt-10 lg:mt-16
+        lg:col-span-12
+        flex justify-center lg:justify-end"
+        >
+          <Button variant="solid-red" href="/voresarbejde">
+            Læs mere om vores arbejde
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <section id="nyheder"></section>
+    <section id="gadeplansarbejde"></section>
+    <section id="vaerestedet"></section>
+    <section id="nyhedsbrev"></section>
   </main>
 </MainLayout>
