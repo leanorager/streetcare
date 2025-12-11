@@ -1,0 +1,47 @@
+---
+import Text from "../components/Text.astro";
+import Button from "./Button.astro";
+---
+
+<article
+  class="bg-red max-w-[880px] px-[20px] py-[40px] mx-auto rounded-[10px]"
+>
+  <div>
+    <h3 class="font-display text-[40px] text-white leading-tight">
+      Følg med i gadeindsatsen og mød menneskene bag historierne
+    </h3>
+
+    <Text stylingclasses="mt-[30px] text-white">
+      Vi deler små øjeblikke fra hverdagen, indblik i vores arbejde og
+      fortællinger fra gaden – alt sammen for at vise, hvad din støtte betyder.
+    </Text>
+  </div>
+
+  <!-- FORM: input + knap -->
+  <form class="mt-[30px]">
+    <!-- Skjult label til skærmlæsere -->
+    <label for="newsletter-email" class="sr-only"> Indtast din e-mail </label>
+
+    <!-- Email-feltet -->
+    <input
+      id="newsletter-email"
+      name="email"
+      type="email"
+      placeholder="Indtast din e-mail..."
+      required
+      class="w-full h-[42px]
+             border border-white rounded-[5px]
+             bg-transparent px-[10px]
+             text-white placeholder:text-white/60
+             outline-none
+             focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[var(--color-red)]"
+    />
+
+    <!-- Knap: centreret under feltet -->
+    <div class="mt-[15px] flex justify-end">
+      <Button variant="outline-light" type="submit">
+        Tilmeld nyhedsbrev
+      </Button>
+    </div>
+  </form>
+</article>
