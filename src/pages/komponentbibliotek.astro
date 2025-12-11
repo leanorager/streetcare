@@ -129,5 +129,75 @@ import NewsCard from "../components/NewsCard.astro";
       subtitle="Vejen ind i hjemløshed og kampen tilbage"
       href="/artikler/fra-tryghed-til-gaden"
     />
+
+    <section class="h-[570px]">
+  <!-- GRID: Mobil = 5 kolonner, Desktop = 12 kolonner -->
+  <div class="grid grid-cols-5 gap-6 md:grid-cols-12 md:gap-10 h-full">
+    <!-- TEKSTBLOK — 5 kolonner på desktop -->
+    <div class="col-span-5 md:col-span-5 flex flex-col">
+      <!-- Label → Heading = 5px -->
+      <Text
+        teksttype="p_small_reg"
+        stylingclasses="text-grey70 mb-[5px]"
+      >
+        Gadeplansarbejde
+      </Text>
+
+      <!-- Heading → Brødtekst = 20px -->
+      <Heading
+        htmlheading="h2"
+        size="h2"
+        stylingclasses="mb-[20px] text-black"
+      >
+        På gaden – dér hvor livet leves, og hvor vi møder mennesker i øjenhøjde
+      </Heading>
+
+      <!-- Brødtekst → Link = 5px -->
+      <Text
+        teksttype="p_base_reg"
+        stylingclasses="text-dark-grey md:pr-12 mb-[5px]"
+      >
+        Vores gadeplansteam besøger hver uge faste steder i København:
+        Christianshavns Torv, Enghave Plads, Hulgårds Plads, Den Grønne
+        Plads i Sydhavnen, Sundholm og flere andre. Vi kommer ikke forbi,
+        fordi vi kan knipse med fingrene og “løse problemerne” – vi kommer
+        for at møde mennesker. For mange er vi et fast punkt i hverdagen: en
+        samtale, et smil, en kop kaffe og et rum, hvor man kan være sig selv.
+      </Text>
+
+      <Link href="/lokationer" variant="primary">
+        Se alle lokationer
+      </Link>
+    </div>
+
+    <!-- BILLEDE — 4 kolonner på desktop -->
+    <div class="col-span-5 md:col-span-4 flex items-start h-full">
+      <img
+        src="/img/CardImg1.png"
+        alt="Gadeplansarbejde"
+        class="w-full object-cover rounded-[20px] max-h-[570px]"
+      />
+    </div>
+
+    <!-- TIDER-KORT — 3 kolonner på desktop -->
+    <div
+      class="col-span-5 md:col-span-3 bg-light-grey rounded-[16px] p-6 flex flex-col gap-4 h-[300px]"
+    >
+      <Heading htmlheading="h4" size="h4" stylingclasses="text-dark-red">
+        Tider for gadeplans-arbejde
+      </Heading>
+
+      <Text
+        teksttype="p_base_reg"
+        stylingclasses="text-dark-grey"
+      >
+        Tirsdag: 13.30–19.00<br />
+        Onsdag: 12.30–16.30<br />
+        Torsdag: 13.00–19.30
+      </Text>
+    </div>
+  </div>
+</section>
+
   </main>
 </MainLayout>
