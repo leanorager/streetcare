@@ -15,7 +15,6 @@ import NewsCard from "../components/NewsCard.astro";
     <Text stylingclasses="italic"
       >Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text
     >
-    <NewsCard />
 
     <hr class="my-4" />
     <!-- start på typografi -->
@@ -120,5 +119,15 @@ import NewsCard from "../components/NewsCard.astro";
       <Button variant="solid-white"> Støt nu </Button>
     </section>
     <!-- Slut på Buttons komponent instanser -->
+
+    <NewsCard
+      imageSrc="/images/homeless-story.jpg"
+      imageAlt="Mand på gaden"
+      labelText="Interview"
+      labelHref="/interviews"
+      title="Fra tryghed til gaden:"
+      subtitle="Vejen ind i hjemløshed og kampen tilbage"
+      href="/artikler/fra-tryghed-til-gaden"
+    />
   </main>
 </MainLayout>
