@@ -1,0 +1,59 @@
+---
+import Heading from "../components/Heading.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  imageAlt?: string;
+  className?: string;
+}
+
+const {
+  title,
+  subtitle,
+  imageSrc,
+  imageAlt = "",
+  className = "",
+} = Astro.props;
+---
+
+<section class={`w-full bg-off-white h-auto lg:h-[650px] ${className}`}>
+  <div class="h-full px-4 pt-12 lg:px-[60px] lg:pt-[80px]">
+    <!-- Mobil: 1 kolonne / Desktop: 12 kolonner -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 lg:h-full">
+      <!-- TEKST: 6 kolonner -->
+      <div class="lg:col-span-6">
+        <Heading htmlheading="h1" size="h1" stylingclasses="text-red">
+          {title}
+        </Heading>
+
+        <Heading
+          htmlheading="h2"
+          size="h2"
+          font="display"
+          stylingclasses="text-red mt-[20px]"
+        >
+          {subtitle}
+        </Heading>
+      </div>
+
+      <!-- TOM KOLONNE -->
+      <div class="hidden lg:block lg:col-span-1"></div>
+
+      <!-- BILLEDE: 5 kolonner -->
+      <div
+        class="lg:col-span-5 mt-8 lg:mt-0 flex justify-center lg:justify-end"
+      >
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          loading="lazy"
+          class="w-full max-w-[570px]
+            aspect-[570/710] object-cover
+            lg:w-[570px] lg:h-[710px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>
