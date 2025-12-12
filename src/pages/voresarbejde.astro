@@ -19,12 +19,12 @@ import HeroCard from "../components/HeroCard.astro";
     imageAlt="Frivillige hos Street Care, der smiler sammen"
   />
   <!-- HEROCARD SLUT -->
-  <main>
+  <main class="container mx-auto p-4">
     <section
-      id="vaerestedet"
-      class="px-4 py-20
+      id="gadeplansarbejde"
+      class="pt-20 pb-10
     grid grid-cols-5 gap-6
-    lg:px-[60px] lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+    lg:lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
     >
       <!-- VENSTRE BLOK -->
       <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
@@ -66,6 +66,38 @@ import HeroCard from "../components/HeroCard.astro";
           Torsdag: 13.00–19.30
         </Text>
       </div>
+    </section>
+
+    <section class="w-full">
+      <img
+        src="/img/ourwork1.png"
+        alt=""
+        class="w-full
+      h-[145px] lg:h-[539px]
+      object-cover"
+        loading="lazy"
+      />
+    </section>
+
+    <section
+      id="gadeplansarbejde"
+      class="pt-20 pb-10
+    grid grid-cols-5 gap-6
+    lg:grid-cols-12 lg:gap-[10px]"
+    >
+      <!-- VENSTRE BLOK -->
+      <div class="col-span-5 lg:col-span-7 lg:pb-[10px]">
+        <Heading>
+          Midt i byens støj finder vi dem, der er glemt.
+          <span class="text-[var(--color-grey70)]">
+            {" "}
+            Street Care står skulder ved skulder med Københavns mest udsatte.
+          </span>
+        </Heading>
+      </div>
+
+      <!-- HØJRE BLOK -->
+      <div class="col-span-5 lg:col-start-9 lg:col-end-13"></div>
     </section>
   </main>
 </MainLayout>
