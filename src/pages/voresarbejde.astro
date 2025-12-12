@@ -1,0 +1,423 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import NewsCard from "../components/NewsCard.astro";
+import HeroCard from "../components/HeroCard.astro";
+import CheckList from "../components/CheckList.astro";
+import Bullet from "../components/Bullet.astro";
+---
+
+<MainLayout title="Vores arbejde">
+  <!-- HEROCARD START -->
+  <HeroCard
+    title="Vores arbejde"
+    subtitle="Små handlinger, store forskelle – hver eneste dag"
+    imageSrc="/img/OurWork.png"
+    imageAlt="Frivillige hos Street Care, der smiler sammen"
+  />
+  <!-- HEROCARD SLUT -->
+  <main class="">
+    <section
+      id="gadeplansarbejde"
+      class="px-4 lg:px-[60px] py-20 pt-20 pb-10
+    grid grid-cols-5 gap-6
+    lg:lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+    >
+      <!-- VENSTRE BLOK -->
+      <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Opsøgende gadeplansarbejde
+        </Text>
+
+        <Heading>
+          Vi møder mennesker på gaden – i øjenhøjde og i hverdagen
+        </Heading>
+      </div>
+
+      <!-- HØJRE BLOK -->
+      <div class="col-span-5 lg:col-start-7 lg:col-end-13">
+        <!-- Mindre spacing på mobil, større på desktop -->
+        <Text stylingclasses="mt-[0px] lg:mt-[30px]">
+          Gadeplansarbejdet er kernen i Street Cares indsats. Flere gange om
+          ugen besøger vi faste steder i København, hvor hjemløse og udsatte
+          opholder sig. Vi kommer for at lytte, støtte og skabe relationer –
+          ikke for at presse agendaer igennem.
+        </Text>
+
+        <Text stylingclasses="mt-[30px]">
+          Vi kommer rundt i byen med bil, i Metro eller på vores
+          Christianiacykel, og vi opsøger mennesker på steder som Enghave Plads,
+          Den Grønne Plads og Københavns Hovedbanegård, Kgs. Enghave, Hulgårds
+          Plads, Christianshavns Torv, Nørreport st., Sundholm samt Vanløse
+          Torv. Vi vil også løbende lave opsøgende gadeplansarbejde andre steder
+          og på andre tidspunkter i løbet af ugen.
+        </Text>
+
+        <Heading htmlheading="h5" size="h5" stylingclasses="mt-[40px]">
+          Faste tidspunkter for gadeplansarbejde:
+        </Heading>
+
+        <Text stylingclasses="mt-[10px]">
+          Tirsdag: 13.30–19.00<br />
+          Onsdag: 12.30–16.30<br />
+          Torsdag: 13.00–19.30
+        </Text>
+      </div>
+    </section>
+
+    <section class="w-full px-4 lg:px-[60px] py-20">
+      <img
+        src="/img/ourwork1.png"
+        alt=""
+        class="w-full
+      h-[145px] lg:h-[539px]
+      object-cover"
+        loading="lazy"
+      />
+    </section>
+
+    <section
+      id="gadeplansarbejde"
+      class="px-4 lg:px-[60px] py-20 mb-[96px] pt-20 pb-10
+    grid grid-cols-5 gap-6
+    lg:grid-cols-12 lg:gap-[10px]"
+    >
+      <!-- VENSTRE BLOK -->
+      <div class="col-span-5 lg:col-span-7 lg:pb-[10px]">
+        <Heading>
+          Midt i byens støj finder vi dem, der er glemt.
+          <span class="text-[var(--color-grey70)]">
+            {" "}
+            Street Care står skulder ved skulder med Københavns mest udsatte.
+          </span>
+        </Heading>
+      </div>
+
+      <!-- HØJRE BLOK -->
+
+      <div class="col-span-5 pt-[10px] lg:col-start-9 lg:col-end-13">
+        <CheckList
+          title="Gadeplansarbejde:"
+          items={[
+            "Samtaler og nærvær",
+            "Praktisk hjælp og rådgivning",
+            "Mad & drikke",
+            "Kontakt til behandling, sundhedssystemet og kommunen",
+            "Uddeling af tøj, soveposer og information om fællesspisning og aktiviteter",
+          ]}
+        />
+      </div>
+    </section>
+
+    <section
+      id="vaerestedet"
+      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    >
+      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Værestedet
+        </Text>
+        <Heading>
+          Et trygt sted at lande, når man har brug for varme, mad og
+          menneskelighed
+        </Heading>
+        <Text stylingclasses="mt-[20px]">
+          Vores værested på Frederiksberg er et åbent og trygt fællesskab for
+          hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
+          grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
+          nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
+          noget. Her får man:
+        </Text>
+        <div class="mt-[20px]">
+          <CheckList
+            title="Særlige arrangementer i december:"
+            iconSrc="/svg/calendar.svg"
+            items={[
+              "Julebanko – 3. december",
+              "Foredrag med Victor Hørup – 10. december",
+              "Julefest – 17. december (tilmelding nødvendig)",
+            ]}
+          />
+        </div>
+      </div>
+      <div class="lg:col-start-9 lg:col-end-13">
+        <img
+          src="/img/vaerestedet.webp"
+          alt="Værestedet Street Care"
+          class="block w-full h-auto object-cover"
+        />
+        <Text teksttype="p_small_reg" stylingclasses="mt-[4px] text-dark-grey">
+          Evangeliekirken, Worsaaesvej 5, Frederiksberg
+        </Text>
+        <Text teksttype="p_small_reg" stylingclasses="text-dark-grey">
+          Åbent udvalgte onsdage 18–21
+        </Text>
+      </div>
+
+      <Bullet
+        icon="cutlery.svg"
+        heading="Gratis mad"
+        text="Og kolde og varme drikke til at fylde depoterne op."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
+      />
+      <Bullet
+        icon="two-people.svg"
+        heading="Fællesskab"
+        text="I et roligt og trygt rum uden krav."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
+      />
+      <Bullet
+        icon="talking.svg"
+        heading="Samtaler"
+        text="Med frivillige og andre bekendtskaber."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
+      />
+      <Bullet
+        icon="disco.svg"
+        heading="Arrangementer"
+        text="Såsom musik, banko og quizzer."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
+      />
+    </section>
+
+    <section id="faellesspisning" class="px-4 lg:px-[60px]
+    pt-2 pb-10">
+      <!-- TOP: TEKSTGRID -->
+      <div
+        class="grid grid-cols-5 gap-6
+      lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+      >
+        <!-- VENSTRE: label + heading -->
+        <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Fællesspisning
+          </Text>
+
+          <Heading> Fællesskab begynder ofte med et måltid </Heading>
+        </div>
+
+        <!-- HØJRE: 2 tekstkolonner på desktop / stacked på mobil -->
+        <div class="col-span-5 lg:col-start-7 lg:col-end-13">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[25px]">
+            <Text stylingclasses="mt-[10px] lg:mt-[30px]">
+              Flere gange om måneden inviterer vi til fællesspisninger, hvor
+              mennesker kan mødes i rolige og trygge rammer. Her handler
+              måltidet ikke kun om mad, men om at blive set, hørt og være en del
+              af noget. Vi deler god mad, samtaler og grin – og skaber et
+              frirum, hvor relationer kan vokse og følge med ud i hverdagen.
+            </Text>
+
+            <Text stylingclasses="mt-[0px] lg:mt-[30px]">
+              Fællesspisningerne kan foregå privat, i kirker eller i forbindelse
+              med aktiviteter. Fælles for dem er, at de samler mennesker, der
+              ellers ofte står alene, og giver plads til nærvær, varme og et
+              bord, hvor der altid er en stol til én mere.
+            </Text>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUND: BILLEDER (mobil: stacked, desktop: side-by-side) -->
+      <div
+        class="mt-[40px]
+    grid grid-cols-1 gap-6
+    lg:mt-[60px] lg:grid-cols-12 lg:gap-[20px]"
+      >
+        <!-- BILLEDE 1 -->
+        <div class="lg:col-span-6">
+          <img
+            src="/img/grillin.png"
+            alt=""
+            loading="lazy"
+            class="block w-full h-[260px] md:h-[420px] lg:h-[686px] object-cover"
+          />
+        </div>
+
+        <!-- BILLEDE 2 -->
+        <div class="lg:col-span-6">
+          <img
+            src="/img/cookin.png"
+            alt=""
+            loading="lazy"
+            class="block w-full h-[260px] md:h-[420px] lg:h-[768px] object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!--AKTIVITETER OG TURE START-->
+    <section
+      id="aktiviterogture"
+      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    >
+      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px] lg:pt-[120px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Aktiviteter og ture
+        </Text>
+        <Heading> Oplevelser, der giver glæde – og håb for fremtiden </Heading>
+        <Text stylingclasses="mt-[20px]">
+          Vi arrangerer både små og store aktiviteter for mennesker, der
+          sjældent får mulighed for en pause fra hverdagen. Formålet med dette
+          er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
+          finder ny glæde ved og for fremtiden. For mange er disse ture et
+          højdepunkt – en dag uden bekymringer og med plads til at mærke livet
+          igen.
+        </Text>
+        <div class="col-span-5 pt-[20px] lg:col-start-9 lg:col-end-13">
+          <CheckList
+            title="Det kan være:"
+            items={[
+              "Ture til Dyrehavsbakken, Tivoli eller bowling",
+              "Gospelarrangementer og koncerter",
+              "Sommerhusture og sommerferier",
+              "Fisketure og udflugter i naturen",
+              "Julehjælp & deling af varmt tøj om vinteren",
+            ]}
+          />
+        </div>
+      </div>
+      <div class="lg:col-start-7 lg:col-end-13">
+        <img
+          src="/img/huggingHomeless.png"
+          alt="Gadeplansarbejde"
+          class="w-full object-cover max-h-[685px]"
+        />
+      </div>
+    </section>
+    <!--AKTIVITETER SLUT -->
+
+    <!--MENTOR OG BESIDDERSTØTTE SEKTION START -->
+    <section id="indsats" class="px-4 py-20 lg:px-[60px]">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+        {/* VENSTRE: emnetekst + stor heading */}
+        <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Mentor- og bisidderstøtte
+          </Text>
+
+          <Heading>
+            Vi går vejen sammen, når systemet bliver uoverskueligt.
+            <span class="text-[var(--color-grey70)]">
+              {" "}
+              Street Care hjælper med breve, møder og myndigheder, så der skabes tryghed
+              og overblik.
+            </span>
+          </Heading>
+        </div>
+
+        {/* BULLETS – 1 kolonne på mobil, 3 kolonner på desktop */}
+        <div
+          class="lg:col-span-12
+        space-y-[5px]
+        lg:space-y-0
+        lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+        >
+          <Bullet
+            icon="checkmark.svg"
+            heading="Følgeskab til møder"
+            text="Når systemet bliver for meget, går vi med dig."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Brev- og myndighedsforståelse"
+            text="Vi hjælper med at skabe overblik i papirerne."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Samtaler og nærvær"
+            text="En kop kaffe kan være starten på forandring."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Støtte gennem svære perioder"
+            text="Vi binder trådene sammen, når alt falder fra hinanden."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Besøg i hjemmet"
+            text="Vi kommer til dig, når du ikke kan komme til os."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Støtte under indlæggelse"
+            text="Vi er med, når du har brug for tryghed i behandlingen."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+        </div>
+      </div>
+    </section>
+    <!--MENTOR OG BESIDDERSTØTTE SLUT -->
+
+    <!-- TELEFONRÅDGIVNING START -->
+
+    <section class="px-4 lg:px-[60px] py-20">
+      <div class="flex justify-center">
+        <div
+          class="bg-red text-white
+        w-[570px] max-w-full
+        rounded-[16px]
+        p-10
+        flex flex-col gap-[20px]"
+        >
+          <!-- Titel -->
+          <Heading htmlheading="h3" size="h3" stylingclasses="text-white">
+            Telefonrådgivning
+          </Heading>
+
+          <!-- Lille underlinje (kort, “fed”) -->
+          <Text teksttype="p_base_med" stylingclasses="text-white">
+            En livline i hverdagen, når man har brug for hjælp nu og her
+          </Text>
+
+          <!-- Brødtekst -->
+          <Text teksttype="p_base_reg" stylingclasses="text-white">
+            Vores telefonrådgivning giver mulighed for at støtte, når livet
+            brænder på. Man kan ringe for at aftale kørsel til møder, få støtte,
+            råd eller samtaler, lave aftaler om kaffe- eller fællesspisning
+            eller for at få hjælp i akutte situationer.
+          </Text>
+
+          <!-- Åbningstider -->
+          <div class="flex flex-col gap-[4px]">
+            <Text teksttype="p_base_med" stylingclasses="text-white">
+              Åbningstider
+            </Text>
+
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Åben alle hverdage kl. 11–16
+            </Text>
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Ved akutte behov er man altid velkommen til at ringe.
+            </Text>
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Telefon: 31 14 21 00
+            </Text>
+          </div>
+
+          <!-- Knapper: højrestillet, i én linje -->
+          <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
+            <Button variant="outline-light">Ring til os</Button>
+            <Button variant="outline-light">Send mail</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELEFONRÅDGIVNING SLUT-->
+  </main>
+</MainLayout>
