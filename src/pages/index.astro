@@ -1,8 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
@@ -10,7 +8,7 @@ import Bullet from "../components/Bullet.astro";
 import NewsletterSignUp from "../components/NewsletterSignUp.astro";
 ---
 
-<MainLayout title="Titel">
+<MainLayout title="Forside">
   <main>
     <Heading htmlheading="h1">Lav noget flot!</Heading>
     <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
@@ -208,7 +206,63 @@ import NewsletterSignUp from "../components/NewsletterSignUp.astro";
     </section>
 
     <section id="nyheder"></section>
-    <section id="gadeplansarbejde"></section>
+    <!-- GADEPLANSARBEJDE SECTION START -->
+    <section id="gadeplansarbejde" class="h-[570px]">
+      <div class="grid grid-cols-5 gap-6 md:grid-cols-12 md:gap-10 h-full">
+        <div class="col-span-5 md:col-span-5 flex flex-col">
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
+            Gadeplansarbejde
+          </Text>
+
+          <Heading
+            htmlheading="h2"
+            size="h2"
+            stylingclasses="mb-[20px] text-black"
+          >
+            På gaden – dér hvor livet leves, og hvor vi møder mennesker i
+            øjenhøjde
+          </Heading>
+
+          <Text
+            teksttype="p_base_reg"
+            stylingclasses="text-dark-grey md:pr-12 mb-[5px]"
+          >
+            Vores gadeplansteam besøger hver uge faste steder i København:
+            Christianshavns Torv, Enghave Plads, Hulgårds Plads, Den Grønne
+            Plads i Sydhavnen, Sundholm og flere andre. Vi kommer ikke forbi,
+            fordi vi kan knipse med fingrene og “løse problemerne” – vi kommer
+            for at møde mennesker. For mange er vi et fast punkt i hverdagen: en
+            samtale, et smil, en kop kaffe og et rum, hvor man kan være sig
+            selv.
+          </Text>
+
+          <Link href="/lokationer" variant="primary">Se alle lokationer</Link>
+        </div>
+
+        <div class="col-span-5 md:col-span-4 flex items-start h-full">
+          <img
+            src="/img/CardImg1.png"
+            alt="Gadeplansarbejde"
+            class="w-full object-cover rounded-[20px] max-h-[570px]"
+          />
+        </div>
+
+        <div
+          class="col-span-5 md:col-span-3 bg-light-grey rounded-[16px] p-6 flex flex-col gap-4 h-[300px]"
+        >
+          <Heading htmlheading="h4" size="h4" stylingclasses="text-dark-red">
+            Tider for gadeplans-arbejde
+          </Heading>
+
+          <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+            Tirsdag: 13.30–19.00<br />
+            Onsdag: 12.30–16.30<br />
+            Torsdag: 13.00–19.30
+          </Text>
+        </div>
+      </div>
+    </section>
+    <!-- GADEPLANSARBEJDE SLUT -->
     <section
       id="vaerestedet"
       class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
