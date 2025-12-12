@@ -132,8 +132,111 @@ import NewsCard from "../components/NewsCard.astro";
           resten af samfundet. Din støtte viser dem, at de ikke er alene.
         </Text>
       </div>
-
-      <section id="pengene"></section>
     </section>
-  </main></MainLayout
->
+    <section
+      id="pengene"
+      class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
+    >
+      <div
+        class="lg:col-start-1 lg:col-end-8 lg:grid lg:grid-cols-8 lg:gap-x-[20px]"
+      >
+        <div class="lg:col-start-1 lg:col-end-6">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Hvad går pengene til?
+          </Text>
+          <Heading
+            htmlheading="h2"
+            size="h2"
+            stylingclasses="mb-[6px] lg:mb-[20px]"
+          >
+            Din støtte er med til at holde dørene åbne – og hjertet varmt
+          </Heading>
+        </div>
+        <div class="lg:col-start-1 lg:col-end-9">
+          <Text stylingclasses="text-dark-grey mb-[20px]">
+            Din støtte bliver til handling. Street Care arbejder hver uge blandt
+            Københavns mest udsatte. Når du donerer, er du med til at finansiere
+            punkterne nedenfor. I starten af året udgiver Street Care en
+            årsberetning, der beretter historier og fortæller om årets
+            resultater. Vores årsregnskab deles endvidere her, så alle ved hvad
+            vores indsamlinger går til - og kan se tallene bag.
+          </Text>
+          <Link href="/aarsregnskab">Se årsregnskabet</Link>
+        </div>
+      </div>
+      <div class="mt-[20px] lg:col-start-1 lg:col-end-7 lg:mt-0">
+        <img
+          src="/img/pengene1.webp"
+          alt="Kvinde cykler på ladcykel med Street Care logo"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
+        >
+      </div>
+      <div class="lg:col-start-7 lg:col-end-10">
+        <img
+          src="/img/pengene2.webp"
+          alt="Værestedet Street Care"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >2 / Værested med gratis mad, varme drikke og fællesskab</Text
+        >
+      </div>
+      <div class="lg:col-start-10 lg:col-end-13">
+        <img
+          src="/img/pengene3.webp"
+          alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
+        >
+      </div>
+      <div class="lg:col-start-1 lg:col-end-4">
+        <img
+          src="/img/pengene4.webp"
+          alt="Fire glade frivillige med Street Care t-shirts"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem systemet</Text
+        >
+      </div>
+      <div class="lg:col-start-4 lg:col-end-10">
+        <img
+          src="/img/pengene5.webp"
+          alt="To glade hjemløse personer til koncert"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
+        >
+      </div>
+      <div class="lg:col-start-10 lg:col-end-13">
+        <img
+          src="/img/pengene6.webp"
+          alt="Nærbillede af hjemløs mand med bedrøvet blik"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet brænder
+          på</Text
+        >
+      </div>
+    </section>
+  </main>
+</MainLayout>
