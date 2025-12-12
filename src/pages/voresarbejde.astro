@@ -135,9 +135,13 @@ import Bullet from "../components/Bullet.astro";
         </Text>
         <div class="mt-[20px]">
           <CheckList
-            title="Frivilligrollen"
-            iconSrc="/svg/heart.svg"
-            items={["Nærvær", "Stabilitet", "Respekt"]}
+            title="Særlige arrangementer i december:"
+            iconSrc="/svg/calendar.svg"
+            items={[
+              "Julebanko – 3. december",
+              "Foredrag med Victor Hørup – 10. december",
+              "Julefest – 17. december (tilmelding nødvendig)",
+            ]}
           />
         </div>
       </div>
@@ -179,6 +183,71 @@ import Bullet from "../components/Bullet.astro";
         text="Såsom musik, banko og quizzer."
         stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
       />
+    </section>
+
+    <section id="faellesspisning" class="px-4 lg:px-[60px]
+    pt-2 pb-10">
+      <!-- TOP: TEKSTGRID -->
+      <div
+        class="grid grid-cols-5 gap-6
+      lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+      >
+        <!-- VENSTRE: label + heading -->
+        <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Fællesspisning
+          </Text>
+
+          <Heading> Fællesskab begynder ofte med et måltid </Heading>
+        </div>
+
+        <!-- HØJRE: 2 tekstkolonner på desktop / stacked på mobil -->
+        <div class="col-span-5 lg:col-start-7 lg:col-end-13">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[25px]">
+            <Text stylingclasses="mt-[10px] lg:mt-[30px]">
+              Flere gange om måneden inviterer vi til fællesspisninger, hvor
+              mennesker kan mødes i rolige og trygge rammer. Her handler
+              måltidet ikke kun om mad, men om at blive set, hørt og være en del
+              af noget. Vi deler god mad, samtaler og grin – og skaber et
+              frirum, hvor relationer kan vokse og følge med ud i hverdagen.
+            </Text>
+
+            <Text stylingclasses="mt-[0px] lg:mt-[30px]">
+              Fællesspisningerne kan foregå privat, i kirker eller i forbindelse
+              med aktiviteter. Fælles for dem er, at de samler mennesker, der
+              ellers ofte står alene, og giver plads til nærvær, varme og et
+              bord, hvor der altid er en stol til én mere.
+            </Text>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUND: BILLEDER (mobil: stacked, desktop: side-by-side) -->
+      <div
+        class="mt-[40px]
+    grid grid-cols-1 gap-6
+    lg:mt-[60px] lg:grid-cols-12 lg:gap-[20px]"
+      >
+        <!-- BILLEDE 1 -->
+        <div class="lg:col-span-6">
+          <img
+            src="/img/grillin.png"
+            alt=""
+            loading="lazy"
+            class="block w-full h-[260px] md:h-[420px] lg:h-[686px] object-cover"
+          />
+        </div>
+
+        <!-- BILLEDE 2 -->
+        <div class="lg:col-span-6">
+          <img
+            src="/img/cookin.png"
+            alt=""
+            loading="lazy"
+            class="block w-full h-[260px] md:h-[420px] lg:h-[768px] object-cover"
+          />
+        </div>
+      </div>
     </section>
   </main>
 </MainLayout>
