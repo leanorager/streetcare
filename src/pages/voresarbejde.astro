@@ -1,0 +1,71 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import NewsCard from "../components/NewsCard.astro";
+import HeroCard from "../components/HeroCard.astro";
+---
+
+<MainLayout title="Vores arbejde">
+  <!-- HEROCARD START -->
+  <HeroCard
+    title="Vores arbejde"
+    subtitle="Små handlinger, store forskelle – hver eneste dag"
+    imageSrc="/img/OurWork.png"
+    imageAlt="Frivillige hos Street Care, der smiler sammen"
+  />
+  <!-- HEROCARD SLUT -->
+  <main>
+    <section
+      id="vaerestedet"
+      class="px-4 py-20
+    grid grid-cols-5 gap-6
+    lg:px-[60px] lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+    >
+      <!-- VENSTRE BLOK -->
+      <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Opsøgende gadeplansarbejde
+        </Text>
+
+        <Heading>
+          Vi møder mennesker på gaden – i øjenhøjde og i hverdagen
+        </Heading>
+      </div>
+
+      <!-- HØJRE BLOK -->
+      <div class="col-span-5 lg:col-start-7 lg:col-end-13">
+        <!-- Mindre spacing på mobil, større på desktop -->
+        <Text stylingclasses="mt-[0px] lg:mt-[30px]">
+          Gadeplansarbejdet er kernen i Street Cares indsats. Flere gange om
+          ugen besøger vi faste steder i København, hvor hjemløse og udsatte
+          opholder sig. Vi kommer for at lytte, støtte og skabe relationer –
+          ikke for at presse agendaer igennem.
+        </Text>
+
+        <Text stylingclasses="mt-[30px]">
+          Vi kommer rundt i byen med bil, i Metro eller på vores
+          Christianiacykel, og vi opsøger mennesker på steder som Enghave Plads,
+          Den Grønne Plads og Københavns Hovedbanegård, Kgs. Enghave, Hulgårds
+          Plads, Christianshavns Torv, Nørreport st., Sundholm samt Vanløse
+          Torv. Vi vil også løbende lave opsøgende gadeplansarbejde andre steder
+          og på andre tidspunkter i løbet af ugen.
+        </Text>
+
+        <Heading htmlheading="h5" size="h5" stylingclasses="mt-[40px]">
+          Faste tidspunkter for gadeplansarbejde:
+        </Heading>
+
+        <Text stylingclasses="mt-[10px]">
+          Tirsdag: 13.30–19.00<br />
+          Onsdag: 12.30–16.30<br />
+          Torsdag: 13.00–19.30
+        </Text>
+      </div>
+    </section>
+  </main>
+</MainLayout>
