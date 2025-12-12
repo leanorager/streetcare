@@ -8,6 +8,7 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import NewsCard from "../components/NewsCard.astro";
 import HeroCard from "../components/HeroCard.astro";
+import CheckList from "../components/CheckList.astro";
 ---
 
 <MainLayout title="Vores arbejde">
@@ -97,7 +98,19 @@ import HeroCard from "../components/HeroCard.astro";
       </div>
 
       <!-- HØJRE BLOK -->
-      <div class="col-span-5 lg:col-start-9 lg:col-end-13"></div>
+
+      <div class="col-span-5 pt-[10px] lg:col-start-9 lg:col-end-13">
+        <CheckList
+          title="Gadeplansarbejde:"
+          items={[
+            "Samtaler og nærvær",
+            "Praktisk hjælp og rådgivning",
+            "Mad & drikke",
+            "Kontakt til behandling, sundhedssystemet og kommunen",
+            "Uddeling af tøj, soveposer og information om fællesspisning og aktiviteter",
+          ]}
+        />
+      </div>
     </section>
   </main>
 </MainLayout>
