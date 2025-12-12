@@ -249,5 +249,176 @@ import Bullet from "../components/Bullet.astro";
         </div>
       </div>
     </section>
+
+    <!--AKTIVITETER OG TURE START-->
+    <section
+      id="aktiviterogture"
+      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    >
+      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px] lg:pt-[120px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Aktiviteter og ture
+        </Text>
+        <Heading> Oplevelser, der giver glæde – og håb for fremtiden </Heading>
+        <Text stylingclasses="mt-[20px]">
+          Vi arrangerer både små og store aktiviteter for mennesker, der
+          sjældent får mulighed for en pause fra hverdagen. Formålet med dette
+          er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
+          finder ny glæde ved og for fremtiden. For mange er disse ture et
+          højdepunkt – en dag uden bekymringer og med plads til at mærke livet
+          igen.
+        </Text>
+        <div class="col-span-5 pt-[10px] lg:col-start-9 lg:col-end-13">
+          <CheckList
+            title="Det kan være:"
+            items={[
+              "Ture til Dyrehavsbakken, Tivoli eller bowling",
+              "Gospelarrangementer og koncerter",
+              "Sommerhusture og sommerferier",
+              "Fisketure og udflugter i naturen",
+              "Julehjælp & deling af varmt tøj om vinteren",
+            ]}
+          />
+        </div>
+      </div>
+      <div class="lg:col-start-7 lg:col-end-13">
+        <img
+          src="/img/huggingHomeless.png"
+          alt="Gadeplansarbejde"
+          class="w-full object-cover max-h-[685px]"
+        />
+      </div>
+    </section>
+    <!--AKTIVITETER SLUT -->
+
+    <!--MENTOR OG BESIDDERSTØTTE SEKTION START -->
+    <section id="indsats" class="px-4 py-20 lg:px-[60px]">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+        {/* VENSTRE: emnetekst + stor heading */}
+        <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Mentor- og bisidderstøtte
+          </Text>
+
+          <Heading>
+            Vi går vejen sammen, når systemet bliver uoverskueligt.
+            <span class="text-[var(--color-grey70)]">
+              {" "}
+              Street Care hjælper med breve, møder og myndigheder, så der skabes tryghed
+              og overblik.
+            </span>
+          </Heading>
+        </div>
+
+        {/* BULLETS – 1 kolonne på mobil, 3 kolonner på desktop */}
+        <div
+          class="lg:col-span-12
+        space-y-10
+        lg:space-y-0
+        lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+        >
+          <Bullet
+            icon="checkmark.svg"
+            heading="Følgeskab til møder"
+            text="Når systemet bliver for meget, går vi med dig."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Brev- og myndighedsforståelse"
+            text="Vi hjælper med at skabe overblik i papirerne."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Samtaler og nærvær"
+            text="En kop kaffe kan være starten på forandring."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Støtte gennem svære perioder"
+            text="Vi binder trådene sammen, når alt falder fra hinanden."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Besøg i hjemmet"
+            text="Vi kommer til dig, når du ikke kan komme til os."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+
+          <Bullet
+            icon="checkmark.svg"
+            heading="Støtte under indlæggelse"
+            text="Vi er med, når du har brug for tryghed i behandlingen."
+            stylingclasses="pt-[40px] lg:pt-[60px]"
+          />
+        </div>
+      </div>
+    </section>
+    <!--MENTOR OG BESIDDERSTØTTE SLUT -->
+
+    <!-- TELEFONRÅDGIVNING START -->
+    <!-- RØD BOKS (mobil: øverst, desktop: sticky venstre) -->
+
+    <section class="px-4 lg:px-[60px] py-20">
+      <div class="flex justify-center">
+        <div
+          class="bg-red text-white
+        w-[570px] max-w-full
+        rounded-[16px]
+        p-10
+        flex flex-col gap-[20px]"
+        >
+          <!-- Titel -->
+          <Heading htmlheading="h3" size="h3" stylingclasses="text-white">
+            Telefonrådgivning
+          </Heading>
+
+          <!-- Lille underlinje (kort, “fed”) -->
+          <Text teksttype="p_base_med" stylingclasses="text-white">
+            En livline i hverdagen, når man har brug for hjælp nu og her
+          </Text>
+
+          <!-- Brødtekst -->
+          <Text teksttype="p_base_reg" stylingclasses="text-white">
+            Vores telefonrådgivning giver mulighed for at støtte, når livet
+            brænder på. Man kan ringe for at aftale kørsel til møder, få støtte,
+            råd eller samtaler, lave aftaler om kaffe- eller fællesspisning
+            eller for at få hjælp i akutte situationer.
+          </Text>
+
+          <!-- Åbningstider -->
+          <div class="flex flex-col gap-[4px]">
+            <Text teksttype="p_base_med" stylingclasses="text-white">
+              Åbningstider
+            </Text>
+
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Åben alle hverdage kl. 11–16
+            </Text>
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Ved akutte behov er man altid velkommen til at ringe.
+            </Text>
+            <Text teksttype="p_small_reg" stylingclasses="text-white">
+              Telefon: 31 14 21 00
+            </Text>
+          </div>
+
+          <!-- Knapper: højrestillet, i én linje -->
+          <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
+            <Button variant="outline-light">Ring til os</Button>
+            <Button variant="outline-light">Send mail</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELEFONRÅDGIVNING SLUT-->
   </main>
 </MainLayout>
