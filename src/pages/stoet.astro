@@ -1,0 +1,242 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import NewsCard from "../components/NewsCard.astro";
+---
+
+<MainLayout title="Støt">
+  <main>
+    <section id="hero"></section>
+    <section id="anden_stoette" class="px-4 py-20 lg:px-[60px]">
+      {/* Heading */}
+      <div class="max-w-[900px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Andre måder at støtte på
+        </Text>
+
+        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+          Ikke alle bidrag er økonomiske.
+          <span class="text-[var(--color-grey)]">
+            {" "}
+            Vi har brug for mange typer støtte.
+          </span>
+        </Heading>
+      </div>
+
+      {/* Cards */}
+      <div>
+        {/* Mobil: horisontal scroll */}
+        <div
+          class="-mx-4 px-4
+        flex gap-4 overflow-x-auto
+        snap-x snap-mandatory
+        pb-2
+        lg:mx-0 lg:px-0
+        lg:overflow-visible lg:pb-0
+        lg:flex lg:gap-[20px]"
+        >
+          <div class="snap-start shrink-0 lg:shrink lg:flex-1 pl-4 lg:pl-0">
+            <NewsCard
+              imageSrc="/img/anden-stoette1.webp"
+              imageAlt="Frivillig kvinde med Street Care t-shirt"
+              labelText="Frivillighed"
+              labelHref="/blivfrivillig"
+              subtitle="Bliv frivillig"
+              href="/blivfrivillig"
+              className="w-[315px] md:w-[440px] lg:w-full"
+            />
+          </div>
+
+          <div class="snap-start shrink-0 lg:shrink lg:flex-1">
+            <NewsCard
+              imageSrc="/img/anden-stoette2.webp"
+              imageAlt="Køkkenbord med madvarer"
+              labelText="Anden donation"
+              labelHref="/andendonation"
+              subtitle="Donér mad, tøj eller udstyr"
+              href="/andendonation"
+              className="w-[315px] md:w-[440px] lg:w-full"
+            />
+          </div>
+
+          <div class="snap-start shrink-0 lg:shrink lg:flex-1">
+            <NewsCard
+              imageSrc="/img/anden-stoette3.webp"
+              imageAlt="Kvinde med Street Care t-shirt taler i mikrofon foran en gruppe mennesker"
+              labelText="Samarbejde"
+              labelHref="/samarbejde"
+              subtitle="Samarbejde eller partnerskab?"
+              href="/samarbejde"
+              className="w-[315px] md:w-[440px] lg:w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="vidste_du"
+      class="py-[96px] px-4 bg-off-white lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    >
+      <div
+        class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px]"
+      >
+        <Heading htmlheading="h3" size="h3" stylingclasses="mb-[20px] lg:mb-0">
+          Vidste du at?
+        </Heading>
+        <Link href="/om"> Læs mere om vores historie </Link>
+      </div>
+
+      <div
+        class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+      >
+        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+          1 ud af 3
+        </Heading>
+        <Text styllingclasses="text-dark-grey">
+          som vi møder på gaden, har ikke talt med nogen den dag — før vi kommer
+          forbi. Din støtte gør det muligt, at ingen behøver gå igennem dagen
+          uden et menneske, der ser dem.
+        </Text>
+      </div>
+      <div
+        class="border-b-grey70 border-b-[1px] pb-[40px] lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+      >
+        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+          150kr
+        </Heading>
+        <Text styllingclasses="text-dark-grey">
+          Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
+          kulden. For nogen er det deres første måltid i flere dage.
+        </Text>
+      </div>
+      <div
+        class="border-b-grey70 border-b-[1px] pb-[40px] lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+      >
+        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+          40 udsatte
+        </Heading>
+        <Text styllingclasses="text-dark-grey">
+          Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
+          behandling, bolig, økonomi. Mange af dem ville aldrig være nået frem
+          uden bisidderstøtte.
+        </Text>
+      </div>
+      <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
+        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+          7 ud af 10
+        </Heading>
+        <Text styllingclasses="text-dark-grey">
+          7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt af
+          resten af samfundet. Din støtte viser dem, at de ikke er alene.
+        </Text>
+      </div>
+    </section>
+    <section
+      id="pengene"
+      class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
+    >
+      <div
+        class="lg:col-start-1 lg:col-end-8 lg:grid lg:grid-cols-8 lg:gap-x-[20px]"
+      >
+        <div class="lg:col-start-1 lg:col-end-6">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+            Hvad går pengene til?
+          </Text>
+          <Heading
+            htmlheading="h2"
+            size="h2"
+            stylingclasses="mb-[6px] lg:mb-[20px]"
+          >
+            Din støtte er med til at holde dørene åbne – og hjertet varmt
+          </Heading>
+        </div>
+        <div class="lg:col-start-1 lg:col-end-9">
+          <Text stylingclasses="text-dark-grey mb-[20px]">
+            Din støtte bliver til handling. Street Care arbejder hver uge blandt
+            Københavns mest udsatte. Når du donerer, er du med til at finansiere
+            punkterne nedenfor. I starten af året udgiver Street Care en
+            årsberetning, der beretter historier og fortæller om årets
+            resultater. Vores årsregnskab deles endvidere her, så alle ved hvad
+            vores indsamlinger går til - og kan se tallene bag.
+          </Text>
+          <Link href="/aarsregnskab">Se årsregnskabet</Link>
+        </div>
+      </div>
+      <div class="mt-[20px] lg:col-start-1 lg:col-end-7 lg:mt-0">
+        <img
+          src="/img/pengene1.webp"
+          alt="Kvinde cykler på ladcykel med Street Care logo"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
+        >
+      </div>
+      <div class="lg:col-start-7 lg:col-end-10">
+        <img
+          src="/img/pengene2.webp"
+          alt="Værestedet Street Care"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >2 / Værested med gratis mad, varme drikke og fællesskab</Text
+        >
+      </div>
+      <div class="lg:col-start-10 lg:col-end-13">
+        <img
+          src="/img/pengene3.webp"
+          alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
+        >
+      </div>
+      <div class="lg:col-start-1 lg:col-end-4">
+        <img
+          src="/img/pengene4.webp"
+          alt="Fire glade frivillige med Street Care t-shirts"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem systemet</Text
+        >
+      </div>
+      <div class="lg:col-start-4 lg:col-end-10">
+        <img
+          src="/img/pengene5.webp"
+          alt="To glade hjemløse personer til koncert"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
+        >
+      </div>
+      <div class="lg:col-start-10 lg:col-end-13">
+        <img
+          src="/img/pengene6.webp"
+          alt="Nærbillede af hjemløs mand med bedrøvet blik"
+          class="w-full h-full object-cover"
+        />
+        <Text
+          teksttype="p_large_med"
+          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+          >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet brænder
+          på</Text
+        >
+      </div>
+    </section>
+  </main>
+</MainLayout>
