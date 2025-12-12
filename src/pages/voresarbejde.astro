@@ -9,6 +9,7 @@ import thumbsup from "../assets/images/thumbsup.png";
 import NewsCard from "../components/NewsCard.astro";
 import HeroCard from "../components/HeroCard.astro";
 import CheckList from "../components/CheckList.astro";
+import Bullet from "../components/Bullet.astro";
 ---
 
 <MainLayout title="Vores arbejde">
@@ -20,10 +21,10 @@ import CheckList from "../components/CheckList.astro";
     imageAlt="Frivillige hos Street Care, der smiler sammen"
   />
   <!-- HEROCARD SLUT -->
-  <main class="container mx-auto p-4">
+  <main class="">
     <section
       id="gadeplansarbejde"
-      class="pt-20 pb-10
+      class="px-4 lg:px-[60px] py-20 pt-20 pb-10
     grid grid-cols-5 gap-6
     lg:lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
     >
@@ -69,7 +70,7 @@ import CheckList from "../components/CheckList.astro";
       </div>
     </section>
 
-    <section class="w-full">
+    <section class="w-full px-4 lg:px-[60px] py-20">
       <img
         src="/img/ourwork1.png"
         alt=""
@@ -82,7 +83,7 @@ import CheckList from "../components/CheckList.astro";
 
     <section
       id="gadeplansarbejde"
-      class="pt-20 pb-10
+      class="px-4 lg:px-[60px] py-20 mb-[96px] pt-20 pb-10
     grid grid-cols-5 gap-6
     lg:grid-cols-12 lg:gap-[10px]"
     >
@@ -111,6 +112,73 @@ import CheckList from "../components/CheckList.astro";
           ]}
         />
       </div>
+    </section>
+
+    <section
+      id="vaerestedet"
+      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    >
+      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
+        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
+          Værestedet
+        </Text>
+        <Heading>
+          Et trygt sted at lande, når man har brug for varme, mad og
+          menneskelighed
+        </Heading>
+        <Text stylingclasses="mt-[20px]">
+          Vores værested på Frederiksberg er et åbent og trygt fællesskab for
+          hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
+          grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
+          nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
+          noget. Her får man:
+        </Text>
+        <div class="mt-[20px]">
+          <CheckList
+            title="Frivilligrollen"
+            iconSrc="/svg/heart.svg"
+            items={["Nærvær", "Stabilitet", "Respekt"]}
+          />
+        </div>
+      </div>
+      <div class="lg:col-start-9 lg:col-end-13">
+        <img
+          src="/img/vaerestedet.webp"
+          alt="Værestedet Street Care"
+          class="block w-full h-auto object-cover"
+        />
+        <Text teksttype="p_small_reg" stylingclasses="mt-[4px] text-dark-grey">
+          Evangeliekirken, Worsaaesvej 5, Frederiksberg
+        </Text>
+        <Text teksttype="p_small_reg" stylingclasses="text-dark-grey">
+          Åbent udvalgte onsdage 18–21
+        </Text>
+      </div>
+
+      <Bullet
+        icon="cutlery.svg"
+        heading="Gratis mad"
+        text="Og kolde og varme drikke til at fylde depoterne op."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
+      />
+      <Bullet
+        icon="two-people.svg"
+        heading="Fællesskab"
+        text="I et roligt og trygt rum uden krav."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
+      />
+      <Bullet
+        icon="talking.svg"
+        heading="Samtaler"
+        text="Med frivillige og andre bekendtskaber."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
+      />
+      <Bullet
+        icon="disco.svg"
+        heading="Arrangementer"
+        text="Såsom musik, banko og quizzer."
+        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
+      />
     </section>
   </main>
 </MainLayout>

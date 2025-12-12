@@ -9,11 +9,19 @@ interface Props {
   /** Liste af punkter */
   items: string[];
 
+  /** SVG-ikon pr. punkt (valgfrit) */
+  iconSrc?: string;
+
   /** Ekstra classes (valgfrit) */
   className?: string;
 }
 
-const { title, items, className = "" } = Astro.props;
+const {
+  title,
+  items,
+  iconSrc = "/svg/checkmark.svg",
+  className = "",
+} = Astro.props;
 ---
 
 <section class={`w-full ${className}`}>
@@ -22,13 +30,13 @@ const { title, items, className = "" } = Astro.props;
     {title}
   </Heading>
 
-  <!-- 20px mellem overskrift og liste -->
+  <!-- Liste -->
   <ul class="mt-[20px] flex flex-col gap-[10px]">
     {
       items.map((item) => (
         <li class="flex items-start gap-3 pb-[10px] border-b border-grey70/70">
           <img
-            src="/svg/checkmark.svg"
+            src={iconSrc}
             alt=""
             class="mt-[2px] h-5 w-5 flex-shrink-0"
             aria-hidden="true"
