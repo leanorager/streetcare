@@ -11,6 +11,7 @@ import NewsCard from "../components/NewsCard.astro";
 
 <MainLayout title="Forside">
   <main>
+    <!-- HERO -->
     <section class="bg-off-white px-4 lg:px-[60px] py-24">
       <div class="w-full flex flex-col items-center text-center">
         <img
@@ -36,6 +37,8 @@ import NewsCard from "../components/NewsCard.astro";
         </div>
       </div>
     </section>
+
+    <!-- DONATION -->
     <section id="donation" class="px-4 lg:px-[60px] py-20">
       <h2
         class="font-display text-[22px] lg:text-[40px] text-red text-center mb-[38px] lg:mb-[100px]"
@@ -44,7 +47,7 @@ import NewsCard from "../components/NewsCard.astro";
       </h2>
 
       <div class="lg:grid lg:grid-cols-12 lg:gap-[40px] items-stretch">
-        {/* Billede venstre */}
+        <!-- Billede venstre -->
         <div class="lg:col-span-7">
           <img
             src="/img/man-and-dog.webp"
@@ -53,15 +56,16 @@ import NewsCard from "../components/NewsCard.astro";
           />
         </div>
 
-        {/* Doner-kort højre */}
+        <!-- Doner-kort højre -->
         <article
           class="mt-8 lg:mt-0 lg:col-span-5 bg-red rounded-[10px] px-[20px] py-[40px] lg:px-[50px] text-white flex flex-col lg:self-start"
         >
           <Heading htmlheading="h3" size="h3" stylingclasses="text-center">
             Vælg donation
           </Heading>
+
           <form class="mt-[24px] flex flex-col">
-            {/* Engangsbeløb / månedlig */}
+            <!-- Engangsbeløb / månedlig -->
             <div class="flex gap-[24px] text-[16px]">
               <label class="inline-flex items-center gap-2 cursor-pointer">
                 <input
@@ -82,9 +86,8 @@ import NewsCard from "../components/NewsCard.astro";
               </label>
             </div>
 
-            {/* Beløbs-knapper */}
+            <!-- Beløbs-knapper -->
             <div class="mt-[30px] grid grid-cols-2 gap-[12px] lg:grid-cols-3">
-              {/* Gentag knap markup for hver beløbsmulighed */}
               <button
                 type="button"
                 class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
@@ -123,7 +126,7 @@ import NewsCard from "../components/NewsCard.astro";
               </button>
             </div>
 
-            {/* Valgfrit beløb */}
+            <!-- Valgfrit beløb -->
             <div
               class="mt-[16px] flex items-center rounded-[5px] bg-white text-dark-grey"
             >
@@ -137,7 +140,7 @@ import NewsCard from "../components/NewsCard.astro";
               <span class="pr-[12px] text-[16px]">kr.</span>
             </div>
 
-            {/* CTA */}
+            <!-- CTA -->
             <div class="mt-[30px] flex justify-end">
               <Button variant="solid-white" type="submit">
                 Start donation
@@ -147,9 +150,11 @@ import NewsCard from "../components/NewsCard.astro";
         </article>
       </div>
     </section>
+
+    <!-- VORES INDSATS -->
     <section id="indsats" class="px-4 py-20 lg:px-[60px]">
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
-        {/* VENSTRE: emnetekst + stor heading */}
+        <!-- VENSTRE -->
         <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
           <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Vores indsats
@@ -166,12 +171,12 @@ import NewsCard from "../components/NewsCard.astro";
           </Heading>
         </div>
 
-        {/* BULLETS – 1 kolonne på mobil, 3 kolonner på desktop */}
+        <!-- BULLETS -->
         <div
           class="lg:col-span-12
-        space-y-10
-        lg:space-y-0
-        lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+                 space-y-10
+                 lg:space-y-0
+                 lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
         >
           <Bullet
             icon="work.svg"
@@ -179,35 +184,30 @@ import NewsCard from "../components/NewsCard.astro";
             text="Vi laver opsøgende gadeplansarbejde 3-4 dage om ugen i København."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
-
           <Bullet
             icon="house.svg"
             heading="Værested på Frederiksberg"
             text="Vi driver et værested på Frederiksberg, hvor vi skaber et trygt, varmt og åbent fællesskab."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
-
           <Bullet
             icon="person.svg"
             heading="Mentor- og bisidderstøtte"
             text="Mentor- og bisidderstøtte, når livet og systemet bliver svært at navigere."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
-
           <Bullet
             icon="cutlery.svg"
             heading="Fællesspisninger"
             text="Fællesspisninger byder på gratis mad og drikke, et varmt og trygt sted og nye relationer."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
-
           <Bullet
             icon="compass.svg"
             heading="Aktiviteter og ture"
             text="Forskellige aktiviteter og ture skaber gode minder, nye venskaber og håb for fremtiden."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
-
           <Bullet
             icon="phone.svg"
             heading="Telefonrådgivning"
@@ -216,11 +216,9 @@ import NewsCard from "../components/NewsCard.astro";
           />
         </div>
 
-        {/* KNAP – centreret mobil, højre på desktop */}
+        <!-- KNAP -->
         <div
-          class="mt-10 lg:mt-16
-        lg:col-span-12
-        flex justify-center lg:justify-end"
+          class="mt-10 lg:mt-16 lg:col-span-12 flex justify-center lg:justify-end"
         >
           <Button variant="solid-red" href="/voresarbejde">
             Læs mere om vores arbejde
@@ -228,18 +226,18 @@ import NewsCard from "../components/NewsCard.astro";
         </div>
       </div>
     </section>
-    <!-- NYHEDER SECTION START -->
+
+    <!-- NYHEDER -->
     <section class="bg-off-white px-4 py-16 lg:px-[60px]">
       <!-- Header -->
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-6">
           <Heading htmlheading="h2" size="h2">Seneste nyheder</Heading>
-          <Link href="/nyheder" variant="action"> Se alle </Link>
+          <Link href="/nyheder" variant="action">Se alle</Link>
         </div>
 
         <!-- Pile -->
         <div class="hidden lg:flex items-center gap-[10px]">
-          <!-- VENSTRE PIL -->
           <button
             type="button"
             data-carousel-prev
@@ -261,7 +259,6 @@ import NewsCard from "../components/NewsCard.astro";
             </svg>
           </button>
 
-          <!-- HØJRE PIL -->
           <button
             type="button"
             data-carousel-next
@@ -288,13 +285,8 @@ import NewsCard from "../components/NewsCard.astro";
       <!-- Horisontal scroll -->
       <div
         data-carousel
-        class="mt-8
-      overflow-x-auto
-      scroll-smooth
-      snap-x snap-mandatory
-      [-ms-overflow-style:none]
-      [scrollbar-width:none]
-      [&::-webkit-scrollbar]:hidden"
+        class="mt-8 overflow-x-auto scroll-smooth snap-x snap-mandatory
+               [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         <div
           data-carousel-track
@@ -359,13 +351,12 @@ import NewsCard from "../components/NewsCard.astro";
 
           if (!scroller || !track || !prevBtn || !nextBtn) return;
 
-          // Finder "step" = første card bredde + gap (vi måler faktisk afstand mellem item 1 og 2)
           const getStep = () => {
             const items = track.children;
             if (items.length < 2) return 300;
             const a = items[0].getBoundingClientRect();
             const b = items[1].getBoundingClientRect();
-            return Math.round(b.left - a.left); // card + gap
+            return Math.round(b.left - a.left);
           };
 
           const scrollByStep = (dir) => {
@@ -379,12 +370,16 @@ import NewsCard from "../components/NewsCard.astro";
       </script>
     </section>
 
-    <!-- GADEPLANSARBEJDE SECTION START -->
-    <section id="gadeplansarbejde" class="h-[570px]">
+    <!-- GADEPLANSARBEJDE -->
+    <section id="gadeplansarbejde">
       <div
-        class="px-4 lg:px-[60px] grid grid-cols-5 gap-6 md:grid-cols-12 md:gap-10 h-full"
+        class="px-4 lg:px-[60px]
+      py-[96px]
+      grid grid-cols-5 gap-6
+      lg:grid-cols-12 lg:gap-10"
       >
-        <div class="col-span-5 md:col-span-5 flex flex-col">
+        <!-- TEKSTBLOK -->
+        <div class="col-span-5 lg:col-span-5 flex flex-col">
           <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[5px]">
             Gadeplansarbejde
           </Text>
@@ -400,7 +395,7 @@ import NewsCard from "../components/NewsCard.astro";
 
           <Text
             teksttype="p_base_reg"
-            stylingclasses="text-dark-grey md:pr-12 mb-[5px]"
+            stylingclasses="text-dark-grey lg:pr-12 mb-[5px]"
           >
             Vores gadeplansteam besøger hver uge faste steder i København:
             Christianshavns Torv, Enghave Plads, Hulgårds Plads, Den Grønne
@@ -411,19 +406,24 @@ import NewsCard from "../components/NewsCard.astro";
             selv.
           </Text>
 
-          <Link href="/lokationer" variant="primary">Se alle lokationer</Link>
+          <Link href="/lokationer" variant="action"> Se alle lokationer </Link>
         </div>
 
-        <div class="col-span-5 md:col-span-4 flex items-start h-full">
+        <!-- BILLEDE -->
+        <div class="col-span-5 lg:col-span-4">
           <img
             src="/img/huggingHomeless.png"
             alt="Gadeplansarbejde"
-            class="w-full object-cover max-h-[570px]"
+            class="w-full object-cover"
           />
         </div>
 
+        <!-- TIDER-KORT -->
         <div
-          class="col-span-5 md:col-span-3 bg-light-grey rounded-[16px] p-6 flex flex-col gap-4 h-[300px]"
+          class="col-span-5 lg:col-span-3
+        bg-light-grey rounded-[16px]
+        p-6 flex flex-col gap-4
+        h-[300px]"
         >
           <Heading htmlheading="h4" size="h4" stylingclasses="text-dark-red">
             Tider for gadeplans-arbejde
@@ -437,19 +437,22 @@ import NewsCard from "../components/NewsCard.astro";
         </div>
       </div>
     </section>
-    <!-- GADEPLANSARBEJDE SLUT -->
+
+    <!-- VÆRESTEDET -->
     <section
       id="vaerestedet"
-      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+      class="bg-light-grey px-4 py-[96px] lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
     >
       <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
         <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
           Værestedet
         </Text>
+
         <Heading>
           Et trygt sted at lande, når man har brug for varme, mad og
           menneskelighed
         </Heading>
+
         <Text stylingclasses="mt-[20px]">
           Vores værested på Frederiksberg er et åbent og trygt fællesskab for
           hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
@@ -458,6 +461,7 @@ import NewsCard from "../components/NewsCard.astro";
           noget. Her får man:
         </Text>
       </div>
+
       <div class="lg:col-start-9 lg:col-end-13">
         <img
           src="/img/vaerestedet.webp"
@@ -471,6 +475,7 @@ import NewsCard from "../components/NewsCard.astro";
           Åbent udvalgte onsdage 18–21
         </Text>
       </div>
+
       <Bullet
         icon="cutlery.svg"
         heading="Gratis mad"
@@ -496,6 +501,8 @@ import NewsCard from "../components/NewsCard.astro";
         stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
       />
     </section>
+
+    <!-- NYHEDSBREV -->
     <section id="nyhedsbrev" class="px-4 lg:px-[60px] py-[100px]">
       <NewsletterSignUp />
     </section>
