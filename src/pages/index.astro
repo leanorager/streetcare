@@ -10,8 +10,31 @@ import NewsletterSignUp from "../components/NewsletterSignUp.astro";
 
 <MainLayout title="Forside">
   <main>
-    <Heading htmlheading="h1">Lav noget flot!</Heading>
-    <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
+    <section class="bg-off-white px-4 lg:px-[60px] py-24">
+      <div class="w-full flex flex-col items-center text-center">
+        <img
+          src="/img/heroTxtImg.png"
+          alt="Street Care"
+          loading="eager"
+          class="w-full max-w-[980px] h-auto"
+        />
+
+        <Heading
+          htmlheading="h1"
+          size="h2"
+          font="display"
+          stylingclasses="text-red mt-[24px] text-[26px] md:text-[32px] lg:text-[36px] font-normal -rotate-[1.95deg]"
+        >
+          Vi står sammen med dem der står alene
+        </Heading>
+
+        <div class="mt-[24px] flex items-center justify-center gap-4">
+          <Button variant="outline" href="/blivfrivillig">Bliv frivillig</Button
+          >
+          <Button variant="solid-red" href="/stoet">Støt os</Button>
+        </div>
+      </div>
+    </section>
     <section id="donation" class="px-4 lg:px-[60px] py-20">
       <h2
         class="font-display text-[22px] lg:text-[40px] text-red text-center mb-[38px] lg:mb-[100px]"
