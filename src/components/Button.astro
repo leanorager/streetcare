@@ -14,58 +14,44 @@ const {
   stylingclasses = "",
 } = Astro.props;
 
-// Fælles styling for alle knapper
+// Fælles styling for alle knapper (samme som jeres originale)
 const baseClasses =
   "group inline-flex items-center rounded-full " +
   "pl-[20px] pr-[2px] py-[2px] gap-[13px] " +
   "border-[1px] cursor-pointer transition-colors duration-200";
 
-// Tekst-styling (match p_large_med så godt som muligt)
-const textClasses = "text-[20px] leading-[1.2] font-medium";
+// Tekst-styling (p_large_med)
+const textClasses = "p_large_med";
 
-// Variant-specifik styling (brug dine CSS-variabler)
+// Variant-specifik styling (samme som jeres originale)
 const variantClasses = {
-  // 1. Transparent, sort tekst + border, hover: sort bg + hvid tekst
   outline:
-    "bg-transparent border-[var(--color-black)] text-[var(--color-black)] ",
+    "bg-transparent border-[var(--color-black)] text-[var(--color-black)]",
 
-  // 2. Rød baggrund, off-white tekst
   "solid-red":
-    "bg-[var(--color-red)] border-[var(--color-red)] text-[var(--color-off-white)] " +
-    "hover:bg-[var(--color-dark-red)]",
+    "bg-[var(--color-red)] border-[var(--color-red)] text-[var(--color-off-white)] hover:bg-[var(--color-dark-red)]",
 
-  // 3. Transparent, off-white tekst + border, hover: tekst bliver dark-red
   "outline-light":
-    "bg-transparent border-[var(--color-off-white)] text-[var(--color-off-white)] " +
-    "hover:bg-[var(--color-off-white)] hover:text-[var(--color-dark-red)]",
+    "bg-transparent border-[var(--color-off-white)] text-[var(--color-off-white)] hover:bg-[var(--color-off-white)] hover:text-[var(--color-dark-red)]",
 
-  // 4. Hvid baggrund, rød tekst, hover: dark-red tekst
   "solid-white":
-    "bg-[var(--color-white)] border-[var(--color-white)] text-[var(--color-red)] " +
-    "hover:text-[var(--color-dark-red)]",
+    "bg-[var(--color-white)] border-[var(--color-white)] text-[var(--color-red)] hover:text-[var(--color-dark-red)]",
 } as const;
 
-// Pil-ikoner pr. variant
-const iconSources = {
-  outline: {
-    default: "/svg/btn-arrow-red.svg",
-    hover: "/svg/btn-arrow-red-hover.svg",
-  },
-  "solid-red": {
-    default: "/svg/btn-arrow-off-white.svg",
-    hover: "/svg/btn-arrow-off-white-hover.svg",
-  },
-  "outline-light": {
-    default: "/svg/btn-arrow-off-white.svg",
-    hover: "/svg/btn-arrow-off-white-hover-border.svg",
-  },
-  "solid-white": {
-    default: "/svg/btn-arrow-red.svg",
-    hover: "/svg/btn-arrow-red-hover.svg",
-  },
+// Cirkel bag pilen (matcher jeres farvelogik for den “ikon-boble”)
+const iconWrapVariant = {
+  outline: "bg-[var(--color-black)] text-[var(--color-off-white)]",
+
+  "solid-red": "bg-[var(--color-off-white)] text-[var(--color-red)]",
+
+  "outline-light":
+    "bg-[var(--color-off-white)] text-[var(--color-red)] border border-[var(--color-red)]",
+
+  "solid-white": "bg-[var(--color-red)] text-[var(--color-off-white)]",
 } as const;
 
-const icons = iconSources[variant];
+const iconWrapBase =
+  "inline-flex items-center justify-center rounded-full h-[31px] w-[31px] flex-shrink-0";
 ---
 
 {
@@ -78,19 +64,24 @@ const icons = iconSources[variant];
         <slot />
       </span>
 
-      <span class="flex items-center">
-        <img
-          src={icons.default}
-          alt=""
-          aria-hidden="true"
-          class="block group-hover:hidden"
-        />
-        <img
-          src={icons.hover}
-          alt=""
-          aria-hidden="true"
-          class="hidden group-hover:block"
-        />
+      <span
+        class:list={[iconWrapBase, iconWrapVariant[variant]]}
+        aria-hidden="true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 origin-center transition-transform duration-300 ease-out group-hover:rotate-90"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7 17L17 7M9 7h8v8"
+          />
+        </svg>
       </span>
     </a>
   ) : (
@@ -102,19 +93,24 @@ const icons = iconSources[variant];
         <slot />
       </span>
 
-      <span class="flex items-center">
-        <img
-          src={icons.default}
-          alt=""
-          aria-hidden="true"
-          class="block group-hover:hidden"
-        />
-        <img
-          src={icons.hover}
-          alt=""
-          aria-hidden="true"
-          class="hidden group-hover:block"
-        />
+      <span
+        class:list={[iconWrapBase, iconWrapVariant[variant]]}
+        aria-hidden="true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 origin-center transition-transform duration-300 ease-out group-hover:rotate-90"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7 17L17 7M9 7h8v8"
+          />
+        </svg>
       </span>
     </button>
   )
