@@ -1,28 +1,184 @@
 ---
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+// Normaliser trailing slash (undtagen "/")
+const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 ---
-<header x-data="{ showmenu: false }" class="" >
-    <div id="navbar" class="container mx-auto p-4 flex flex-row justify-between items-center">
-        <div id="logo" class="">
-            <a href="#" class="font-display text-4xl">Astro-Tailwind starter - udvidet udgave E25</a>
-        </div>
-        <nav id="desktopmenu" class="hidden lg:block">
-            <ul class="flex flex-row gap-4">
-                <li class=""><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-                <li class=""><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
-            </ul>
+
+<header
+  x-data="{ showmenu: false }"
+  class="sticky top-0 z-50 w-full bg-off-white"
+>
+  <!-- Bar i fuld bredde -->
+  <div class="px-4 lg:px-[60px]">
+    <div class="flex items-center justify-between py-6">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-4">
+        <img
+          id="scroll-logo"
+          src="/svg/logo.svg"
+          alt="Street Care"
+          class="h-10 w-10 will-change-transform"
+        />
+        <span class="p_base_med text-black">STREET CARE</span>
+      </a>
+
+      <script is:inline>
+        (() => {
+          const logo = document.getElementById("scroll-logo");
+          if (!logo) return;
+
+          const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+          if (media.matches) return;
+
+          let ticking = false;
+
+          const update = () => {
+            ticking = false;
+            const speed = 0.08; // grader pr. pixel scroll
+            const deg = window.scrollY * speed;
+            logo.style.transform = `rotate(${deg}deg)`;
+          };
+
+          const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+          };
+
+          update();
+          window.addEventListener("scroll", onScroll, { passive: true });
+
+          media.addEventListener?.("change", () => {
+            if (media.matches) {
+              window.removeEventListener("scroll", onScroll);
+              logo.style.transform = "";
+            } else {
+              update();
+              window.addEventListener("scroll", onScroll, { passive: true });
+            }
+          });
+        })();
+      </script>
+
+      <!-- Desktop menu + CTA -->
+      <div class="hidden lg:flex items-center gap-[40px]">
+        <!-- Menu links -->
+        <nav class="flex items-center gap-10">
+          <Link
+            href="/voresarbejde"
+            variant="menu"
+            className={currentPath === "/voresarbejde" ? "underline" : ""}
+          >
+            Vores arbejde
+          </Link>
+
+          <Link
+            href="/blivfrivillig"
+            variant="menu"
+            className={currentPath === "/blivfrivillig" ? "underline" : ""}
+          >
+            Bliv frivillig
+          </Link>
+
+          <Link
+            href="/omos"
+            variant="menu"
+            className={currentPath === "/omos" ? "underline" : ""}
+          >
+            Om os
+          </Link>
         </nav>
-        <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-</svg>
-</button>
+
+        <!-- CTA -->
+        <Button variant="solid-red" href="/stoet"> Støt nu </Button>
+      </div>
+
+      <!-- Mobile burger -->
+      <button
+        type="button"
+        class="lg:hidden inline-flex items-center justify-center"
+        aria-label="Åbn menu"
+        x-on:click="showmenu = !showmenu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-10 w-10 text-red"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
     </div>
-    <nav id="mobilmenu" class="flex flex-col content-center" 
-    x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-        <ul class="border-t-2 border-b-2 border-black">
-            <li class="text-center py-2"><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li>
-            <li class="text-center py-2"><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
-        </ul>
-    </nav>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <nav
+    class="relative z-50 lg:hidden border-t border-grey70/70 bg-off-white"
+    x-show="showmenu"
+    x-transition
+    x-on:click.outside="showmenu = false"
+  >
+    <div class="px-4 py-6 flex flex-col gap-6">
+      <Link
+        href="/voresarbejde"
+        variant="menu"
+        className={currentPath === "/voresarbejde" ? "underline" : ""}
+        x-on:click="showmenu = false"
+      >
+        Vores arbejde
+      </Link>
+
+      <Link
+        href="/blivfrivillig"
+        variant="menu"
+        className={currentPath === "/blivfrivillig" ? "underline" : ""}
+        x-on:click="showmenu = false"
+      >
+        Bliv frivillig
+      </Link>
+
+      <Link
+        href="/omos"
+        variant="menu"
+        className={currentPath === "/omos" ? "underline" : ""}
+        x-on:click="showmenu = false"
+      >
+        Om os
+      </Link>
+
+      <div class="pt-2">
+        <Button variant="solid-red" href="/stoet" x-on:click="showmenu = false">
+          Støt nu
+          <span
+            class="ml-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-off-white text-red"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M7 17L17 7M9 7h8v8"></path>
+            </svg>
+          </span>
+        </Button>
+      </div>
+    </div>
+  </nav>
 </header>
