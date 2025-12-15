@@ -1,0 +1,71 @@
+---
+const {
+  count = 8, // antal “mennesker” i ringen
+  size = 40, // px: container størrelse (h/w)
+  personSize = 14, // px: figur størrelse
+  radius = 14, // px: ring-radius (translateZ)
+  tilt = 16, // grader: kameratilt (rotateX)
+  speed = 0.12, // grader pr. px scroll
+  src = "/svg/singlemanlogo.svg",
+  className = "",
+} = Astro.props;
+---
+
+<div
+  id="logo-ring"
+  class="relative h-10 w-10 [transform:rotateX(8deg)] [transform-style:preserve-3d] [perspective:1200px]"
+  style={`width:${size}px;height:${size}px;transform:rotateX(${tilt}deg);--count:${count};--radius:${radius}px;`}
+  aria-label="Street Care logo"
+>
+  {
+    Array.from({ length: count }).map((_, i) => (
+      <img
+        src="/svg/singlemanlogo.svg"
+        alt=""
+        aria-hidden="true"
+        class="logo-person block absolute left-1/2 top-1/2
+         -translate-x-1/2 -translate-y-1/2
+         h-[19px] w-auto
+         will-change-transform"
+        style={`--i:${i};`}
+      />
+    ))
+  }
+</div>
+
+<script is:inline define:vars={{ speed }}>
+  (() => {
+    const ring = document.getElementById("logo-ring");
+    if (!ring) return;
+
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) return;
+
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const deg = window.scrollY * speed;
+      ring.style.setProperty("--rot", `${deg}deg`);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    media.addEventListener?.("change", () => {
+      if (media.matches) {
+        window.removeEventListener("scroll", onScroll);
+        ring.style.removeProperty("--rot");
+      } else {
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+    });
+  })();
+</script>

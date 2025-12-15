@@ -1,6 +1,7 @@
 ---
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
+import Text from "../components/Text.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 // Normaliser trailing slash (undtagen "/")
@@ -15,20 +16,42 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
   <div class="px-4 lg:px-[60px]">
     <div class="flex items-center justify-between py-6">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-4">
-        <img
-          id="scroll-logo"
-          src="/svg/logo.svg"
-          alt="Street Care"
-          class="h-10 w-10 will-change-transform"
-        />
-        <span class="p_base_med text-black">STREET CARE</span>
+      <a href="/" class="flex items-center gap-4 h-[54px]">
+        <div
+          id="logo-ring"
+          class="relative w-[56px] h-[54px] shrink-0 translate-y-[1px]
+                 [perspective:1400px]
+                 [transform-style:preserve-3d]
+                 [transform:rotateX(8deg)]"
+          style="--count:6; --radius:18px;"
+          aria-label="Street Care logo"
+        >
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <img
+                src="/svg/singlemanlogo.svg"
+                alt=""
+                aria-hidden="true"
+                class="logo-person block absolute left-1/2 top-1/2
+                     -translate-x-1/2 -translate-y-1/2
+                     h-[19px] w-auto
+                     will-change-transform"
+                style={`--i:${i};`}
+              />
+            ))
+          }
+        </div>
+
+        <Text teksttype="brand_label" stylingclasses="m-0 leading-none">
+          STREET CARE
+        </Text>
       </a>
 
+      <!-- Scroll rotation til 3D-ringen -->
       <script is:inline>
         (() => {
-          const logo = document.getElementById("scroll-logo");
-          if (!logo) return;
+          const ring = document.getElementById("logo-ring");
+          if (!ring) return;
 
           const media = window.matchMedia("(prefers-reduced-motion: reduce)");
           if (media.matches) return;
@@ -37,9 +60,9 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 
           const update = () => {
             ticking = false;
-            const speed = 0.08; // grader pr. pixel scroll
+            const speed = 0.12;
             const deg = window.scrollY * speed;
-            logo.style.transform = `rotate(${deg}deg)`;
+            ring.style.setProperty("--rot", `${deg}deg`);
           };
 
           const onScroll = () => {
@@ -54,7 +77,7 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
           media.addEventListener?.("change", () => {
             if (media.matches) {
               window.removeEventListener("scroll", onScroll);
-              logo.style.transform = "";
+              ring.style.removeProperty("--rot");
             } else {
               update();
               window.addEventListener("scroll", onScroll, { passive: true });
@@ -64,9 +87,8 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
       </script>
 
       <!-- Desktop menu + CTA -->
-      <div class="hidden lg:flex items-center gap-[40px]">
-        <!-- Menu links -->
-        <nav class="flex items-center gap-10">
+      <div class="hidden lg:flex h-full items-center gap-[40px]">
+        <nav class="flex h-full items-center gap-10">
           <Link
             href="/voresarbejde"
             variant="menu"
@@ -92,8 +114,9 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
           </Link>
         </nav>
 
-        <!-- CTA -->
-        <Button variant="solid-red" href="/stoet"> Støt nu </Button>
+        <div class="flex h-full items-center">
+          <Button variant="solid-red" href="/stoet">Støt nu</Button>
+        </div>
       </div>
 
       <!-- Mobile burger -->
@@ -157,27 +180,15 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
       </Link>
 
       <div class="pt-2">
-        <Button variant="solid-red" href="/stoet" x-on:click="showmenu = false">
-          Støt nu
-          <span
-            class="ml-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-off-white text-red"
+        <div class="flex h-full items-center">
+          <Button
+            variant="solid-red"
+            href="/stoet"
+            x-on:click="showmenu = false"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 rotate-45"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M7 17L17 7M9 7h8v8"></path>
-            </svg>
-          </span>
-        </Button>
+            Støt nu
+          </Button>
+        </div>
       </div>
     </div>
   </nav>
