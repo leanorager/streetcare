@@ -1,7 +1,110 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import SubtleLink from "./SubtleLink.astro";
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+
+<footer class="relative overflow-hidden bg-light-grey text-dark-grey">
+  {/* Baggrunds-logomark */}
+  <img
+    src="/svg/logomark-footer.svg"
+    alt="Street Care logomark"
+    aria-hidden="true"
+    class="pointer-events-none absolute right-[-120px] top-[-45px] w-[520px] lg:right-[-80px] lg:top-[-10px] lg:w-[820px]"
+  />
+
+  {/* Indhold */}
+  <div
+    class="relative z-10 px-4 py-[96px] lg:px-[60px] lg:pb-[250px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+  >
+    <div class="lg:col-start-1 lg:col-end-3">
+      <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
+        Værestedet
+      </Heading>
+      <Text teksttype="p_base_med">Åbningstider</Text>
+      <Text>Udvalgte onsdage 18–21</Text>
+      <Text teksttype="p_base_med" stylingclasses="pt-[12px]">Adresse</Text>
+      <SubtleLink
+        href="https://www.google.com/maps/dir//Worsaaesvej+5,+1972+Frederiksberg/"
+        teksttype="p_base_reg"
+      >
+        <Text>
+          Evangeliekirken, <br /> Worsaaesvej 5, <br />1972 Frederiksberg
+        </Text>
+      </SubtleLink>
     </div>
+
+    <div class="mt-[40px] lg:mt-0 lg:col-start-3 lg:col-end-5">
+      <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
+        Gadeplansarbejde
+      </Heading>
+      <Text teksttype="p_base_med">Operative tidspunkter</Text>
+      <Text>
+        Tirsdag: 13.30-19.00<br />Onsdag: 12.30-16.30<br />Torsdag: 13.00-19.30
+      </Text>
+    </div>
+
+    <div class="mt-[40px] lg:mt-0 lg:col-start-5 lg:col-end-7">
+      <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
+        Kontakt
+      </Heading>
+      <Text teksttype="p_base_med">Vi er kun et opkald væk</Text>
+      <SubtleLink href="tel:31142100" teksttype="p_base_reg">
+        <Text>Tlf. 31 14 21 00</Text>
+      </SubtleLink>
+      <SubtleLink href="mailto:af@streetcare.dk" teksttype="p_base_reg">
+        <Text>E-mail: af@streetcare.dk</Text>
+      </SubtleLink>
+
+      <Text teksttype="p_base_med" stylingclasses="pt-[12px]">Socials</Text>
+      <SubtleLink
+        href="https://www.instagram.com/street.care/"
+        teksttype="p_base_reg"
+      >
+        <Text>Instagram</Text>
+      </SubtleLink>
+      <SubtleLink
+        href="https://www.facebook.com/profile.php?id=100064936591901"
+        teksttype="p_base_reg"
+      >
+        <Text>Facebook</Text>
+      </SubtleLink>
+      <SubtleLink href="#" teksttype="p_base_reg">
+        <Text>LinkedIn</Text>
+      </SubtleLink>
+    </div>
+
+    <div class="mt-[40px] lg:mt-0 lg:col-start-7 lg:col-end-9">
+      <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
+        Regler & vilkår
+      </Heading>
+      <Text teksttype="p_base_med">Alt det formelle</Text>
+      <Text>CVR. 41 63 46 42</Text>
+      <SubtleLink href="#" teksttype="p_base_reg">
+        <Text>Handelsbetingelser</Text>
+      </SubtleLink>
+      <SubtleLink href="#" teksttype="p_base_reg">
+        <Text>Persondatapolitik</Text>
+      </SubtleLink>
+      <SubtleLink href="#" teksttype="p_base_reg">
+        <Text>Cookieinformationer</Text>
+      </SubtleLink>
+    </div>
+
+    <p
+      class="mt-[20px] lg:mt-0 lg:row-start-2 lg:col-start-1 lg:col-end-13 lg:place-self-end"
+    >
+      &copy; 2025
+    </p>
+  </div>
+
+  {/* Wordmark i bunden (croppet) */}
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden">
+    <img
+      src="/svg/wordmark-footer.svg"
+      alt="Street Care wordmark"
+      aria-hidden="true"
+      class="w-full h-auto translate-y-[10%] lg:translate-y-[17%]"
+    />
+  </div>
 </footer>
