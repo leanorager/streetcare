@@ -13,20 +13,21 @@ const {
 
 <div
   id="logo-ring"
-  class={`relative [perspective:800px] [transform-style:preserve-3d] ${className}`}
+  class="relative h-10 w-10 [transform:rotateX(8deg)] [transform-style:preserve-3d] [perspective:1200px]"
   style={`width:${size}px;height:${size}px;transform:rotateX(${tilt}deg);--count:${count};--radius:${radius}px;`}
   aria-label="Street Care logo"
 >
   {
     Array.from({ length: count }).map((_, i) => (
       <img
-        src={src}
+        src="/svg/singlemanlogo.svg"
         alt=""
         aria-hidden="true"
-        class="logo-person absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform"
-        style={`--i:${i};width:${personSize}px;height:${personSize}px;`}
-        loading="eager"
-        decoding="async"
+        class="logo-person block absolute left-1/2 top-1/2
+         -translate-x-1/2 -translate-y-1/2
+         h-[19px] w-auto
+         will-change-transform"
+        style={`--i:${i};`}
       />
     ))
   }

@@ -23,11 +23,6 @@
 * URL: https://www.fontshare.com/fonts/general-sans
 * © 2025 Indian Type Foundry
 *
-* General Sans Regular 
-* General Sans Medium 
-* General Sans Semibold 
-* General Sans Bold 
-*
 */
 @font-face {
   font-family: "General Sans";
@@ -67,9 +62,7 @@
 }
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
-
-  /*Farver */
+  /* Farver */
   --color-black: #2b2a2a;
   --color-dark-grey: #4d4b4b;
   --color-grey: #a6a6a6;
@@ -80,30 +73,25 @@
 
   --color-red: #cc3233;
   --color-dark-red: #ba2525;
-
   --color-yellow: #fed130;
 
-  /*Typografi */
+  /* Typografi */
   --font-display: "Nafta Light", monospace;
   --font-sans: "General Sans", sans-serif;
-
-  /* @color grey70 var(--color-grey70); */
 }
 
 @layer base {
 }
 
 @layer components {
-  /* Scroll 3D logo – mennesker i ring */
+  /* Scroll-logo: mennesker i ring */
   .logo-person {
     --step: calc(360deg / var(--count));
 
-    transform-style: preserve-3d;
-
     transform: translate(-50%, -50%)
-      rotateY(calc(var(--i) * var(--step) + var(--rot, 0deg)))
-      translateZ(var(--radius))
-      rotateY(calc(-1 * (var(--i) * var(--step) + var(--rot, 0deg))));
+      rotate(calc(var(--i) * var(--step) + var(--rot, 0deg)))
+      translateY(calc(-1 * var(--radius)))
+      rotate(calc(-1 * (var(--i) * var(--step) + var(--rot, 0deg))));
   }
 }
 
