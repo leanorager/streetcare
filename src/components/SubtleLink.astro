@@ -1,0 +1,44 @@
+---
+const { href = "#", teksttype = "p", stylingclasses = "" } = Astro.props;
+
+// De samme classes som i Text.astro, så links følger samme skala
+const sizeClasses = {
+  p_small_reg: "text-[14px] lg:text-[14px] font-normal",
+  p_base_reg: "text-[16px] lg:text-[16px] font-normal",
+  p_base_med: "text-[16px] lg:text-[16px] font-medium",
+  p_large_reg: "text-[18px] lg:text-[18px] font-normal",
+  p_large_med: "text-[18px] lg:text-[18px] font-medium",
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    "inline-block relative text-current",
+    sizeClasses[teksttype],
+    stylingclasses,
+  ]}
+>
+  <span class="link-underline"><slot /></span>
+</a>
+
+<style>
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.25s ease-out;
+  }
+
+  a:hover .link-underline::after {
+    width: 100%;
+  }
+</style>
