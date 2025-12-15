@@ -1,5 +1,10 @@
 ---
-const { href = "#", teksttype = "p", stylingclasses = "" } = Astro.props;
+const {
+  href = "#",
+  teksttype = "p_base_reg",
+  display = "block",
+  stylingclasses = "",
+} = Astro.props;
 
 // De samme classes som i Text.astro, så links følger samme skala
 const sizeClasses = {
@@ -14,7 +19,8 @@ const sizeClasses = {
 <a
   href={href}
   class:list={[
-    "inline-block relative text-current",
+    display === "inline" ? "inline-block" : "block",
+    "relative text-current",
     sizeClasses[teksttype],
     stylingclasses,
   ]}
@@ -25,6 +31,7 @@ const sizeClasses = {
 <style>
   .link-underline {
     position: relative;
+    display: inline-block;
   }
 
   .link-underline::after {
