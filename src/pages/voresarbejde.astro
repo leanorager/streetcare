@@ -24,12 +24,12 @@ import Bullet from "../components/Bullet.astro";
   <main class="">
     <section
       id="gadeplansarbejde"
-      class="px-4 lg:px-[60px] py-20 pt-20 pb-10
-    grid grid-cols-5 gap-6
-    lg:lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+      class="mx-[10px] lg:mx-[60px]
+             grid grid-cols-5
+             lg:grid-cols-12"
     >
       <!-- VENSTRE BLOK -->
-      <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+      <div class="col-span-5 my-[px] lg:my-[260px] lg:col-start-1 lg:col-end-6">
         <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
           Opsøgende gadeplansarbejde
         </Text>
@@ -40,7 +40,9 @@ import Bullet from "../components/Bullet.astro";
       </div>
 
       <!-- HØJRE BLOK -->
-      <div class="col-span-5 lg:col-start-7 lg:col-end-13">
+      <div
+        class="col-span-5 lg:col-start-7 lg:col-end-13 lg:mt-[260px] mt-[0px] mb-[40px] lg:mb-[72px]"
+      >
         <!-- Mindre spacing på mobil, større på desktop -->
         <Text stylingclasses="mt-[0px] lg:mt-[30px]">
           Gadeplansarbejdet er kernen i Street Cares indsats. Flere gange om
@@ -58,7 +60,7 @@ import Bullet from "../components/Bullet.astro";
           og på andre tidspunkter i løbet af ugen.
         </Text>
 
-        <Heading htmlheading="h5" size="h5" stylingclasses="mt-[40px]">
+        <Heading htmlheading="h5" size="h5" stylingclasses="mt-[30px]">
           Faste tidspunkter for gadeplansarbejde:
         </Heading>
 
@@ -70,25 +72,19 @@ import Bullet from "../components/Bullet.astro";
       </div>
     </section>
 
-    <section class="w-full px-4 lg:px-[60px] py-20">
-      <img
-        src="/img/ourwork1.png"
-        alt=""
-        class="w-full
-      h-[145px] lg:h-[539px]
-      object-cover"
-        loading="lazy"
-      />
-    </section>
+    <img
+      src="/img/ourwork1.png"
+      class="w-full h-[145px] lg:h-[539px] object-cover"
+    />
 
     <section
       id="gadeplansarbejde"
-      class="px-4 lg:px-[60px] py-20 mb-[96px] pt-20 pb-10
-    grid grid-cols-5 gap-6
-    lg:grid-cols-12 lg:gap-[10px]"
+      class="mx-[10px] lg:mx-[60px] mt-[96px] lg:mt-[72px] mb-[96px]
+             grid grid-cols-5
+             lg:grid-cols-12"
     >
       <!-- VENSTRE BLOK -->
-      <div class="col-span-5 lg:col-span-7 lg:pb-[10px]">
+      <div class="col-span-5 lg:col-span-7">
         <Heading>
           Midt i byens støj finder vi dem, der er glemt.
           <span class="text-[var(--color-grey70)]">
@@ -116,24 +112,30 @@ import Bullet from "../components/Bullet.astro";
 
     <section
       id="vaerestedet"
-      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+      class="bg-light-grey px-[10px] lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px] py-[96px]"
     >
-      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
+      <div class="lg:col-start-1 lg:col-end-6">
         <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
           Værestedet
         </Text>
-        <Heading>
+
+        {/* 1px mellem "Værestedet" og heading (mobil + laptop) */}
+        <Heading stylingclasses="mt-[1px]">
           Et trygt sted at lande, når man har brug for varme, mad og
           menneskelighed
         </Heading>
-        <Text stylingclasses="mt-[20px]">
+
+        {/* Mobil 40px, laptop 20px */}
+        <Text stylingclasses="mt-[40px] lg:mt-[20px]">
           Vores værested på Frederiksberg er et åbent og trygt fællesskab for
           hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
           grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
           nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
           noget. Her får man:
         </Text>
-        <div class="mt-[20px]">
+
+        {/* Mobil 40px, laptop 20px */}
+        <div class="mt-[40px] lg:mt-[20px]">
           <CheckList
             title="Særlige arrangementer i december:"
             iconSrc="/svg/calendar.svg"
@@ -145,13 +147,17 @@ import Bullet from "../components/Bullet.astro";
           />
         </div>
       </div>
-      <div class="lg:col-start-9 lg:col-end-13">
+
+      {/* Mobil: 96px ned til billedet. Laptop: uændret */}
+      <div class="mt-[96px] lg:mt-0 lg:col-start-9 lg:col-end-13">
         <img
           src="/img/vaerestedet.webp"
           alt="Værestedet Street Care"
           class="block w-full h-auto object-cover"
         />
-        <Text teksttype="p_small_reg" stylingclasses="mt-[4px] text-dark-grey">
+
+        {/* 6px mellem billede og adresse */}
+        <Text teksttype="p_small_reg" stylingclasses="mt-[6px] text-dark-grey">
           Evangeliekirken, Worsaaesvej 5, Frederiksberg
         </Text>
         <Text teksttype="p_small_reg" stylingclasses="text-dark-grey">
@@ -185,15 +191,14 @@ import Bullet from "../components/Bullet.astro";
       />
     </section>
 
-    <section id="faellesspisning" class="px-4 lg:px-[60px]
-    pt-2 pb-10">
+    <section id="faellesspisning" class="my-[96px] px-4 lg:px-[60px]">
       <!-- TOP: TEKSTGRID -->
       <div
         class="grid grid-cols-5 gap-6
-      lg:grid-cols-12 lg:gap-[10px] lg:mt-[160px]"
+           lg:grid-cols-12 lg:gap-[10px]"
       >
         <!-- VENSTRE: label + heading -->
-        <div class="col-span-5 lg:col-start-1 lg:col-end-6 lg:pb-[10px]">
+        <div class="col-span-5 lg:col-start-1 lg:col-end-6">
           <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Fællesspisning
           </Text>
@@ -204,35 +209,33 @@ import Bullet from "../components/Bullet.astro";
         <!-- HØJRE: 2 tekstkolonner på desktop / stacked på mobil -->
         <div class="col-span-5 lg:col-start-7 lg:col-end-13">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[25px]">
-            <Text stylingclasses="mt-[10px] lg:mt-[30px]">
+            <Text class="lg:mt-[30px]">
               Flere gange om måneden inviterer vi til fællesspisninger, hvor
               mennesker kan mødes i rolige og trygge rammer. Her handler
               måltidet ikke kun om mad, men om at blive set, hørt og være en del
-              af noget. Vi deler god mad, samtaler og grin – og skaber et
-              frirum, hvor relationer kan vokse og følge med ud i hverdagen.
+              af noget.
             </Text>
 
-            <Text stylingclasses="mt-[0px] lg:mt-[30px]">
+            <Text class="lg:mt-[30px]">
               Fællesspisningerne kan foregå privat, i kirker eller i forbindelse
               med aktiviteter. Fælles for dem er, at de samler mennesker, der
-              ellers ofte står alene, og giver plads til nærvær, varme og et
-              bord, hvor der altid er en stol til én mere.
+              ellers ofte står alene, og giver plads til nærvær og varme.
             </Text>
           </div>
         </div>
       </div>
 
-      <!-- BUND: BILLEDER (mobil: stacked, desktop: side-by-side) -->
+      <!-- BUND: BILLEDER -->
       <div
         class="mt-[40px]
-    grid grid-cols-1 gap-6
-    lg:mt-[60px] lg:grid-cols-12 lg:gap-[20px]"
+           grid grid-cols-1 gap-6
+           lg:mt-[60px] lg:grid-cols-12 lg:gap-[20px]"
       >
         <!-- BILLEDE 1 -->
         <div class="lg:col-span-6">
           <img
             src="/img/grillin.png"
-            alt=""
+            alt="Fællesspisning udendørs"
             loading="lazy"
             class="block w-full h-[260px] md:h-[420px] lg:h-[686px] object-cover"
           />
@@ -242,7 +245,7 @@ import Bullet from "../components/Bullet.astro";
         <div class="lg:col-span-6">
           <img
             src="/img/cookin.png"
-            alt=""
+            alt="Madlavning til fællesspisning"
             loading="lazy"
             class="block w-full h-[260px] md:h-[420px] lg:h-[768px] object-cover"
           />
@@ -253,47 +256,64 @@ import Bullet from "../components/Bullet.astro";
     <!--AKTIVITETER OG TURE START-->
     <section
       id="aktiviterogture"
-      class="bg-light-grey px-4 py-20 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+      class="py-[96px] px-[10px] lg:px-[60px] bg-light-grey"
     >
-      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px] lg:pt-[120px]">
-        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-          Aktiviteter og ture
-        </Text>
-        <Heading> Oplevelser, der giver glæde – og håb for fremtiden </Heading>
-        <Text stylingclasses="mt-[20px]">
-          Vi arrangerer både små og store aktiviteter for mennesker, der
-          sjældent får mulighed for en pause fra hverdagen. Formålet med dette
-          er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
-          finder ny glæde ved og for fremtiden. For mange er disse ture et
-          højdepunkt – en dag uden bekymringer og med plads til at mærke livet
-          igen.
-        </Text>
-        <div class="col-span-5 pt-[20px] lg:col-start-9 lg:col-end-13">
-          <CheckList
-            title="Det kan være:"
-            items={[
-              "Ture til Dyrehavsbakken, Tivoli eller bowling",
-              "Gospelarrangementer og koncerter",
-              "Sommerhusture og sommerferier",
-              "Fisketure og udflugter i naturen",
-              "Julehjælp & deling af varmt tøj om vinteren",
-            ]}
+      <div
+        class="grid grid-cols-5 gap-6 lg:grid-cols-12 lg:gap-[20px] items-end"
+      >
+        <!-- VENSTRE: label + heading + brødtekst + checklist -->
+        <div class="col-span-5 lg:col-start-1 lg:col-end-6">
+          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+            Aktiviteter & ture
+          </Text>
+
+          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+            Oplevelser, der giver glæde – og håb for fremtiden
+          </Heading>
+
+          <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+            Vi arrangerer både små og store aktiviteter for mennesker, der
+            sjældent får mulighed for en pause fra hverdagen. Formålet med dette
+            er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
+            finder ny glæde ved og for fremtiden. For mange er disse ture et
+            højdepunkt – en dag uden bekymringer og med plads til at mærke livet
+            igen.
+          </Text>
+
+          <div class="mt-[20px] gap-[10px]">
+            <CheckList
+              title="Det kan være:"
+              items={[
+                "Ture til Dyrehavsbakken, Tivoli eller bowling",
+                "Gospelarrangementer og koncerter",
+                "Sommerhusture og sommerferier",
+                "Fisketure og udflugter i naturen",
+                "Julehjælp & deling af varmt tøj om vinteren",
+              ]}
+            />
+          </div>
+        </div>
+
+        <!-- HØJRE: billede -->
+        <div class="col-span-5 lg:col-start-7 lg:col-end-13 mt-[40px] lg:mt-0">
+          <img
+            src="/img/huggingHomeless.png"
+            alt="Aktiviteter og ture"
+            loading="lazy"
+            class="block w-full object-cover max-h-[373px] lg:max-h-[685px]"
           />
         </div>
       </div>
-      <div class="lg:col-start-7 lg:col-end-13">
-        <img
-          src="/img/huggingHomeless.png"
-          alt="Gadeplansarbejde"
-          class="w-full object-cover max-h-[685px]"
-        />
-      </div>
     </section>
+
     <!--AKTIVITETER SLUT -->
 
     <!--MENTOR OG BESIDDERSTØTTE SEKTION START -->
-    <section id="indsats" class="px-4 py-20 lg:px-[60px]">
-      <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+    <section
+      id="mentor_og_besidderstotte"
+      class="mx-[10px] my-[96px] lg:mx-[60px]"
+    >
+      <div class="lg:grid lg:grid-cols-12">
         {/* VENSTRE: emnetekst + stor heading */}
         <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
           <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
