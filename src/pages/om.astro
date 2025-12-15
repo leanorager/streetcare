@@ -5,6 +5,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import HeroCard from "../components/HeroCard.astro";
+import Bullet from "../components/Bullet.astro";
 ---
 
 <MainLayout title="Om Street Care">
@@ -19,7 +20,7 @@ import HeroCard from "../components/HeroCard.astro";
       />
       <!-- HEROCARD SLUT -->
     </section>
-    <section id="om" class="px-4 py-[96px] lg:px-[60px]">
+    <section id="om" class="px-4 pt-[96px] lg:px-[60px]">
       {/* Top: overskrift + brødtekst */}
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
         <div class="lg:col-start-1 lg:col-end-6">
@@ -109,6 +110,66 @@ import HeroCard from "../components/HeroCard.astro";
             <Button variant="outline-light">Send mail</Button>
           </div>
         </article>
+      </div>
+    </section>
+    <section id="vision" class="px-4 py-[96px] lg:px-[60px]">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
+        <Heading stylingclasses="lg:col-start-1 lg:col-end-8">
+          Midt i byens støj finder vi dem, der er glemt.
+          <span class="text-[var(--color-grey)]">
+            {" "}
+            Street Care står skulder ved skulder med Københavns mest udsatte – med
+            kaffe i hånden, tid i stemmen og fællesskab i hjertet. Ingen skal bære
+            livet alene.
+          </span>
+        </Heading>
+        <div
+          class="pt-[30px] lg:pt-[8px] lg:col-start-11 lg:col-end-13 lg:text-right"
+        >
+          <Link href="/stoet" variant="action">Støt her</Link>
+        </div>
+      </div>
+      <!-- BULLETS -->
+      <div
+        class="lg:col-span-12
+                 lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+      >
+        <Bullet
+          icon="formaal.svg"
+          heading="Vores formål"
+          text="Vi arbejder for, at udsatte bliver set, mødt og hørt – og får hjælp til at håndtere både store og små udfordringer i livet. Vi følger mennesker på vej så længe, det giver mening for dem."
+          stylingclasses="pt-[40px] lg:pt-[60px] text-dark-grey"
+        />
+        <Bullet
+          icon="vision.svg"
+          heading="Vores vision"
+          text="Vi ønsker, at langt flere udsatte genfinder tro, styrke og håb for fremtiden, og får mulighed for at skabe et liv, der føles trygt, værdifuldt og fuldt af muligheder."
+          stylingclasses="pt-[40px] lg:pt-[60px]"
+        />
+        <Bullet
+          icon="vaerdier.svg"
+          heading="Vores værdier"
+          text="Omsorg – vi møder mennesker med forståelse, respekt og tid. Nærvær – vi er til stede i relationerne og lytter uden fordomme. Rummelighed – hos os er der plads til forskellighed, sårbarhed og livserfaring."
+          stylingclasses="pt-[40px] lg:pt-[60px]"
+        />
+        <Bullet
+          icon="tilgang.svg"
+          heading="Vores tilgang"
+          text="Vi arbejder tværkirkeligt og samarbejder bredt med frivillige, kirker og sociale aktører for at styrke indsatsen for udsatte i Danmark. Vi lader os inspirere af fortællinger om næstekærlighed og praktisk omsorg i handling – små skridt, der gør en stor forskel."
+          stylingclasses="pt-[40px] lg:pt-[60px]"
+        />
+        <Bullet
+          icon="transparens.svg"
+          heading="Transparens"
+          text="Som selvejende institution deler vi hvert år årsberetning, regnskab og nyhedsbrev, så du som donor eller frivillig kan se, hvad din støtte går til."
+          stylingclasses="pt-[40px] lg:pt-[60px]"
+        />
+        <Bullet
+          icon="ansvar.svg"
+          heading="Ansvar"
+          text="Vi passer desuden ansvarligt på persondata og deler aldrig billeder eller oplysninger uden samtykke."
+          stylingclasses="pt-[40px] lg:pt-[60px]"
+        />
       </div>
     </section>
   </main>
