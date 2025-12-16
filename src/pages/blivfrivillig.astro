@@ -4,6 +4,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import HeroCard from "../components/HeroCard.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 ---
 
 <MainLayout title="Bliv frivillig">
@@ -42,17 +43,20 @@ import HeroCard from "../components/HeroCard.astro";
           </Text>
 
           <div class="space-y-[4px]">
-            <Text teksttype="p_small_reg" stylingclasses="text-white">
-              <a href="mailto:af@streetcare.dk">af@streetcare.dk</a>
-            </Text>
-            <Text teksttype="p_small_reg" stylingclasses="text-white mb-[30px]">
-              <a href="tel:+45453142100">+45 31 14 21 00</a>
-            </Text>
+            <SubtleLink href="mailto:af@streetcare.dk"
+              >af@streetcare.dk</SubtleLink
+            >
+
+            <SubtleLink href="tel:+45453142100">+45 31 14 21 00</SubtleLink>
           </div>
 
           <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
-            <Button variant="outline-light">Ring til os</Button>
-            <Button variant="outline-light">Send mail</Button>
+            <Button variant="outline-light" href="tel:+45453142100"
+              >Ring til os</Button
+            >
+            <Button variant="outline-light" href="mailto:af@streetcare.dk"
+              >Send mail</Button
+            >
           </div>
         </div>
       </aside>
@@ -66,7 +70,7 @@ import HeroCard from "../components/HeroCard.astro";
       >
         <!-- INTRO -->
         <section>
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Bliv frivillig
           </Text>
 
@@ -85,7 +89,7 @@ import HeroCard from "../components/HeroCard.astro";
 
         <!-- HVAD LAVER MAN SOM FRIVILLIG -->
         <section>
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Hvad laver man som frivillig?
           </Text>
 
@@ -96,7 +100,7 @@ import HeroCard from "../components/HeroCard.astro";
 
           <div class="space-y-6">
             <div>
-              <Text teksttype="p_base_med">Gadeplansarbejde</Text>
+              <Heading htmlheading="h5" size="h5">Gadeplansarbejde</Heading>
               <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
                 Du er med, når vi besøger byens “hænge-ud”-pladser og møder
                 mennesker i øjenhøjde med kaffe, samtaler, støtte og praktisk
@@ -105,7 +109,9 @@ import HeroCard from "../components/HeroCard.astro";
             </div>
 
             <div>
-              <Text teksttype="p_base_med">Værested på Frederiksberg</Text>
+              <Heading htmlheading="h5" size="h5"
+                >Værested på Frederiksberg</Heading
+              >
               <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
                 Du er med til at skabe et trygt, varmt og uformelt fællesskab
                 med mad, aktiviteter og nærvær.
@@ -113,7 +119,9 @@ import HeroCard from "../components/HeroCard.astro";
             </div>
 
             <div>
-              <Text teksttype="p_base_med">Mentor- og bisidderstøtte</Text>
+              <Heading htmlheading="h5" size="h5"
+                >Mentor- og bisidderstøtte</Heading
+              >
               <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
                 Du kan følge mennesker til møder, hjælpe med breve, systemer og
                 beslutninger – og være en stabil støtteperson over tid. Fælles
@@ -126,7 +134,7 @@ import HeroCard from "../components/HeroCard.astro";
 
         <!-- HVAD KRÆVER DET -->
         <section>
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Hvad kræver det at være frivillig?
           </Text>
 
@@ -169,7 +177,7 @@ import HeroCard from "../components/HeroCard.astro";
 
         <!-- HVAD FÅR DU UD AF DET -->
         <section>
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Hvad får du ud af at være frivillig?
           </Text>
 
@@ -222,7 +230,7 @@ import HeroCard from "../components/HeroCard.astro";
 
         <!-- HVEM SØGER VI -->
         <section>
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Hvem søger vi?
           </Text>
 

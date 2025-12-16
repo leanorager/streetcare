@@ -10,6 +10,7 @@ import NewsCard from "../components/NewsCard.astro";
 import HeroCard from "../components/HeroCard.astro";
 import CheckList from "../components/CheckList.astro";
 import Bullet from "../components/Bullet.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 ---
 
 <MainLayout title="Vores arbejde">
@@ -24,7 +25,7 @@ import Bullet from "../components/Bullet.astro";
   <main class="">
     <section
       id="gadeplansarbejde"
-      class="mx-[10px] lg:mx-[60px]
+      class="mx-4 mt-[96px] lg:mt-0 lg:mx-[60px]
              grid grid-cols-5
              lg:grid-cols-12"
     >
@@ -64,7 +65,7 @@ import Bullet from "../components/Bullet.astro";
           Faste tidspunkter for gadeplansarbejde:
         </Heading>
 
-        <Text stylingclasses="mt-[10px]">
+        <Text stylingclasses="mt-[5px]">
           Tirsdag: 13.30–19.00<br />
           Onsdag: 12.30–16.30<br />
           Torsdag: 13.00–19.30
@@ -263,7 +264,7 @@ import Bullet from "../components/Bullet.astro";
       >
         <!-- VENSTRE: label + heading + brødtekst + checklist -->
         <div class="col-span-5 lg:col-start-1 lg:col-end-6">
-          <Text teksttype="p_small_reg" stylingclasses="text-grey70 mb-[1px]">
+          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
             Aktiviteter & ture
           </Text>
 
@@ -395,44 +396,58 @@ import Bullet from "../components/Bullet.astro";
         flex flex-col gap-[20px]"
         >
           <!-- Titel -->
-          <Heading htmlheading="h3" size="h3" stylingclasses="text-white">
+          <Heading htmlheading="h4" size="h4" stylingclasses="text-white">
             Telefonrådgivning
           </Heading>
+          <div>
+            <!-- Lille underlinje (kort, “fed”) -->
+            <Heading
+              htmlheading="h6"
+              size="h6"
+              stylingclasses="text-white"
+              stylingclasses="mb-[8px]"
+            >
+              En livline i hverdagen, når man har brug for hjælp nu og her
+            </Heading>
 
-          <!-- Lille underlinje (kort, “fed”) -->
-          <Text teksttype="p_base_med" stylingclasses="text-white">
-            En livline i hverdagen, når man har brug for hjælp nu og her
-          </Text>
-
-          <!-- Brødtekst -->
-          <Text teksttype="p_base_reg" stylingclasses="text-white">
-            Vores telefonrådgivning giver mulighed for at støtte, når livet
-            brænder på. Man kan ringe for at aftale kørsel til møder, få støtte,
-            råd eller samtaler, lave aftaler om kaffe- eller fællesspisning
-            eller for at få hjælp i akutte situationer.
-          </Text>
+            <!-- Brødtekst -->
+            <Text teksttype="p_base_reg" stylingclasses="text-white">
+              Vores telefonrådgivning giver mulighed for at støtte, når livet
+              brænder på. Man kan ringe for at aftale kørsel til møder, få
+              støtte, råd eller samtaler, lave aftaler om kaffe- eller
+              fællesspisning eller for at få hjælp i akutte situationer.
+            </Text>
+          </div>
 
           <!-- Åbningstider -->
-          <div class="flex flex-col gap-[4px]">
-            <Text teksttype="p_base_med" stylingclasses="text-white">
+          <div class="flex flex-col">
+            <Heading
+              htmlheading="h6"
+              size="h6"
+              stylingclasses="text-white mb-[8px]"
+            >
               Åbningstider
-            </Text>
+            </Heading>
 
-            <Text teksttype="p_small_reg" stylingclasses="text-white">
+            <Text stylingclasses="text-white">
               Åben alle hverdage kl. 11–16
             </Text>
-            <Text teksttype="p_small_reg" stylingclasses="text-white">
+            <Text stylingclasses="text-white">
               Ved akutte behov er man altid velkommen til at ringe.
             </Text>
-            <Text teksttype="p_small_reg" stylingclasses="text-white">
+            <SubtleLink stylingclasses="text-white" href="tel:31142100">
               Telefon: 31 14 21 00
-            </Text>
+            </SubtleLink>
           </div>
 
           <!-- Knapper: højrestillet, i én linje -->
           <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
-            <Button variant="outline-light">Ring til os</Button>
-            <Button variant="outline-light">Send mail</Button>
+            <Button variant="outline-light" href="tel:31142100"
+              >Ring til os</Button
+            >
+            <Button variant="outline-light" href="mailto:af@streetcare.dk"
+              >Send mail</Button
+            >
           </div>
         </div>
       </div>
