@@ -10,14 +10,14 @@ import SubtleLink from "./SubtleLink.astro";
     src="/svg/logomark-footer.svg"
     alt="Street Care logomark"
     aria-hidden="true"
-    class="pointer-events-none absolute right-[-120px] top-[-45px] w-[520px] lg:right-[-80px] lg:top-[-10px] lg:w-[820px]"
+    class="pointer-events-none absolute right-[-120px] top-[-45px] w-[520px] md:right-[-20px] md:top-[-40px]"
   />
 
   {/* Indhold */}
   <div
-    class="relative z-10 px-4 py-[96px] lg:px-[60px] lg:pb-[250px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+    class="relative z-10 px-4 py-[96px] xl:px-[60px] md:pb-[250px] md:grid md:grid-cols-12 md:gap-[20px]"
   >
-    <div class="lg:col-start-1 lg:col-end-3">
+    <div class="md:col-start-1 md:col-end-4 xl:col-end-3">
       <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
         Værestedet
       </Heading>
@@ -34,7 +34,9 @@ import SubtleLink from "./SubtleLink.astro";
       </SubtleLink>
     </div>
 
-    <div class="mt-[40px] lg:mt-0 lg:col-start-3 lg:col-end-5">
+    <div
+      class="mt-[40px] md:mt-0 md:col-start-4 md:col-end-7 xl:col-start-3 xl:col-end-5"
+    >
       <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
         Gadeplansarbejde
       </Heading>
@@ -44,7 +46,9 @@ import SubtleLink from "./SubtleLink.astro";
       </Text>
     </div>
 
-    <div class="mt-[40px] lg:mt-0 lg:col-start-5 lg:col-end-7">
+    <div
+      class="mt-[40px] md:mt-0 md:col-start-7 md:col-end-10 xl:col-start-5 xl:col-end-7"
+    >
       <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
         Kontakt
       </Heading>
@@ -74,7 +78,9 @@ import SubtleLink from "./SubtleLink.astro";
       </SubtleLink>
     </div>
 
-    <div class="mt-[40px] lg:mt-0 lg:col-start-7 lg:col-end-9">
+    <div
+      class="mt-[40px] md:mt-0 md:col-start-10 md:col-end-13 xl:col-start-7 xl:col-end-9"
+    >
       <Heading htmlheading="h6" size="h6" stylingclasses="mb-[8px]">
         Regler & vilkår
       </Heading>
@@ -91,11 +97,7 @@ import SubtleLink from "./SubtleLink.astro";
       </SubtleLink>
     </div>
 
-    <p
-      class="mt-[20px] lg:mt-0 lg:row-start-2 lg:col-start-1 lg:col-end-13 lg:place-self-end"
-    >
-      &copy; 2025
-    </p>
+    <p class="mt-[20px] md:mt-0 md:row-start-2 md:col-start-1">&copy; 2025</p>
   </div>
 
   {/* Wordmark i bunden (croppet) */}
@@ -104,7 +106,7 @@ import SubtleLink from "./SubtleLink.astro";
       src="/svg/wordmark-footer.svg"
       alt="Street Care wordmark"
       aria-hidden="true"
-      class="w-full h-auto translate-y-[10%] lg:translate-y-[17%]"
+      class="w-full h-auto translate-y-[10%] md:translate-y-[17%]"
     />
   </div>
 </footer>
