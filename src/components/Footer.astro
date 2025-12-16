@@ -2,7 +2,61 @@
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import SubtleLink from "./SubtleLink.astro";
+
+const partnerLogos = [
+  { src: "/svg/lunar.svg", alt: "Lunar" },
+  { src: "/svg/lego.svg", alt: "LEGO" },
+  { src: "/svg/foetex.svg", alt: "føtex" },
+  { src: "/svg/maersk.svg", alt: "Maersk" },
+  { src: "/svg/spejder-sport.svg", alt: "Spejder Sport" },
+  { src: "/svg/rema1000.svg", alt: "REMA 1000" },
+];
+
+// IMPORTANT: gør rækken lang nok, så du IKKE ser duplikatet “inde i view’et”
+const row = [
+  ...partnerLogos,
+  ...partnerLogos,
+  ...partnerLogos,
+  ...partnerLogos,
+];
 ---
+
+{/* Partner-banner (OVER footer) */}
+<section class="border-t border-dark-grey bg-white overflow-x-hidden">
+  <div class="py-[22px]">
+    <div class="sc-marquee-track flex w-max items-center">
+      {/* Gruppe A */}
+      <div class="flex items-center gap-[70px] pr-[70px]">
+        {
+          row.map((l) => (
+            <img
+              src={l.src}
+              alt={l.alt}
+              loading="lazy"
+              class="h-[43px] w-auto flex-none opacity-50"
+            />
+          ))
+        }
+      </div>
+
+      {/* Gruppe A igen (duplikat) */}
+      <div class="flex items-center gap-[70px] pr-[70px]" aria-hidden="true">
+        {
+          row.map((l) => (
+            <img
+              src={l.src}
+              alt=""
+              loading="lazy"
+              class="h-[43px] w-auto flex-none opacity-50"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Footer */}
 
 <footer class="relative overflow-hidden bg-light-grey text-dark-grey">
   {/* Baggrunds-logomark */}
@@ -110,3 +164,26 @@ import SubtleLink from "./SubtleLink.astro";
     />
   </div>
 </footer>
+
+<style>
+  /* Tracken indeholder A + A. Vi flytter præcis én A's bredde (= 50%) */
+  .sc-marquee-track {
+    will-change: transform;
+    animation: sc-marquee 80s linear infinite;
+  }
+
+  @keyframes sc-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sc-marquee-track {
+      animation: none;
+    }
+  }
+</style>
