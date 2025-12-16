@@ -71,17 +71,28 @@
 }
 
 @layer base {
+  [x-cloak] {
+    display: none !important;
+  }
 }
 
 @layer components {
-  /* Scroll-logo: mennesker i ring */
-  .logo-person {
-    --step: calc(360deg / var(--count));
+  /* Container for 3D-ring/cylinder */
+  .logo-ring {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
 
-    transform: translate(-50%, -50%)
-      rotate(calc(var(--i) * var(--step) + var(--rot, 0deg)))
-      translateY(calc(-1 * var(--radius)))
-      rotate(calc(-1 * (var(--i) * var(--step) + var(--rot, 0deg))));
+  /* De enkelte figurer – vi bruger translate-property, så JS kan styre transform */
+  .logo-person {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transform-style: preserve-3d;
+    will-change: transform;
+    /* fjern drop-shadow hvis I ikke vil have den */
+    /* filter: drop-shadow(0 6px 10px rgba(0,0,0,.15)); */
   }
 }
 

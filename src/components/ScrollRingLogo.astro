@@ -1,69 +1,102 @@
 ---
 const {
-  count = 8, // antal “mennesker” i ringen
-  size = 40, // px: container størrelse (h/w)
-  personSize = 14, // px: figur størrelse
-  radius = 14, // px: ring-radius (translateZ)
-  tilt = 16, // grader: kameratilt (rotateX)
-  speed = 0.12, // grader pr. px scroll
+  count = 6,
+  size = 56,
+  personSize = 19,
+  radius = 18,
+  tilt = 8,
+  scrollSens = 0.35,
+  ease = 0.12,
   src = "/svg/singlemanlogo.svg",
   className = "",
 } = Astro.props;
 ---
 
 <div
-  id="logo-ring"
-  class="relative h-10 w-10 [transform:rotateX(8deg)] [transform-style:preserve-3d] [perspective:1200px]"
-  style={`width:${size}px;height:${size}px;transform:rotateX(${tilt}deg);--count:${count};--radius:${radius}px;`}
+  class={`logo-ring relative shrink-0 [perspective:1400px] ${className}`}
+  style={`width:${size}px;height:${size}px;`}
+  data-scroll-ring
   aria-label="Street Care logo"
 >
   {
     Array.from({ length: count }).map((_, i) => (
       <img
-        src="/svg/singlemanlogo.svg"
+        src={src}
         alt=""
         aria-hidden="true"
-        class="logo-person block absolute left-1/2 top-1/2
-         -translate-x-1/2 -translate-y-1/2
-         h-[19px] w-auto
-         will-change-transform"
-        style={`--i:${i};`}
+        class="logo-person block h-[19px] w-auto"
+        style={`height:${personSize}px; --i:${i};`}
+        draggable="false"
       />
     ))
   }
 </div>
 
-<script is:inline define:vars={{ speed }}>
+<script is:inline define:vars={{ radius, tilt, scrollSens, ease }}>
   (() => {
-    const ring = document.getElementById("logo-ring");
-    if (!ring) return;
+    const root = document.currentScript?.previousElementSibling;
+    if (!root || !root.matches?.("[data-scroll-ring]")) return;
 
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
 
+    const items = Array.from(root.querySelectorAll("img"));
+    const COUNT = items.length;
+    const RADIUS = Number(radius) || 18;
+    const TILT_X = Number(tilt) || 8;
+    const SCROLL_SENS = Number(scrollSens) || 0.35;
+    const EASE = Number(ease) || 0.12;
+
+    // 1) Placer items rundt om Y-aksen + ud i Z
+    for (let i = 0; i < COUNT; i++) {
+      const angle = (360 / COUNT) * i;
+      items[i].style.transform = `rotateY(${angle}deg) translateZ(${RADIUS}px)`;
+    }
+
+    // 2) Inertia scroll-rotation (delta-baseret)
+    let targetRotY = 0;
+    let currentRotY = 0;
     let ticking = false;
+    let lastY = window.scrollY;
 
-    const update = () => {
-      ticking = false;
-      const deg = window.scrollY * speed;
-      ring.style.setProperty("--rot", `${deg}deg`);
-    };
+    function apply() {
+      root.style.transform = `rotateX(${TILT_X}deg) rotateY(${currentRotY}deg)`;
+    }
 
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
-    };
+    function animate() {
+      currentRotY += (targetRotY - currentRotY) * EASE;
+      apply();
 
-    update();
+      if (Math.abs(targetRotY - currentRotY) > 0.01) {
+        requestAnimationFrame(animate);
+      } else {
+        ticking = false;
+      }
+    }
+
+    function onScroll() {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      lastY = y;
+
+      targetRotY += delta * SCROLL_SENS;
+
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(animate);
+      }
+    }
+
+    apply();
     window.addEventListener("scroll", onScroll, { passive: true });
 
     media.addEventListener?.("change", () => {
       if (media.matches) {
         window.removeEventListener("scroll", onScroll);
-        ring.style.removeProperty("--rot");
+        root.style.transform = `rotateX(${TILT_X}deg)`;
       } else {
-        update();
+        lastY = window.scrollY;
+        apply();
         window.addEventListener("scroll", onScroll, { passive: true });
       }
     });

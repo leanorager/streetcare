@@ -3,7 +3,7 @@ import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
 import SubtleLink from "../components/SubtleLink.astro";
-
+import ScrollRingLogo from "../components/ScrollRingLogo.astro";
 const pathname = new URL(Astro.request.url).pathname;
 // Normaliser trailing slash (undtagen "/")
 const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
@@ -15,77 +15,24 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 >
   <!-- Bar i fuld bredde -->
   <div class="px-4 lg:px-[60px]">
-    <div class="flex items-center justify-between py-3 lg:py-6">
+    <div class="flex items-center justify-between py-3 lg:py-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-4 h-[54px]">
-        <div
-          id="logo-ring"
-          class="relative w-[56px] h-[54px] shrink-0 translate-y-[1px]
-                 [perspective:1400px]
-                 [transform-style:preserve-3d]
-                 [transform:rotateX(8deg)]"
-          style="--count:6; --radius:18px;"
-          aria-label="Street Care logo"
-        >
-          {
-            Array.from({ length: 6 }).map((_, i) => (
-              <img
-                src="/svg/singlemanlogo.svg"
-                alt=""
-                aria-hidden="true"
-                class="logo-person block absolute left-1/2 top-1/2
-                     -translate-x-1/2 -translate-y-1/2
-                     h-[19px] w-auto
-                     will-change-transform"
-                style={`--i:${i};`}
-              />
-            ))
-          }
-        </div>
-
+      <a href="/" class="flex items-center gap-3 sm:gap-4 h-[54px]">
+        <ScrollRingLogo
+          count={6}
+          personSize={22}
+          size={56}
+          radius={22}
+          tilt={30}
+          scrollSens={0.2}
+          ease={0.12}
+          src="/svg/singlemanlogo.svg"
+          className="translate-y-[1px]"
+        />
         <Text teksttype="brand_label" stylingclasses="m-0 leading-none">
           STREET CARE
         </Text>
       </a>
-
-      <!-- Scroll rotation til 3D-ringen -->
-      <script is:inline>
-        (() => {
-          const ring = document.getElementById("logo-ring");
-          if (!ring) return;
-
-          const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-          if (media.matches) return;
-
-          let ticking = false;
-
-          const update = () => {
-            ticking = false;
-            const speed = 0.12;
-            const deg = window.scrollY * speed;
-            ring.style.setProperty("--rot", `${deg}deg`);
-          };
-
-          const onScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(update);
-          };
-
-          update();
-          window.addEventListener("scroll", onScroll, { passive: true });
-
-          media.addEventListener?.("change", () => {
-            if (media.matches) {
-              window.removeEventListener("scroll", onScroll);
-              ring.style.removeProperty("--rot");
-            } else {
-              update();
-              window.addEventListener("scroll", onScroll, { passive: true });
-            }
-          });
-        })();
-      </script>
 
       <!-- Desktop menu + CTA -->
       <div class="hidden lg:flex h-full items-center gap-[40px]">
@@ -107,7 +54,7 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
         type="button"
         class="lg:hidden inline-flex items-center justify-center cursor-pointer"
         aria-label="Åbn menu"
-        x-on:click="showmenu = !showmenu"
+        x-on:click.stop="showmenu = !showmenu; console.log('showmenu:', showmenu)"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -133,6 +80,7 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
   <nav
     class="relative z-50 lg:hidden border-b border-t border-dark-grey bg-off-white"
     x-show="showmenu"
+    x-cloak
     x-transition
     x-on:click.outside="showmenu = false"
   >

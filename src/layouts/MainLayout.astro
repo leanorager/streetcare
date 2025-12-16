@@ -11,6 +11,9 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <title>{Astro.props.title}</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <!-- Lacquer font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +21,6 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
       rel="stylesheet"
     />
-    <title>{Astro.props.title}</title>
     <script
       defer
       src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
