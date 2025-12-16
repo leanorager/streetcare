@@ -2,6 +2,7 @@
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 // Normaliser trailing slash (undtagen "/")
@@ -89,29 +90,11 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
       <!-- Desktop menu + CTA -->
       <div class="hidden lg:flex h-full items-center gap-[40px]">
         <nav class="flex h-full items-center gap-10">
-          <Link
-            href="/voresarbejde"
-            variant="menu"
-            className={currentPath === "/voresarbejde" ? "underline" : ""}
-          >
-            Vores arbejde
-          </Link>
+          <SubtleLink href="/voresarbejde"> Vores arbejde </SubtleLink>
 
-          <Link
-            href="/blivfrivillig"
-            variant="menu"
-            className={currentPath === "/blivfrivillig" ? "underline" : ""}
-          >
-            Bliv frivillig
-          </Link>
+          <SubtleLink href="/blivfrivillig"> Bliv frivillig </SubtleLink>
 
-          <Link
-            href="/om"
-            variant="menu"
-            className={currentPath === "/omos" ? "underline" : ""}
-          >
-            Om os
-          </Link>
+          <SubtleLink href="/om"> Om os </SubtleLink>
         </nav>
 
         <div class="flex h-full items-center">
@@ -152,32 +135,15 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
     x-on:click.outside="showmenu = false"
   >
     <div class="px-4 py-6 flex flex-col gap-6">
-      <Link
-        href="/voresarbejde"
-        variant="menu"
-        className={currentPath === "/voresarbejde" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
+      <SubtleLink href="/voresarbejde" x-on:click="showmenu = false">
         Vores arbejde
-      </Link>
+      </SubtleLink>
 
-      <Link
-        href="/blivfrivillig"
-        variant="menu"
-        className={currentPath === "/blivfrivillig" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
+      <SubtleLink href="/blivfrivillig" x-on:click="showmenu = false">
         Bliv frivillig
-      </Link>
+      </SubtleLink>
 
-      <Link
-        href="/omos"
-        variant="menu"
-        className={currentPath === "/omos" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
-        Om os
-      </Link>
+      <SubtleLink href="/om" x-on:click="showmenu = false"> Om os </SubtleLink>
 
       <div class="pt-2">
         <div class="flex h-full items-center">
