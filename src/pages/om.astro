@@ -6,6 +6,7 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import HeroCard from "../components/HeroCard.astro";
 import Bullet from "../components/Bullet.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 ---
 
 <MainLayout title="Om Street Care">
@@ -68,38 +69,32 @@ import Bullet from "../components/Bullet.astro";
               </Heading>
               <Text stylingclasses="text-white">Daglig leder,</Text>
               <Text stylingclasses="text-white">Allan Frederiksen</Text>
-              <Text stylingclasses="text-white">
-                <a href="mailto:af@streetcare.dk">af@streetcare.dk</a>
-              </Text>
-              <Text stylingclasses="text-white">
-                <a href="tel:31142100">+ 45 31 14 21 00</a>
-              </Text>
+              <SubtleLink href="mailto:af@streetcare.dk"
+                >af@streetcare.dk</SubtleLink
+              >
+              <SubtleLink href="tel:31142100">+ 45 31 14 21 00</SubtleLink>
             </div>
 
             <div>
               <Heading htmlheading="h6" size="h6" stylingclasses="pt-[30px]">
                 Værestedets adresse:
               </Heading>
-              <a
+              <SubtleLink
                 href="https://www.google.com/maps/dir//Worsaaesvej+5,+1972+Frederiksberg/"
               >
-                <Text stylingclasses="text-white">
-                  Evangeliekirken,<br />Worsaaesvej 5,<br />1972 Frederiksberg
-                </Text>
-              </a>
+                Evangeliekirken,<br />Worsaaesvej 5,<br />1972 Frederiksberg
+              </SubtleLink>
             </div>
 
             <div>
               <Heading htmlheading="h6" size="h6" stylingclasses="pt-[30px]">
                 Virksomhedsadresse:
               </Heading>
-              <a
+              <SubtleLink
                 href="https://www.google.com/maps/place/Drejervej+13,+2400+K%C3%B8benhavn/"
               >
-                <Text stylingclasses="text-white">
-                  S/I Street Care<br />Drejervej 13-21<br />2400 København NV
-                </Text>
-              </a>
+                S/I Street Care<br />Drejervej 13-21<br />2400 København NV
+              </SubtleLink>
             </div>
           </div>
 

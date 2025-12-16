@@ -6,7 +6,6 @@ const {
   stylingclasses = "",
 } = Astro.props;
 
-// De samme classes som i Text.astro, så links følger samme skala
 const sizeClasses = {
   p_small_reg: "text-[14px] lg:text-[14px] font-normal",
   p_base_reg: "text-[16px] lg:text-[16px] font-normal",
@@ -14,6 +13,23 @@ const sizeClasses = {
   p_large_reg: "text-[18px] lg:text-[18px] font-normal",
   p_large_med: "text-[18px] lg:text-[18px] font-medium",
 };
+
+// Normaliser paths så /foo og /foo/ matcher
+const normalize = (p) => {
+  if (!p) return "/";
+  const noQuery = p.split("?")[0].split("#")[0];
+  const trimmed = noQuery.replace(/\/+$/, "");
+  return trimmed === "" ? "/" : trimmed;
+};
+
+const currentPath = normalize(Astro.url.pathname);
+
+// Kun interne links kan være "active"
+const isInternal = typeof href === "string" && href.startsWith("/");
+const linkPath = isInternal ? normalize(href) : null;
+
+// Active hvis det matcher præcist
+const isActive = isInternal && linkPath === currentPath;
 ---
 
 <a
@@ -24,6 +40,7 @@ const sizeClasses = {
     sizeClasses[teksttype],
     stylingclasses,
   ]}
+  aria-current={isActive ? "page" : undefined}
 >
   <span class="link-underline"><slot /></span>
 </a>
@@ -46,6 +63,11 @@ const sizeClasses = {
   }
 
   a:hover .link-underline::after {
+    width: 100%;
+  }
+
+  /* “Active” (som menu-varianten): underline bliver stående */
+  a[aria-current="page"] .link-underline::after {
     width: 100%;
   }
 </style>

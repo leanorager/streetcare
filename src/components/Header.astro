@@ -2,6 +2,7 @@
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Text from "../components/Text.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 // Normaliser trailing slash (undtagen "/")
@@ -14,7 +15,7 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 >
   <!-- Bar i fuld bredde -->
   <div class="px-4 lg:px-[60px]">
-    <div class="flex items-center justify-between py-6">
+    <div class="flex items-center justify-between py-3 lg:py-6">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-4 h-[54px]">
         <div
@@ -89,29 +90,11 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
       <!-- Desktop menu + CTA -->
       <div class="hidden lg:flex h-full items-center gap-[40px]">
         <nav class="flex h-full items-center gap-10">
-          <Link
-            href="/voresarbejde"
-            variant="menu"
-            className={currentPath === "/voresarbejde" ? "underline" : ""}
-          >
-            Vores arbejde
-          </Link>
+          <SubtleLink href="/voresarbejde"> Vores arbejde </SubtleLink>
 
-          <Link
-            href="/blivfrivillig"
-            variant="menu"
-            className={currentPath === "/blivfrivillig" ? "underline" : ""}
-          >
-            Bliv frivillig
-          </Link>
+          <SubtleLink href="/blivfrivillig"> Bliv frivillig </SubtleLink>
 
-          <Link
-            href="/om"
-            variant="menu"
-            className={currentPath === "/omos" ? "underline" : ""}
-          >
-            Om os
-          </Link>
+          <SubtleLink href="/om"> Om os </SubtleLink>
         </nav>
 
         <div class="flex h-full items-center">
@@ -122,7 +105,7 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
       <!-- Mobile burger -->
       <button
         type="button"
-        class="lg:hidden inline-flex items-center justify-center"
+        class="lg:hidden inline-flex items-center justify-center cursor-pointer"
         aria-label="Åbn menu"
         x-on:click="showmenu = !showmenu"
       >
@@ -132,13 +115,15 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="1.2"
           aria-hidden="true"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M4 7h16M4 12h16M4 17h16"></path>
+            d="M4 7h16M4 12h16M4 17h16"
+          >
+          </path>
         </svg>
       </button>
     </div>
@@ -146,38 +131,21 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 
   <!-- Mobile dropdown -->
   <nav
-    class="relative z-50 lg:hidden border-t border-grey70/70 bg-off-white"
+    class="relative z-50 lg:hidden border-b border-t border-dark-grey bg-off-white"
     x-show="showmenu"
     x-transition
     x-on:click.outside="showmenu = false"
   >
-    <div class="px-4 py-6 flex flex-col gap-6">
-      <Link
-        href="/voresarbejde"
-        variant="menu"
-        className={currentPath === "/voresarbejde" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
+    <div class="px-4 py-6 flex flex-col gap-6 items-end text-right">
+      <SubtleLink href="/voresarbejde" x-on:click="showmenu = false">
         Vores arbejde
-      </Link>
+      </SubtleLink>
 
-      <Link
-        href="/blivfrivillig"
-        variant="menu"
-        className={currentPath === "/blivfrivillig" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
+      <SubtleLink href="/blivfrivillig" x-on:click="showmenu = false">
         Bliv frivillig
-      </Link>
+      </SubtleLink>
 
-      <Link
-        href="/omos"
-        variant="menu"
-        className={currentPath === "/omos" ? "underline" : ""}
-        x-on:click="showmenu = false"
-      >
-        Om os
-      </Link>
+      <SubtleLink href="/om" x-on:click="showmenu = false"> Om os </SubtleLink>
 
       <div class="pt-2">
         <div class="flex h-full items-center">
