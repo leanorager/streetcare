@@ -25,8 +25,9 @@ import SubtleLink from "../components/SubtleLink.astro";
       {/* Top: overskrift + brødtekst */}
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
         <div class="lg:col-start-1 lg:col-end-6">
-          <Text teksttype="p_large_med">Om Street Care</Text>
-          <Heading>Mennesker er noget særligt – og ingen skal stå alene</Heading
+          <Heading>Om Street Care</Heading>
+          <Heading htmlheading="statement" size="statement"
+            >Mennesker er noget særligt – og ingen skal stå alene</Heading
           >
         </div>
 
@@ -64,7 +65,11 @@ import SubtleLink from "../components/SubtleLink.astro";
 
           <div class="xl:flex xl:justify-between xl:gap-[30px]">
             <div>
-              <Heading htmlheading="h6" size="h6" stylingclasses="pt-[30px]">
+              <Heading
+                htmlheading="h6"
+                size="h6"
+                stylingclasses="text-white pt-[30px]"
+              >
                 Kontaktperson:
               </Heading>
               <Text stylingclasses="text-white">Daglig leder,</Text>
@@ -76,7 +81,11 @@ import SubtleLink from "../components/SubtleLink.astro";
             </div>
 
             <div>
-              <Heading htmlheading="h6" size="h6" stylingclasses="pt-[30px]">
+              <Heading
+                htmlheading="h6"
+                size="h6"
+                stylingclasses="text-white pt-[30px]"
+              >
                 Værestedets adresse:
               </Heading>
               <SubtleLink
@@ -87,7 +96,11 @@ import SubtleLink from "../components/SubtleLink.astro";
             </div>
 
             <div>
-              <Heading htmlheading="h6" size="h6" stylingclasses="pt-[30px]">
+              <Heading
+                htmlheading="h6"
+                size="h6"
+                stylingclasses="text-white pt-[30px]"
+              >
                 Virksomhedsadresse:
               </Heading>
               <SubtleLink
@@ -109,7 +122,11 @@ import SubtleLink from "../components/SubtleLink.astro";
     </section>
     <section id="vision" class="px-4 py-[96px] lg:px-[60px]">
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
-        <Heading stylingclasses="lg:col-start-1 lg:col-end-8">
+        <Heading
+          htmlheading="statement"
+          size="statement"
+          stylingclasses="lg:col-start-1 lg:col-end-8"
+        >
           Midt i byens støj finder vi dem, der er glemt.
           <span class="text-[var(--color-grey)]">
             {" "}
