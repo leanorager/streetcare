@@ -9,14 +9,12 @@ import NewsCard from "../components/NewsCard.astro";
 <MainLayout title="Støt">
   <main>
     <section id="hero"></section>
-    <section id="anden_stoette" class="px-4 py-20 lg:px-[60px]">
+    <section id="anden_stoette" class="px-4 py-[96px] lg:px-[60px]">
       {/* Heading */}
-      <div class="max-w-[900px]">
-        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-          Andre måder at støtte på
-        </Text>
+      <div class="max-w-[900px] pb-[20px]">
+        <Heading>Andre måder at støtte på</Heading>
 
-        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+        <Heading htmlheading="statement" size="statement">
           Ikke alle bidrag er økonomiske.
           <span class="text-[var(--color-grey)]">
             {" "}
@@ -82,16 +80,20 @@ import NewsCard from "../components/NewsCard.astro";
       <div
         class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px]"
       >
-        <Heading htmlheading="h3" size="h3" stylingclasses="mb-[20px] lg:mb-0">
+        <Heading htmlheading="h5" size="h5" stylingclasses="mb-[20px] lg:mb-0">
           Vidste du at?
         </Heading>
-        <Link href="/om" variant="action"> Læs mere om vores historie </Link>
+        <Link href="/om"> Læs mere om vores historie </Link>
       </div>
 
       <div
-        class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+        class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
       >
-        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+        <Heading
+          htmlheading="statement"
+          size="statement"
+          stylingclasses="mb-[16px]"
+        >
           1 ud af 3
         </Heading>
         <Text styllingclasses="text-dark-grey">
@@ -101,9 +103,13 @@ import NewsCard from "../components/NewsCard.astro";
         </Text>
       </div>
       <div
-        class="border-b-grey70 border-b-[1px] pb-[40px] lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+        class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
       >
-        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+        <Heading
+          htmlheading="statement"
+          size="statement"
+          stylingclasses="mb-[16px]"
+        >
           150kr
         </Heading>
         <Text styllingclasses="text-dark-grey">
@@ -112,9 +118,13 @@ import NewsCard from "../components/NewsCard.astro";
         </Text>
       </div>
       <div
-        class="border-b-grey70 border-b-[1px] pb-[40px] lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+        class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
       >
-        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+        <Heading
+          htmlheading="statement"
+          size="statement"
+          stylingclasses="mb-[16px]"
+        >
           40 udsatte
         </Heading>
         <Text styllingclasses="text-dark-grey">
@@ -124,7 +134,11 @@ import NewsCard from "../components/NewsCard.astro";
         </Text>
       </div>
       <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
-        <Heading htmlheading="h2" size="h2" stylingclasses="mb-[16px]">
+        <Heading
+          htmlheading="statement"
+          size="statement"
+          stylingclasses="mb-[16px]"
+        >
           7 ud af 10
         </Heading>
         <Text styllingclasses="text-dark-grey">
@@ -137,23 +151,19 @@ import NewsCard from "../components/NewsCard.astro";
       id="pengene"
       class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
     >
-      <div
-        class="lg:col-start-1 lg:col-end-8 lg:grid lg:grid-cols-8 lg:gap-x-[20px]"
-      >
-        <div class="lg:col-start-1 lg:col-end-6">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Hvad går pengene til?
-          </Text>
+      <div class="lg:col-start-1 lg:col-end-6">
+        <div>
+          <Heading>Hvad går pengene til?</Heading>
           <Heading
-            htmlheading="h2"
-            size="h2"
+            htmlheading="statement"
+            size="statement"
             stylingclasses="mb-[6px] lg:mb-[20px]"
           >
             Din støtte er med til at holde dørene åbne – og hjertet varmt
           </Heading>
         </div>
-        <div class="lg:col-start-1 lg:col-end-9">
-          <Text stylingclasses="text-dark-grey mb-[20px]">
+        <div>
+          <Text stylingclasses="text-dark-grey my-[20px]">
             Din støtte bliver til handling. Street Care arbejder hver uge blandt
             Københavns mest udsatte. Når du donerer, er du med til at finansiere
             punkterne nedenfor. I starten af året udgiver Street Care en

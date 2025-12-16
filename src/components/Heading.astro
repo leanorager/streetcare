@@ -1,4 +1,6 @@
 ---
+import { text } from "motion/react-m";
+
 /**
  * Props:
  * htmlheading → hvilken HTML-tag (h1, h2 ...)
@@ -9,27 +11,30 @@
 
 // Henter parametrene fra Astro.props
 let {
-  htmlheading = "h2",
-  size = "h2",
+  htmlheading = "h3",
+  size = "h3",
   font,
   stylingclasses = "",
 } = Astro.props;
 
 const Htmlheading = htmlheading;
 
-// Hvis font ikke er sat manuelt, vælg display-font til h1, ellers sans
+// Hvis font ikke er sat manuelt, brug display-font til h1 og h2, ellers sans
 if (!font) {
-  font = size === "h1" ? "display" : "sans";
+  font = size === "h1" || size === "h2" ? "display" : "sans";
 }
 
 // Tailwind classes for de forskellige størrelser.
 const sizeClasses = {
-  h1: "text-[60px] lg:text-[120px] font-normal",
-  h2: "text-[30px] lg:text-[40px] font-medium",
-  h3: "text-[20px] lg:text-[30px] font-medium",
-  h4: "text-[24px] lg:text-[35px] font-semibold",
-  h5: "text-[18px] lg:text-[20px] font-medium",
-  h6: "text-[16px] lg:text-[16px] font-semibold",
+  h1: "text-[67px] leading-[60px] lg:text-[120px] lg:leading-[110px] font-normal text-red",
+  h2: "text-[30px] lg:text-[40px] font-normal text-red",
+  h3: "text-[18px] lg:text-[18px] font-medium text-dark-grey",
+  statement:
+    "text-[30px] leading-[40px] lg:text-[40px] lg:leading-[50px] font-medium text-black",
+  h4: "text-[35px] lg:text-[35px] font-semibold text-off-white",
+  h5: "text-[30px] lg:text-[30px] font-medium text-black",
+  h6: "text-[20px] lg:text-[20px] font-medium text-black",
+  h7: "text-[16px] lg:text-[16px] font-semibold text-off-white",
 };
 
 // Tailwind classes for skrifttyper

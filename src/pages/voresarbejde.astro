@@ -27,68 +27,77 @@ import SubtleLink from "../components/SubtleLink.astro";
       id="gadeplansarbejde"
       class="mx-4 mt-[96px] lg:mt-0 lg:mx-[60px]
              grid grid-cols-5
-             lg:grid-cols-12"
+             lg:grid-cols-12 lg:gap-[20px]"
     >
       <!-- VENSTRE BLOK -->
       <div class="col-span-5 my-[px] lg:my-[260px] lg:col-start-1 lg:col-end-6">
-        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-          Opsøgende gadeplansarbejde
-        </Text>
+        <Heading>Opsøgende gadeplansarbejde</Heading>
 
-        <Heading>
+        <Heading htmlheading="statement" size="statement">
           Vi møder mennesker på gaden – i øjenhøjde og i hverdagen
         </Heading>
       </div>
 
       <!-- HØJRE BLOK -->
       <div
-        class="col-span-5 lg:col-start-7 lg:col-end-13 lg:mt-[260px] mt-[0px] mb-[40px] lg:mb-[72px]"
+        class="col-span-5 lg:col-start-7 lg:col-end-13 lg:mt-[260px] mt-[20px] mb-[40px] lg:mb-0"
       >
         <!-- Mindre spacing på mobil, større på desktop -->
         <Text stylingclasses="mt-[0px] lg:mt-[30px]">
           Gadeplansarbejdet er kernen i Street Cares indsats. Flere gange om
-          ugen besøger vi faste steder i København, hvor hjemløse og udsatte
-          opholder sig. Vi kommer for at lytte, støtte og skabe relationer –
-          ikke for at presse agendaer igennem.
+          ugen besøger vi faste steder i København, hvor vi skaber relationer og
+          tryghed. Derudover kører vi rundt i København på vores
+          Christianiacykel, hvor vi tilbyder gratis varme drikke.
         </Text>
+        <div class="lg:grid lg:grid-cols-2 lg:gap-[20px]">
+          <div>
+            <Heading
+              htmlheading="h6"
+              size="h7"
+              stylingclasses="!text-black mt-[20px]"
+            >
+              Faste tidspunkter på gaden:
+            </Heading>
 
-        <Text stylingclasses="mt-[30px]">
-          Vi kommer rundt i byen med bil, i Metro eller på vores
-          Christianiacykel, og vi opsøger mennesker på steder som Enghave Plads,
-          Den Grønne Plads og Københavns Hovedbanegård, Kgs. Enghave, Hulgårds
-          Plads, Christianshavns Torv, Nørreport st., Sundholm samt Vanløse
-          Torv. Vi vil også løbende lave opsøgende gadeplansarbejde andre steder
-          og på andre tidspunkter i løbet af ugen.
-        </Text>
+            <Text stylingclasses="mt-[5px]">
+              Tirsdag: 13.30–19.00<br />
+              Onsdag: 12.30–16.30<br />
+              Torsdag: 13.00–19.30
+            </Text>
+          </div>
+          <div>
+            <Heading
+              htmlheading="h6"
+              size="h7"
+              stylingclasses="!text-black mt-[20px]"
+            >
+              Vores faste besøgssteder:
+            </Heading>
 
-        <Heading htmlheading="h5" size="h5" stylingclasses="mt-[30px]">
-          Faste tidspunkter for gadeplansarbejde:
-        </Heading>
-
-        <Text stylingclasses="mt-[5px]">
-          Tirsdag: 13.30–19.00<br />
-          Onsdag: 12.30–16.30<br />
-          Torsdag: 13.00–19.30
-        </Text>
+            <Text stylingclasses="mt-[5px]">
+              Enghave plads<br />
+              Den grønne plads<br />
+              Hulgårds Plads<br />
+              Christianshavn Torv
+            </Text>
+          </div>
+        </div>
       </div>
     </section>
 
-    <img
-      src="/img/ourwork1.png"
-      class="w-full h-[145px] lg:h-[539px] object-cover"
-    />
+    <img src="/img/ourwork1.png" class="w-full lg:h-[539px] object-cover" />
 
     <section
       id="gadeplansarbejde"
-      class="mx-[10px] lg:mx-[60px] mt-[96px] lg:mt-[72px] mb-[96px]
+      class="px-4 lg:px-[60px] pt-[40px] lg:pt-[72px] pb-[96px]
              grid grid-cols-5
              lg:grid-cols-12"
     >
       <!-- VENSTRE BLOK -->
       <div class="col-span-5 lg:col-span-7">
-        <Heading>
+        <Heading htmlheading="statement" size="statement">
           Midt i byens støj finder vi dem, der er glemt.
-          <span class="text-[var(--color-grey70)]">
+          <span class="text-[var(--color-grey)]">
             {" "}
             Street Care står skulder ved skulder med Københavns mest udsatte.
           </span>
@@ -97,7 +106,9 @@ import SubtleLink from "../components/SubtleLink.astro";
 
       <!-- HØJRE BLOK -->
 
-      <div class="col-span-5 pt-[10px] lg:col-start-9 lg:col-end-13">
+      <div
+        class="col-span-5 pt-[20px] lg:pt-[8px] lg:col-start-9 lg:col-end-13"
+      >
         <CheckList
           title="Gadeplansarbejde:"
           items={[
@@ -113,17 +124,12 @@ import SubtleLink from "../components/SubtleLink.astro";
 
     <section
       id="vaerestedet"
-      class="bg-light-grey px-[10px] lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px] py-[96px]"
+      class="bg-light-grey px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px] py-[96px]"
     >
       <div class="lg:col-start-1 lg:col-end-6">
-        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-          Værestedet
-        </Text>
-
-        {/* 1px mellem "Værestedet" og heading (mobil + laptop) */}
-        <Heading stylingclasses="mt-[1px]">
-          Et trygt sted at lande, når man har brug for varme, mad og
-          menneskelighed
+        <Heading> Værestedet </Heading>
+        <Heading htmlheading="statement" size="statement">
+          Et trygt fællesskab med varme, mad og nærvær
         </Heading>
 
         {/* Mobil 40px, laptop 20px */}
@@ -149,7 +155,6 @@ import SubtleLink from "../components/SubtleLink.astro";
         </div>
       </div>
 
-      {/* Mobil: 96px ned til billedet. Laptop: uændret */}
       <div class="mt-[96px] lg:mt-0 lg:col-start-9 lg:col-end-13">
         <img
           src="/img/vaerestedet.webp"
@@ -157,7 +162,6 @@ import SubtleLink from "../components/SubtleLink.astro";
           class="block w-full h-auto object-cover"
         />
 
-        {/* 6px mellem billede og adresse */}
         <Text teksttype="p_small_reg" stylingclasses="mt-[6px] text-dark-grey">
           Evangeliekirken, Worsaaesvej 5, Frederiksberg
         </Text>
@@ -196,20 +200,20 @@ import SubtleLink from "../components/SubtleLink.astro";
       <!-- TOP: TEKSTGRID -->
       <div
         class="grid grid-cols-5 gap-6
-           lg:grid-cols-12 lg:gap-[10px]"
+           lg:grid-cols-12 lg:gap-[20px]"
       >
         <!-- VENSTRE: label + heading -->
         <div class="col-span-5 lg:col-start-1 lg:col-end-6">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Fællesspisning
-          </Text>
+          <Heading>Fællesspisning</Heading>
 
-          <Heading> Fællesskab begynder ofte med et måltid </Heading>
+          <Heading htmlheading="statement" size="statement">
+            Fællesskab begynder ofte med et måltid
+          </Heading>
         </div>
 
         <!-- HØJRE: 2 tekstkolonner på desktop / stacked på mobil -->
         <div class="col-span-5 lg:col-start-7 lg:col-end-13">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[25px]">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
             <Text class="lg:mt-[30px]">
               Flere gange om måneden inviterer vi til fællesspisninger, hvor
               mennesker kan mødes i rolige og trygge rammer. Her handler
@@ -257,22 +261,23 @@ import SubtleLink from "../components/SubtleLink.astro";
     <!--AKTIVITETER OG TURE START-->
     <section
       id="aktiviterogture"
-      class="py-[96px] px-[10px] lg:px-[60px] bg-light-grey"
+      class="py-[96px] px-4 lg:px-[60px] bg-light-grey"
     >
       <div
         class="grid grid-cols-5 gap-6 lg:grid-cols-12 lg:gap-[20px] items-end"
       >
         <!-- VENSTRE: label + heading + brødtekst + checklist -->
         <div class="col-span-5 lg:col-start-1 lg:col-end-6">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Aktiviteter & ture
-          </Text>
+          <Heading> Aktiviteter & ture </Heading>
 
-          <Heading htmlheading="h2" size="h2" stylingclasses="mb-[20px]">
+          <Heading htmlheading="statement" size="statement">
             Oplevelser, der giver glæde – og håb for fremtiden
           </Heading>
 
-          <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+          <Text
+            teksttype="p_base_reg"
+            stylingclasses="text-dark-grey mt-[20px]"
+          >
             Vi arrangerer både små og store aktiviteter for mennesker, der
             sjældent får mulighed for en pause fra hverdagen. Formålet med dette
             er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
@@ -317,13 +322,11 @@ import SubtleLink from "../components/SubtleLink.astro";
       <div class="lg:grid lg:grid-cols-12">
         {/* VENSTRE: emnetekst + stor heading */}
         <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Mentor- og bisidderstøtte
-          </Text>
+          <Heading>Mentor- og bisidderstøtte</Heading>
 
-          <Heading>
+          <Heading htmlheading="statement" size="statement">
             Vi går vejen sammen, når systemet bliver uoverskueligt.
-            <span class="text-[var(--color-grey70)]">
+            <span class="text-[var(--color-grey)]">
               {" "}
               Street Care hjælper med breve, møder og myndigheder, så der skabes tryghed
               og overblik.
@@ -386,7 +389,7 @@ import SubtleLink from "../components/SubtleLink.astro";
 
     <!-- TELEFONRÅDGIVNING START -->
 
-    <section class="px-4 lg:px-[60px] py-20">
+    <section class="px-4 lg:px-[60px] pb-[96px]">
       <div class="flex justify-center">
         <div
           class="bg-red text-white
@@ -396,16 +399,13 @@ import SubtleLink from "../components/SubtleLink.astro";
         flex flex-col gap-[20px]"
         >
           <!-- Titel -->
-          <Heading htmlheading="h4" size="h4" stylingclasses="text-white">
-            Telefonrådgivning
-          </Heading>
+          <Heading htmlheading="h4" size="h4"> Telefonrådgivning </Heading>
           <div>
             <!-- Lille underlinje (kort, “fed”) -->
             <Heading
               htmlheading="h6"
               size="h6"
-              stylingclasses="text-white"
-              stylingclasses="mb-[8px]"
+              stylingclasses="text-white mb-[8px]"
             >
               En livline i hverdagen, når man har brug for hjælp nu og her
             </Heading>

@@ -12,7 +12,7 @@ import NewsCard from "../components/NewsCard.astro";
 <MainLayout title="Forside">
   <main>
     <!-- HERO -->
-    <section class="bg-off-white px-4 lg:px-[60px] py-24">
+    <section class="bg-off-white px-4 lg:px-[60px] py-[96px]">
       <div class="w-full flex flex-col items-center text-center">
         <img
           src="/img/heroTxtImg.png"
@@ -22,10 +22,10 @@ import NewsCard from "../components/NewsCard.astro";
         />
 
         <Heading
-          htmlheading="h1"
+          htmlheading="h2"
           size="h2"
           font="display"
-          stylingclasses="text-red mt-[24px] text-[26px] md:text-[32px] lg:text-[36px] font-normal -rotate-[1.95deg]"
+          stylingclasses="mt-[24px] md:text-[35px] -rotate-[1.95deg]"
         >
           Vi står sammen med dem der står alene
         </Heading>
@@ -39,13 +39,13 @@ import NewsCard from "../components/NewsCard.astro";
     </section>
 
     <!-- DONATION -->
-    <section id="donation" class="px-4 lg:px-[60px] py-20">
-      <h2
-        class="font-display text-[22px] lg:text-[40px] text-red text-center mb-[38px] lg:mb-[100px]"
+    <section id="donation" class="px-4 lg:px-[60px] pt-[96px] lg:py-[96px]">
+      <Heading
+        htmlheading="h2"
+        size="h2"
+        stylingclasses="text-center mb-[38px] lg:mb-[100px]"
+        >Giv varme, hvor kulden rammer hårdest</Heading
       >
-        Giv varme, hvor kulden rammer hårdest
-      </h2>
-
       <div class="lg:grid lg:grid-cols-12 lg:gap-[40px] items-stretch">
         <!-- Billede venstre -->
         <div class="lg:col-span-7">
@@ -58,13 +58,13 @@ import NewsCard from "../components/NewsCard.astro";
 
         <!-- Doner-kort højre -->
         <article
-          class="mt-8 lg:mt-0 lg:col-span-5 bg-red rounded-[10px] px-[20px] py-[40px] lg:px-[50px] text-white flex flex-col lg:self-start"
+          class="mt-8 lg:mt-0 lg:col-span-5 bg-red rounded-[10px] px-[20px] py-[40px] lg:px-[50px] flex flex-col lg:self-start"
         >
-          <Heading htmlheading="h3" size="h3" stylingclasses="text-center">
+          <Heading htmlheading="h4" size="h4" stylingclasses="text-center">
             Vælg donation
           </Heading>
 
-          <form class="mt-[24px] flex flex-col">
+          <form class="mt-[24px] flex flex-col text-off-white">
             <!-- Engangsbeløb / månedlig -->
             <div class="flex gap-[24px] text-[16px]">
               <label class="inline-flex items-center gap-2 cursor-pointer">
@@ -142,7 +142,7 @@ import NewsCard from "../components/NewsCard.astro";
 
             <!-- CTA -->
             <div class="mt-[30px] flex justify-end">
-              <Button variant="solid-white" type="submit">
+              <Button variant="solid-white" type="submit" href="/stoet">
                 Start donation
               </Button>
             </div>
@@ -152,21 +152,17 @@ import NewsCard from "../components/NewsCard.astro";
     </section>
 
     <!-- VORES INDSATS -->
-    <section id="indsats" class="px-4 py-20 lg:px-[60px]">
+    <section id="indsats" class="px-4 py-[96px] lg:px-[60px]">
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
         <!-- VENSTRE -->
         <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Vores indsats
-          </Text>
-
-          <Heading>
+          <Heading>Vores indsats</Heading>
+          <Heading htmlheading="statement" size="statement">
             Vi står sammen med dem, der står alene.
             <span class="text-[var(--color-grey)]">
               {" "}
-              Non-profit organisationen Street Care støtter Københavns mest udsatte
-              - hjemløse, ensomme, misbrugsramte og psykisk sårbare - med nærvær,
-              fællesskab og rådgivning. Ingen skal stå alene.
+              Street Care støtter Københavns mest udsatte med nærvær, fællesskab og
+              rådgivning.
             </span>
           </Heading>
         </div>
@@ -174,7 +170,7 @@ import NewsCard from "../components/NewsCard.astro";
         <!-- BULLETS -->
         <div
           class="lg:col-span-12
-                 space-y-10
+                 space-y-[40px]
                  lg:space-y-0
                  lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
         >
@@ -182,37 +178,37 @@ import NewsCard from "../components/NewsCard.astro";
             icon="work.svg"
             heading="Gadeplansarbejde"
             text="Vi laver opsøgende gadeplansarbejde 3-4 dage om ugen i København."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses=" lg:pt-[60px]"
           />
           <Bullet
             icon="house.svg"
             heading="Værested på Frederiksberg"
             text="Vi driver et værested på Frederiksberg, hvor vi skaber et trygt, varmt og åbent fællesskab."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses="lg:pt-[60px]"
           />
           <Bullet
             icon="person.svg"
             heading="Mentor- og bisidderstøtte"
             text="Mentor- og bisidderstøtte, når livet og systemet bliver svært at navigere."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses="lg:pt-[60px]"
           />
           <Bullet
             icon="cutlery.svg"
             heading="Fællesspisninger"
             text="Fællesspisninger byder på gratis mad og drikke, et varmt og trygt sted og nye relationer."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses="lg:pt-[60px]"
           />
           <Bullet
             icon="compass.svg"
             heading="Aktiviteter og ture"
             text="Forskellige aktiviteter og ture skaber gode minder, nye venskaber og håb for fremtiden."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses="lg:pt-[60px]"
           />
           <Bullet
             icon="phone.svg"
             heading="Telefonrådgivning"
             text="Telefonrådgivning, hvor man kan få hjælp, når hverdagen brænder på."
-            stylingclasses="pt-[40px] lg:pt-[60px]"
+            stylingclasses="lg:pt-[60px]"
           />
         </div>
 
@@ -228,11 +224,11 @@ import NewsCard from "../components/NewsCard.astro";
     </section>
 
     <!-- NYHEDER -->
-    <section class="bg-off-white px-4 py-16 lg:px-[60px]">
+    <section class="bg-off-white px-4 py-[96px] lg:px-[60px]">
       <!-- Header -->
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-6">
-          <Heading htmlheading="h3" size="h3">Seneste nyheder</Heading>
+          <Heading htmlheading="h5" size="h5">Seneste nyheder</Heading>
           <Link href="/nyheder" variant="action">Se alle</Link>
         </div>
 
@@ -376,37 +372,31 @@ import NewsCard from "../components/NewsCard.astro";
         class="px-4 lg:px-[60px]
       py-[96px]
       grid grid-cols-5 gap-6
-      lg:grid-cols-12 lg:gap-10"
+      lg:grid-cols-12 lg:gap-[20px] lg:items-start"
       >
         <!-- TEKSTBLOK -->
         <div class="col-span-5 lg:col-span-5 flex flex-col">
-          <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-            Gadeplansarbejde
-          </Text>
+          <Heading htmlheading="h3" size="h3"> Gadeplansarbejde </Heading>
 
           <Heading
-            htmlheading="h2"
-            size="h2"
+            htmlheading="statement"
+            size="statement"
             stylingclasses="mb-[20px] text-black"
           >
             På gaden – dér hvor livet leves, og hvor vi møder mennesker i
             øjenhøjde
           </Heading>
 
-          <Text
-            teksttype="p_base_reg"
-            stylingclasses="text-dark-grey lg:pr-12 mb-[5px]"
-          >
+          <Text teksttype="p_base_reg" stylingclasses=" lg:pr-12 mb-[20px]">
             Vores gadeplansteam besøger hver uge faste steder i København:
             Christianshavns Torv, Enghave Plads, Hulgårds Plads, Den Grønne
-            Plads i Sydhavnen, Sundholm og flere andre. Vi kommer ikke forbi,
-            fordi vi kan knipse med fingrene og “løse problemerne” – vi kommer
-            for at møde mennesker. For mange er vi et fast punkt i hverdagen: en
-            samtale, et smil, en kop kaffe og et rum, hvor man kan være sig
-            selv.
+            Plads i Sydhavnen, Sundholm og flere andre. <br /> Vi kommer ikke forbi,
+            fordi vi kan knipse med fingrene og “løse problemerne” – vi kommer for
+            at møde mennesker. <br /> For mange er vi et fast punkt i hverdagen: en
+            samtale, et smil, en kop kaffe og et rum, hvor man kan være sig selv.
           </Text>
 
-          <Link href="/lokationer" variant="action"> Se alle lokationer </Link>
+          <Link href="/lokationer"> Se alle lokationer </Link>
         </div>
 
         <!-- BILLEDE -->
@@ -421,12 +411,11 @@ import NewsCard from "../components/NewsCard.astro";
         <!-- TIDER-KORT -->
         <div
           class="col-span-5 lg:col-span-3
-        bg-light-grey rounded-[16px]
-        p-6 flex flex-col gap-4
-        h-[300px]"
+        bg-off-white rounded-[10px]
+        px-[20px] py-[40px] flex flex-col gap-[10px]"
         >
-          <Heading htmlheading="h4" size="h4" stylingclasses="text-dark-red">
-            Tider for gadeplans-arbejde
+          <Heading htmlheading="h6" size="h6" stylingclasses="text-red">
+            Tider for gadeplansarbejde
           </Heading>
 
           <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
@@ -443,14 +432,10 @@ import NewsCard from "../components/NewsCard.astro";
       id="vaerestedet"
       class="bg-light-grey px-4 py-[96px] lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
     >
-      <div class="lg:col-start-1 lg:col-end-6 pb-10 lg:pb-[20px]">
-        <Text teksttype="p_large_med" stylingclasses="text-dark-grey">
-          Værestedet
-        </Text>
-
-        <Heading>
-          Et trygt sted at lande, når man har brug for varme, mad og
-          menneskelighed
+      <div class="lg:col-start-1 lg:col-end-6 pb-[10px] lg:pb-[20px]">
+        <Heading>Værestedet</Heading>
+        <Heading htmlheading="statement" size="statement">
+          Et trygt fællesskab med varme, mad og nærvær
         </Heading>
 
         <Text stylingclasses="mt-[20px]">
@@ -458,7 +443,7 @@ import NewsCard from "../components/NewsCard.astro";
           hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
           grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
           nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
-          noget. Her får man:
+          noget.
         </Text>
       </div>
 
@@ -503,7 +488,7 @@ import NewsCard from "../components/NewsCard.astro";
     </section>
 
     <!-- NYHEDSBREV -->
-    <section id="nyhedsbrev" class="px-4 lg:px-[60px] py-[100px]">
+    <section id="nyhedsbrev" class="px-4 lg:px-[60px] py-[96px]">
       <NewsletterSignUp />
     </section>
   </main>
