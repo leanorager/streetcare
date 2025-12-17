@@ -439,7 +439,9 @@ import NewsCard from "../components/NewsCard.astro";
       id="vaerestedet"
       class="bg-light-grey px-4 py-[96px] lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
     >
-      <div class="lg:col-start-1 lg:col-end-6 pb-[10px] lg:pb-[20px]">
+      <div
+        class="lg:col-start-1 lg:col-end-6 pb-[10px] lg:pb-[20px] max-w-[600px]"
+      >
         <Heading>Værestedet</Heading>
         <Heading htmlheading="statement" size="statement">
           Et trygt fællesskab med varme, mad og nærvær
@@ -468,30 +470,35 @@ import NewsCard from "../components/NewsCard.astro";
         </Text>
       </div>
 
-      <Bullet
-        icon="cutlery.svg"
-        heading="Gratis mad"
-        text="Og kolde og varme drikke til at fylde depoterne op."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
-      />
-      <Bullet
-        icon="two-people.svg"
-        heading="Fællesskab"
-        text="I et roligt og trygt rum uden krav."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
-      />
-      <Bullet
-        icon="talking.svg"
-        heading="Samtaler"
-        text="Med frivillige og andre bekendtskaber."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
-      />
-      <Bullet
-        icon="disco.svg"
-        heading="Arrangementer"
-        text="Såsom musik, banko og quizzer."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
-      />
+      <!-- BULLETS WRAPPER -->
+      <div
+        class="md:grid md:grid-cols-2 md:gap-x-6 md:gap-y-[40px] lg:contents"
+      >
+        <Bullet
+          icon="cutlery.svg"
+          heading="Gratis mad"
+          text="Og kolde og varme drikke til at fylde depoterne op."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
+        />
+        <Bullet
+          icon="two-people.svg"
+          heading="Fællesskab"
+          text="I et roligt og trygt rum uden krav."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
+        />
+        <Bullet
+          icon="talking.svg"
+          heading="Samtaler"
+          text="Med frivillige og andre bekendtskaber."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
+        />
+        <Bullet
+          icon="disco.svg"
+          heading="Arrangementer"
+          text="Såsom musik, banko og quizzer."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
+        />
+      </div>
     </section>
 
     <!-- NYHEDSBREV -->
