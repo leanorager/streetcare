@@ -225,7 +225,7 @@ import NewsCard from "../components/NewsCard.astro";
     </section>
 
     <!-- NYHEDER -->
-    <section class="bg-off-white px-4 py-[96px] lg:px-[60px]">
+    <section id="nyheder" class="bg-off-white px-4 py-[96px] lg:px-[60px]">
       <!-- Header -->
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-6">
@@ -283,7 +283,8 @@ import NewsCard from "../components/NewsCard.astro";
       <div
         data-carousel
         class="mt-8 overflow-x-auto scroll-smooth snap-x snap-mandatory
-               [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+         [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+         -mr-4 lg:-mr-[60px]"
       >
         <div
           data-carousel-track
