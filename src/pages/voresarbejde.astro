@@ -18,7 +18,7 @@ import SubtleLink from "../components/SubtleLink.astro";
   <HeroCard
     title="Vores arbejde"
     subtitle="Små handlinger, store forskelle – hver eneste dag"
-    imageSrc="/img/voresArbejde.png"
+    imageSrc="/img/volunteer-care.webp"
     imageAlt="Frivillige hos Street Care, der smiler sammen"
   />
   <!-- HEROCARD SLUT -->
@@ -27,20 +27,22 @@ import SubtleLink from "../components/SubtleLink.astro";
       id="gadeplansarbejde"
       class="mx-4 mt-[96px] lg:mt-0 lg:mx-[60px]
              grid grid-cols-5
-             lg:grid-cols-12 lg:gap-[20px]"
+             lg:grid-cols-12 lg:gap-[20px] lg:pb-[72px]"
     >
       <!-- VENSTRE BLOK -->
-      <div class="col-span-5 my-[px] lg:my-[260px] lg:col-start-1 lg:col-end-6">
+      <div
+        class="col-span-5 my-[px] lg:mt-[100px] lg:col-start-1 lg:col-end-6 max-w-[600px]"
+      >
         <Heading>Opsøgende gadeplansarbejde</Heading>
 
-        <Heading htmlheading="statement" size="statement">
+        <Heading htmlheading="h4" size="statement">
           Vi møder mennesker på gaden – i øjenhøjde og i hverdagen
         </Heading>
       </div>
 
       <!-- HØJRE BLOK -->
       <div
-        class="col-span-5 lg:col-start-7 lg:col-end-13 lg:mt-[260px] mt-[20px] mb-[40px] lg:mb-0"
+        class="col-span-5 lg:col-start-7 lg:col-end-13 lg:mt-[100px] mt-[20px] mb-[40px] lg:mb-0"
       >
         <!-- Mindre spacing på mobil, større på desktop -->
         <Text stylingclasses="mt-[0px] lg:mt-[30px]">
@@ -49,7 +51,7 @@ import SubtleLink from "../components/SubtleLink.astro";
           tryghed. Derudover kører vi rundt i København på vores
           Christianiacykel, hvor vi tilbyder gratis varme drikke.
         </Text>
-        <div class="lg:grid lg:grid-cols-2 lg:gap-[20px]">
+        <div class="md:grid md:grid-cols-2 md:gap-[20px]">
           <div>
             <Heading
               htmlheading="h6"
@@ -85,7 +87,7 @@ import SubtleLink from "../components/SubtleLink.astro";
       </div>
     </section>
 
-    <img src="/img/ourwork1.png" class="w-full lg:h-[539px] object-cover" />
+    <img src="/img/cargo-bike.webp" class="w-full lg:h-[539px] object-cover" />
 
     <section
       id="gadeplansarbejde"
@@ -94,8 +96,8 @@ import SubtleLink from "../components/SubtleLink.astro";
              lg:grid-cols-12"
     >
       <!-- VENSTRE BLOK -->
-      <div class="col-span-5 lg:col-span-7">
-        <Heading htmlheading="statement" size="statement">
+      <div class="col-span-5 lg:col-span-7 max-w-[600px]">
+        <Heading htmlheading="h4" size="statement">
           Midt i byens støj finder vi dem, der er glemt.
           <span class="text-[var(--color-grey)]">
             {" "}
@@ -127,22 +129,23 @@ import SubtleLink from "../components/SubtleLink.astro";
       class="bg-light-grey px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px] py-[96px]"
     >
       <div class="lg:col-start-1 lg:col-end-6">
-        <Heading> Værestedet </Heading>
-        <Heading htmlheading="statement" size="statement">
-          Et trygt fællesskab med varme, mad og nærvær
-        </Heading>
+        <div class="max-w-[600px]">
+          <Heading> Værestedet </Heading>
+          <Heading htmlheading="h4" size="statement">
+            Et trygt fællesskab med varme, mad og nærvær
+          </Heading>
 
+          {/* Mobil 40px, laptop 20px */}
+          <Text stylingclasses="mt-[20px]">
+            Vores værested på Frederiksberg er et åbent og trygt fællesskab for
+            hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
+            grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
+            nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
+            noget. Her får man:
+          </Text>
+        </div>
         {/* Mobil 40px, laptop 20px */}
-        <Text stylingclasses="mt-[40px] lg:mt-[20px]">
-          Vores værested på Frederiksberg er et åbent og trygt fællesskab for
-          hjemløse og udsatte, hvor man kan puste ud, blive mødt i øjenhøjde,
-          grine lidt og få en pause fra gaden og hverdagens pres. Et sted med
-          nærvær, ro og varme – et frirum, hvor relationer og omsorg betyder
-          noget. Her får man:
-        </Text>
-
-        {/* Mobil 40px, laptop 20px */}
-        <div class="mt-[40px] lg:mt-[20px]">
+        <div class="mt-[20px]">
           <CheckList
             title="Særlige arrangementer i december:"
             iconSrc="/svg/calendar.svg"
@@ -155,7 +158,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         </div>
       </div>
 
-      <div class="mt-[96px] lg:mt-0 lg:col-start-9 lg:col-end-13">
+      <div class="mt-[50px] lg:mt-0 lg:col-start-9 lg:col-end-13">
         <img
           src="/img/vaerestedet.webp"
           alt="Værestedet Street Care"
@@ -170,43 +173,48 @@ import SubtleLink from "../components/SubtleLink.astro";
         </Text>
       </div>
 
-      <Bullet
-        icon="cutlery.svg"
-        heading="Gratis mad"
-        text="Og kolde og varme drikke til at fylde depoterne op."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
-      />
-      <Bullet
-        icon="two-people.svg"
-        heading="Fællesskab"
-        text="I et roligt og trygt rum uden krav."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
-      />
-      <Bullet
-        icon="talking.svg"
-        heading="Samtaler"
-        text="Med frivillige og andre bekendtskaber."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
-      />
-      <Bullet
-        icon="disco.svg"
-        heading="Arrangementer"
-        text="Såsom musik, banko og quizzer."
-        stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
-      />
+      <!-- BULLETS WRAPPER -->
+      <div
+        class="md:grid md:grid-cols-2 md:gap-x-6 md:gap-y-[40px] lg:contents"
+      >
+        <Bullet
+          icon="cutlery.svg"
+          heading="Gratis mad"
+          text="Og kolde og varme drikke til at fylde depoterne op."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-1 lg:col-end-4"
+        />
+        <Bullet
+          icon="two-people.svg"
+          heading="Fællesskab"
+          text="I et roligt og trygt rum uden krav."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-4 lg:col-end-7"
+        />
+        <Bullet
+          icon="talking.svg"
+          heading="Samtaler"
+          text="Med frivillige og andre bekendtskaber."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-7 lg:col-end-10"
+        />
+        <Bullet
+          icon="disco.svg"
+          heading="Arrangementer"
+          text="Såsom musik, banko og quizzer."
+          stylingclasses="pt-[40px] lg:pt-[60px] lg:col-start-10 lg:col-end-13"
+        />
+      </div>
     </section>
 
     <section id="faellesspisning" class="my-[96px] px-4 lg:px-[60px]">
       <!-- TOP: TEKSTGRID -->
       <div
         class="grid grid-cols-5 gap-6
-           lg:grid-cols-12 lg:gap-[20px]"
+           lg:grid-cols-12 lg:gap-[20px] max-w-[600px] lg:max-w-full"
       >
         <!-- VENSTRE: label + heading -->
         <div class="col-span-5 lg:col-start-1 lg:col-end-6">
           <Heading>Fællesspisning</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Fællesskab begynder ofte med et måltid
           </Heading>
         </div>
@@ -239,7 +247,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <!-- BILLEDE 1 -->
         <div class="lg:col-span-6">
           <img
-            src="/img/grillin.png"
+            src="/img/communitymeal-1.webp"
             alt="Fællesspisning udendørs"
             loading="lazy"
             class="block w-full h-[260px] md:h-[420px] lg:h-[686px] object-cover"
@@ -249,7 +257,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <!-- BILLEDE 2 -->
         <div class="lg:col-span-6">
           <img
-            src="/img/cookin.png"
+            src="/img/communitymeal-2.webp"
             alt="Madlavning til fællesspisning"
             loading="lazy"
             class="block w-full h-[260px] md:h-[420px] lg:h-[768px] object-cover"
@@ -268,24 +276,25 @@ import SubtleLink from "../components/SubtleLink.astro";
       >
         <!-- VENSTRE: label + heading + brødtekst + checklist -->
         <div class="col-span-5 lg:col-start-1 lg:col-end-6">
-          <Heading> Aktiviteter & ture </Heading>
+          <div class="max-w-[600px]">
+            <Heading> Aktiviteter & ture </Heading>
 
-          <Heading htmlheading="statement" size="statement">
-            Oplevelser, der giver glæde – og håb for fremtiden
-          </Heading>
+            <Heading htmlheading="h4" size="statement">
+              Oplevelser, der giver glæde – og håb for fremtiden
+            </Heading>
 
-          <Text
-            teksttype="p_base_reg"
-            stylingclasses="text-dark-grey mt-[20px]"
-          >
-            Vi arrangerer både små og store aktiviteter for mennesker, der
-            sjældent får mulighed for en pause fra hverdagen. Formålet med dette
-            er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor man
-            finder ny glæde ved og for fremtiden. For mange er disse ture et
-            højdepunkt – en dag uden bekymringer og med plads til at mærke livet
-            igen.
-          </Text>
-
+            <Text
+              teksttype="p_base_reg"
+              stylingclasses="text-dark-grey mt-[20px]"
+            >
+              Vi arrangerer både små og store aktiviteter for mennesker, der
+              sjældent får mulighed for en pause fra hverdagen. Formålet med
+              dette er, at tilbyde sunde, sjove og mindeværdige oplevelser, hvor
+              man finder ny glæde ved og for fremtiden. For mange er disse ture
+              et højdepunkt – en dag uden bekymringer og med plads til at mærke
+              livet igen.
+            </Text>
+          </div>
           <div class="mt-[20px] gap-[10px]">
             <CheckList
               title="Det kan være:"
@@ -303,8 +312,8 @@ import SubtleLink from "../components/SubtleLink.astro";
         <!-- HØJRE: billede -->
         <div class="col-span-5 lg:col-start-7 lg:col-end-13 mt-[40px] lg:mt-0">
           <img
-            src="/img/huggingHomeless.png"
-            alt="Aktiviteter og ture"
+            src="/img/community-events-2.webp"
+            alt="Hjemløse til koncert"
             loading="lazy"
             class="block w-full object-cover object-top max-h-[373px] lg:max-h-[685px]"
           />
@@ -321,10 +330,12 @@ import SubtleLink from "../components/SubtleLink.astro";
     >
       <div class="lg:grid lg:grid-cols-12">
         {/* VENSTRE: emnetekst + stor heading */}
-        <div class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px]">
+        <div
+          class="lg:col-span-8 lg:col-start-1 pb-10 lg:pb-[20px] max-w-[600px] lg:max-w-full"
+        >
           <Heading>Mentor- og bisidderstøtte</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Vi går vejen sammen, når systemet bliver uoverskueligt.
             <span class="text-[var(--color-grey)]">
               {" "}
@@ -338,46 +349,46 @@ import SubtleLink from "../components/SubtleLink.astro";
         <div
           class="lg:col-span-12
         space-y-[5px]
-        lg:space-y-0
-        lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+        md:space-y-0
+        md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-[60px] md:gap-y-[12px]"
         >
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Følgeskab til møder"
             text="Når systemet bliver for meget, går vi med dig."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
 
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Brev- og myndighedsforståelse"
             text="Vi hjælper med at skabe overblik i papirerne."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
 
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Samtaler og nærvær"
             text="En kop kaffe kan være starten på forandring."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
 
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Støtte gennem svære perioder"
             text="Vi binder trådene sammen, når alt falder fra hinanden."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
 
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Besøg i hjemmet"
             text="Vi kommer til dig, når du ikke kan komme til os."
             stylingclasses="pt-[40px] lg:pt-[60px]"
           />
 
           <Bullet
-            icon="checkmark.svg"
+            icon="checkmark-2.svg"
             heading="Støtte under indlæggelse"
             text="Vi er med, når du har brug for tryghed i behandlingen."
             stylingclasses="pt-[40px] lg:pt-[60px]"
@@ -395,11 +406,13 @@ import SubtleLink from "../components/SubtleLink.astro";
           class="bg-red text-white
         w-[570px] max-w-full
         rounded-[16px]
-        p-10
+        px-[20px] py-[40px] lg:px-[50px]
         flex flex-col gap-[20px]"
         >
           <!-- Titel -->
-          <Heading htmlheading="h4" size="h4"> Telefonrådgivning </Heading>
+          <Heading htmlheading="h4" size="h4" stylingclasses="break-words">
+            Telefonrådgivning
+          </Heading>
           <div>
             <!-- Lille underlinje (kort, “fed”) -->
             <Heading

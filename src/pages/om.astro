@@ -11,12 +11,12 @@ import SubtleLink from "../components/SubtleLink.astro";
 
 <MainLayout title="Om Street Care">
   <main>
-    <section id="hero" class="lg:pb-[140px]">
+    <section id="hero">
       <!-- HEROCARD START -->
       <HeroCard
         title="Om Street Care"
         subtitle="Hvad vi står for & hvem vi står med"
-        imageSrc="/img/om.webp"
+        imageSrc="/img/about-people.webp"
         imageAlt="Frivillig hos Street Care taler i mikrofon for en gruppe mennesker"
       />
       <!-- HEROCARD SLUT -->
@@ -24,15 +24,15 @@ import SubtleLink from "../components/SubtleLink.astro";
     <section id="om" class="px-4 pt-[96px] lg:px-[60px]">
       {/* Top: overskrift + brødtekst */}
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
-        <div class="lg:col-start-1 lg:col-end-6">
+        <div class="lg:col-start-1 lg:col-end-6 max-w-[600px] lg:max-w-full">
           <Heading>Om Street Care</Heading>
-          <Heading htmlheading="statement" size="statement"
+          <Heading htmlheading="h4" size="statement"
             >Mennesker er noget særligt – og ingen skal stå alene</Heading
           >
         </div>
 
         <Text
-          stylingclasses="py-[40px] lg:py-0 lg:pt-[30px] lg:col-start-7 lg:col-end-13"
+          stylingclasses="py-[20px] lg:py-0 lg:pt-[30px] lg:col-start-7 lg:col-end-13 max-w-[600px] lg:max-w-full"
         >
           Street Care er en non-profit organisation, der siden 2020 har arbejdet
           blandt Københavns mest udsatte. Vi møder mennesker dér, hvor de er –
@@ -49,7 +49,7 @@ import SubtleLink from "../components/SubtleLink.astro";
       <div class="mt-[40px] lg:mt-[52px] lg:grid lg:grid-cols-12 lg:gap-[20px]">
         {/* Billede */}
         <img
-          src="/img/om-kirke.png"
+          src="/img/faith-care.webp"
           alt="Hjemløs mand står med sin hund foran kirke"
           class="w-full h-auto object-cover lg:col-start-1 lg:col-end-13"
         />
@@ -59,7 +59,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         }
         <article
           class="mt-8 bg-red rounded-[10px] px-[20px] py-[40px] lg:px-[50px] text-white
-             lg:col-start-7 lg:col-end-13 lg:-mt-[160px] lg:z-10"
+             lg:col-start-7 lg:col-end-13 lg:-mt-[160px] lg:z-10 max-w-[400px] lg:max-w-none mx-auto lg:mx-0"
         >
           <Heading htmlheading="h4" size="h4">Kontakt os</Heading>
 
@@ -99,7 +99,7 @@ import SubtleLink from "../components/SubtleLink.astro";
               <Heading
                 htmlheading="h6"
                 size="h6"
-                stylingclasses="text-white pt-[30px]"
+                stylingclasses="text-white pt-[30px] break-words"
               >
                 Virksomhedsadresse:
               </Heading>
@@ -123,9 +123,9 @@ import SubtleLink from "../components/SubtleLink.astro";
     <section id="vision" class="px-4 py-[96px] lg:px-[60px]">
       <div class="lg:grid lg:grid-cols-12 lg:gap-[20px]">
         <Heading
-          htmlheading="statement"
+          htmlheading="h4"
           size="statement"
-          stylingclasses="lg:col-start-1 lg:col-end-8"
+          stylingclasses="lg:col-start-1 lg:col-end-8 max-w-[600px] lg:max-w-full"
         >
           Midt i byens støj finder vi dem, der er glemt.
           <span class="text-[var(--color-grey)]">
@@ -144,7 +144,8 @@ import SubtleLink from "../components/SubtleLink.astro";
       <!-- BULLETS -->
       <div
         class="lg:col-span-12
-                 lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
+    md:grid md:grid-cols-2 md:gap-x-[40px] md:gap-y-[12px]
+    lg:grid lg:grid-cols-3 lg:gap-x-[60px] lg:gap-y-[12px]"
       >
         <Bullet
           icon="formaal.svg"
