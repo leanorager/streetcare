@@ -369,7 +369,7 @@ import HeroCard from "../components/HeroCard.astro";
           >
             <div class="snap-start shrink-0 lg:shrink lg:flex-1 pl-4 lg:pl-0">
               <NewsCard
-                imageSrc="/img/anden-stoette1.webp"
+                imageSrc="/img/newscard-5.webp"
                 imageAlt="Frivillig kvinde med Street Care t-shirt"
                 labelText="Frivillighed"
                 labelHref="/blivfrivillig"
@@ -381,7 +381,7 @@ import HeroCard from "../components/HeroCard.astro";
 
             <div class="snap-start shrink-0 lg:shrink lg:flex-1">
               <NewsCard
-                imageSrc="/img/anden-stoette2.webp"
+                imageSrc="/img/newscard-6.webp"
                 imageAlt="Køkkenbord med madvarer"
                 labelText="Anden donation"
                 labelHref="/andendonation"
@@ -393,7 +393,7 @@ import HeroCard from "../components/HeroCard.astro";
 
             <div class="snap-start shrink-0 lg:shrink lg:flex-1">
               <NewsCard
-                imageSrc="/img/anden-stoette3.webp"
+                imageSrc="/img/newscard-7.webp"
                 imageAlt="Kvinde med Street Care t-shirt taler i mikrofon foran en gruppe mennesker"
                 labelText="Samarbejde"
                 labelHref="/samarbejde"
@@ -428,11 +428,13 @@ import HeroCard from "../components/HeroCard.astro";
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             1 ud af 3
           </Heading>
-          <Text styllingclasses="text-dark-grey">
-            som vi møder på gaden, har ikke talt med nogen den dag — før vi
-            kommer forbi. Din støtte gør det muligt, at ingen behøver gå igennem
-            dagen uden et menneske, der ser dem.
-          </Text>
+          <div class="max-w-[600px]">
+            <Text styllingclasses="text-dark-grey">
+              som vi møder på gaden, har ikke talt med nogen den dag — før vi
+              kommer forbi. Din støtte gør det muligt, at ingen behøver gå
+              igennem dagen uden et menneske, der ser dem.
+            </Text>
+          </div>
         </div>
         <div
           class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
@@ -440,10 +442,12 @@ import HeroCard from "../components/HeroCard.astro";
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             150kr
           </Heading>
-          <Text styllingclasses="text-dark-grey">
-            Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
-            kulden. For nogen er det deres første måltid i flere dage.
-          </Text>
+          <div class="max-w-[600px]">
+            <Text styllingclasses="text-dark-grey">
+              Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
+              kulden. For nogen er det deres første måltid i flere dage.
+            </Text>
+          </div>
         </div>
         <div
           class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
@@ -451,27 +455,31 @@ import HeroCard from "../components/HeroCard.astro";
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             40 udsatte
           </Heading>
-          <Text styllingclasses="text-dark-grey">
-            Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
-            behandling, bolig, økonomi. Mange af dem ville aldrig være nået frem
-            uden bisidderstøtte.
-          </Text>
+          <div class="max-w-[600px]">
+            <Text styllingclasses="text-dark-grey">
+              Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
+              behandling, bolig, økonomi. Mange af dem ville aldrig være nået
+              frem uden bisidderstøtte.
+            </Text>
+          </div>
         </div>
         <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             7 ud af 10
           </Heading>
-          <Text styllingclasses="text-dark-grey">
-            7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt af
-            resten af samfundet. Din støtte viser dem, at de ikke er alene.
-          </Text>
+          <div class="max-w-[600px]">
+            <Text styllingclasses="text-dark-grey">
+              7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt
+              af resten af samfundet. Din støtte viser dem, at de ikke er alene.
+            </Text>
+          </div>
         </div>
       </section>
       <section
         id="pengene"
         class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
       >
-        <div class="lg:col-start-1 lg:col-end-6">
+        <div class="lg:col-start-1 lg:col-end-6 max-w-[600px] lg:max-w-full">
           <div>
             <Heading>Hvad går pengene til?</Heading>
             <Heading
@@ -494,78 +502,83 @@ import HeroCard from "../components/HeroCard.astro";
             <Link href="/aarsregnskab" variant="action"> Se årsregnskabet</Link>
           </div>
         </div>
-        <div class="mt-[20px] lg:col-start-1 lg:col-end-7 lg:mt-0">
-          <img
-            src="/img/pengene1.webp"
-            alt="Kvinde cykler på ladcykel med Street Care logo"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
-          >
-        </div>
-        <div class="lg:col-start-7 lg:col-end-10">
-          <img
-            src="/img/pengene2.webp"
-            alt="Værestedet Street Care"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >2 / Værested med gratis mad, varme drikke og fællesskab</Text
-          >
-        </div>
-        <div class="lg:col-start-10 lg:col-end-13">
-          <img
-            src="/img/pengene3.webp"
-            alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
-          >
-        </div>
-        <div class="lg:col-start-1 lg:col-end-4">
-          <img
-            src="/img/pengene4.webp"
-            alt="Fire glade frivillige med Street Care t-shirts"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem systemet</Text
-          >
-        </div>
-        <div class="lg:col-start-4 lg:col-end-10">
-          <img
-            src="/img/pengene5.webp"
-            alt="To glade hjemløse personer til koncert"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
-          >
-        </div>
-        <div class="lg:col-start-10 lg:col-end-13">
-          <img
-            src="/img/pengene6.webp"
-            alt="Nærbillede af hjemløs mand med bedrøvet blik"
-            class="w-full h-full object-cover"
-          />
-          <Text
-            teksttype="p_large_med"
-            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-            >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet brænder
-            på</Text
-          >
+        <div
+          class="md:grid md:grid-cols-2 md:gap-[20px] md:pt-[40px] lg:contents"
+        >
+          <div class="mt-[20px] md:mt-0 lg:col-start-1 lg:col-end-7 lg:mt-0">
+            <img
+              src="/img/annualreport-1.webp"
+              alt="Kvinde cykler på ladcykel med Street Care logo"
+              class="w-full h-auto object-cover md:aspect-[333/238] lg:aspect-auto"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
+            >
+          </div>
+          <div class="lg:col-start-7 lg:col-end-10">
+            <img
+              src="/img/annualreport-2.webp"
+              alt="Værestedet Street Care"
+              class="w-full h-auto object-cover"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >2 / Værested med gratis mad, varme drikke og fællesskab</Text
+            >
+          </div>
+          <div class="lg:col-start-10 lg:col-end-13">
+            <img
+              src="/img/annualreport-3.webp"
+              alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
+              class="w-full h-auto object-cover"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
+            >
+          </div>
+          <div class="lg:col-start-1 lg:col-end-4">
+            <img
+              src="/img/annualreport-4.webp"
+              alt="Fire glade frivillige med Street Care t-shirts"
+              class="w-full h-auto object-cover"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem
+              systemet</Text
+            >
+          </div>
+          <div class="lg:col-start-4 lg:col-end-10">
+            <img
+              src="/img/annualreport-5.webp"
+              alt="To glade hjemløse personer til koncert"
+              class="w-full h-auto object-cover md:aspect-[333/238] lg:aspect-auto"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
+            >
+          </div>
+          <div class="lg:col-start-10 lg:col-end-13">
+            <img
+              src="/img/annualreport-6.webp"
+              alt="Nærbillede af hjemløs mand med bedrøvet blik"
+              class="w-full h-auto object-cover"
+            />
+            <Text
+              teksttype="p_large_med"
+              stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+              >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet
+              brænder på</Text
+            >
+          </div>
         </div>
       </section>
     </body>
