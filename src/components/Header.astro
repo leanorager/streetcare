@@ -78,33 +78,77 @@ const currentPath = pathname !== "/" ? pathname.replace(/\/$/, "") : "/";
 
   <!-- Mobile dropdown -->
   <nav
-    class="relative z-50 lg:hidden border-b border-t border-dark-grey bg-off-white"
+    class="relative z-50 lg:hidden border-grey bg-off-white"
     x-show="showmenu"
     x-cloak
     x-transition
     x-on:click.outside="showmenu = false"
   >
-    <div class="px-4 py-6 flex flex-col gap-6 items-end text-right">
-      <SubtleLink href="/voresarbejde" x-on:click="showmenu = false">
-        Vores arbejde
-      </SubtleLink>
+    <div class="px-4 pt-[20px] pb-[40px] flex flex-col gap-2">
+      <a
+        href="/voresarbejde"
+        class="flex items-center justify-between py-[12px] border-b border-grey"
+        x-on:click="showmenu = false"
+      >
+        <span class="p_base_med text-black">Vores arbejde</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-dark-grey"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </a>
 
-      <SubtleLink href="/blivfrivillig" x-on:click="showmenu = false">
-        Bliv frivillig
-      </SubtleLink>
+      <a
+        href="/blivfrivillig"
+        class="flex items-center justify-between py-[12px] border-b border-dark-grey/30"
+        x-on:click="showmenu = false"
+      >
+        <span class="p_base_med text-black">Bliv frivillig</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-dark-grey"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </a>
 
-      <SubtleLink href="/om" x-on:click="showmenu = false"> Om os </SubtleLink>
-
-      <div class="pt-2">
-        <div class="flex h-full items-center">
-          <Button
-            variant="solid-red"
-            href="/stoet"
-            x-on:click="showmenu = false"
-          >
-            Støt nu
-          </Button>
-        </div>
+      <a
+        href="/om"
+        class="flex items-center justify-between py-[12px] border-b border-dark-grey/30"
+        x-on:click="showmenu = false"
+      >
+        <span class="p_base_med text-black">Om os</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-dark-grey"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </a>
+      <!-- CTA row -->
+      <div class="pt-[40px] place-self-end">
+        <Button variant="solid-red" href="/stoet" x-on:click="showmenu = false">
+          Støt nu
+        </Button>
       </div>
     </div>
   </nav>
