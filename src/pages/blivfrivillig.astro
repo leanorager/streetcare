@@ -24,9 +24,9 @@ import SubtleLink from "../components/SubtleLink.astro";
       <!-- RØD BOKS (mobil: fuld bredde øverst, desktop: sticky venstre) -->
       <aside class="col-span-5 lg:col-span-5">
         <div
-          class="bg-red text-white w-full mt-[66px] lg:w-[570px] max-w-full rounded-[10px] px-[20px] py-[40px]
+          class="bg-red text-white w-full mt-[66px] lg:w-[570px] max-w-[430px] mx-auto rounded-[10px] px-[20px] py-[40px]
                  flex flex-col
-                 lg:sticky lg:top-[120px] lg:z-39 lg:px-[50px] lg:py[40px] lg:mb-[96px]"
+                 lg:sticky lg:top-[120px] lg:z-39 lg:px-[50px] lg:py[40px] lg:mb-[96px] xl:max-w-[520px]"
         >
           <Heading htmlheading="h4" size="h4" stylingclasses=" mb-[20px]">
             Klar til at tage det første skridt?
@@ -46,7 +46,9 @@ import SubtleLink from "../components/SubtleLink.astro";
             <SubtleLink href="tel:+45453142100">+45 31 14 21 00</SubtleLink>
           </div>
 
-          <div class="mt-auto flex justify-end gap-3 whitespace-nowrap">
+          <div
+            class="mt-[20px] flex justify-center xl:justify-end gap-3 whitespace-nowrap"
+          >
             <Button variant="outline-light" href="tel:+45453142100"
               >Ring til os</Button
             >
@@ -62,12 +64,12 @@ import SubtleLink from "../components/SubtleLink.astro";
 
       <!-- HØJRE SIDE MED ALT TEKSTINDHOLD -->
       <div
-        class="col-span-5 lg:col-span-6 my-[72px] gap-[72px] lg:mt-[240px] mb-[96px] lg:gap-[124px] flex flex-col"
+        class="col-span-5 lg:col-span-6 my-[72px] gap-[72px] lg:mt-[240px] mb-[96px] lg:gap-[124px] flex flex-col max-w-[520px] mx-auto"
       >
         <!-- INTRO -->
         <section>
           <Heading> Bliv frivillig </Heading>
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Vær med dér, hvor din tid gør en konkret forskel
           </Heading>
 
@@ -84,7 +86,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <section>
           <Heading>Hvad laver man som frivillig?</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Som frivillig kan du blive en del af én eller flere af vores
             indsatser
           </Heading>
@@ -127,7 +129,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <section>
           <Heading>Hvad kræver det at være frivillig?</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Vi leder efter frivillige, som:
           </Heading>
 
@@ -165,7 +167,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <section>
           <Heading>Hvad får du ud af at være frivillig?</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Som frivillig hos Street Care får du:
           </Heading>
 
@@ -213,7 +215,7 @@ import SubtleLink from "../components/SubtleLink.astro";
         <section>
           <Heading>Hvem søger vi?</Heading>
 
-          <Heading htmlheading="statement" size="statement">
+          <Heading htmlheading="h4" size="statement">
             Vi søger både dig, der:
           </Heading>
 
