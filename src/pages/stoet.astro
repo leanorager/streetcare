@@ -13,7 +13,7 @@ import HeroCard from "../components/HeroCard.astro";
     <body>
       <section
         id="hero"
-        class="px-4 lg:px-[60px] pt-[96px] bg-off-white lg:bg-white lg:grid lg:grid-cols-12"
+        class="px-4 lg:px-[60px] pt-[96px] bg-off-white lg:bg-white lg:grid lg:grid-cols-12 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
       >
         <!-- Background layer -->
         <div
@@ -22,7 +22,9 @@ import HeroCard from "../components/HeroCard.astro";
         >
         </div>
 
-        <div class="lg:col-span-6 relative z-10">
+        <div
+          class="lg:col-span-6 relative z-10 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+        >
           <Heading htmlheading="h1" size="h1">Donér her</Heading>
           <Heading htmlheading="h2" size="h2" stylingclasses="my-[20px]">
             et lille beløb for dig, et vendepunkt for et menneske på gaden</Heading
@@ -341,9 +343,14 @@ import HeroCard from "../components/HeroCard.astro";
         </article>
       </section>
 
-      <section id="anden_stoette" class="px-4 py-[96px] lg:px-[60px]">
+      <section
+        id="anden_stoette"
+        class="px-4 py-[96px] lg:px-[60px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+      >
         {/* Heading */}
-        <div class="max-w-[900px] pb-[20px]">
+        <div
+          class="max-w-[900px] pb-[20px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+        >
           <Heading>Andre måder at støtte på</Heading>
 
           <Heading htmlheading="h4" size="statement">
@@ -365,7 +372,7 @@ import HeroCard from "../components/HeroCard.astro";
         pb-2
         lg:mx-0 lg:px-0
         lg:overflow-visible lg:pb-0
-        lg:flex lg:gap-[20px]"
+        lg:flex lg:gap-[20px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
           >
             <div class="snap-start shrink-0 lg:shrink lg:flex-1 pl-4 lg:pl-0">
               <NewsCard
@@ -407,10 +414,10 @@ import HeroCard from "../components/HeroCard.astro";
       </section>
       <section
         id="vidste_du"
-        class="py-[96px] px-4 bg-off-white lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
+        class="py-[96px] px-4 bg-off-white lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
       >
         <div
-          class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px]"
+          class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
         >
           <Heading
             htmlheading="h5"
@@ -423,21 +430,20 @@ import HeroCard from "../components/HeroCard.astro";
         </div>
 
         <div
-          class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+          class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
         >
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             1 ud af 3
           </Heading>
           <div class="max-w-[600px]">
             <Text styllingclasses="text-dark-grey">
-              som vi møder på gaden, har ikke talt med nogen den dag — før vi
-              kommer forbi. Din støtte gør det muligt, at ingen behøver gå
-              igennem dagen uden et menneske, der ser dem.
+              Af dem vi møder på gaden, har ikke talt med nogen den dag - før vi
+              kommer forbi.
             </Text>
           </div>
         </div>
         <div
-          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
         >
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             150kr
@@ -445,41 +451,42 @@ import HeroCard from "../components/HeroCard.astro";
           <div class="max-w-[600px]">
             <Text styllingclasses="text-dark-grey">
               Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
-              kulden. For nogen er det deres første måltid i flere dage.
+              kulden.
             </Text>
           </div>
         </div>
         <div
-          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
+          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
         >
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             40 udsatte
           </Heading>
           <div class="max-w-[600px]">
             <Text styllingclasses="text-dark-grey">
-              Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
-              behandling, bolig, økonomi. Mange af dem ville aldrig være nået
-              frem uden bisidderstøtte.
+              Bliver hver måned hjulpet gennem kommunale møder af Street Care
             </Text>
           </div>
         </div>
-        <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
+        <div
+          class="lg:col-start-10 lg:col-end-13 lg:pr-[30px] opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+        >
           <Heading htmlheading="h4" size="statement" stylingclasses="mb-[16px]">
             7 ud af 10
           </Heading>
           <div class="max-w-[600px]">
             <Text styllingclasses="text-dark-grey">
-              7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt
-              af resten af samfundet. Din støtte viser dem, at de ikke er alene.
+              Fortæller os, at de ofte føler sig glemt af resten af samfundet.
             </Text>
           </div>
         </div>
       </section>
       <section
         id="pengene"
-        class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
+        class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
       >
-        <div class="lg:col-start-1 lg:col-end-6 max-w-[600px] lg:max-w-full">
+        <div
+          class="lg:col-start-1 lg:col-end-6 max-w-[600px] lg:max-w-full opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+        >
           <div>
             <Heading>Hvad går pengene til?</Heading>
             <Heading
@@ -503,9 +510,11 @@ import HeroCard from "../components/HeroCard.astro";
           </div>
         </div>
         <div
-          class="md:grid md:grid-cols-2 md:gap-[20px] md:pt-[40px] lg:contents"
+          class="md:grid md:grid-cols-2 md:gap-[20px] md:pt-[40px] lg:contents opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
         >
-          <div class="mt-[20px] md:mt-0 lg:col-start-1 lg:col-end-7 lg:mt-0">
+          <div
+            class="mt-[20px] md:mt-0 lg:col-start-1 lg:col-end-7 lg:mt-0 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-300"
+          >
             <img
               src="/img/annualreport-1.webp"
               alt="Kvinde cykler på ladcykel med Street Care logo"
@@ -517,7 +526,9 @@ import HeroCard from "../components/HeroCard.astro";
               >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
             >
           </div>
-          <div class="lg:col-start-7 lg:col-end-10">
+          <div
+            class="lg:col-start-7 lg:col-end-10 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-400"
+          >
             <img
               src="/img/annualreport-2.webp"
               alt="Værestedet Street Care"
@@ -529,7 +540,9 @@ import HeroCard from "../components/HeroCard.astro";
               >2 / Værested med gratis mad, varme drikke og fællesskab</Text
             >
           </div>
-          <div class="lg:col-start-10 lg:col-end-13">
+          <div
+            class="lg:col-start-10 lg:col-end-13 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-500"
+          >
             <img
               src="/img/annualreport-3.webp"
               alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
@@ -541,7 +554,9 @@ import HeroCard from "../components/HeroCard.astro";
               >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
             >
           </div>
-          <div class="lg:col-start-1 lg:col-end-4">
+          <div
+            class="lg:col-start-1 lg:col-end-4 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-600"
+          >
             <img
               src="/img/annualreport-4.webp"
               alt="Fire glade frivillige med Street Care t-shirts"
@@ -554,7 +569,9 @@ import HeroCard from "../components/HeroCard.astro";
               systemet</Text
             >
           </div>
-          <div class="lg:col-start-4 lg:col-end-10">
+          <div
+            class="lg:col-start-4 lg:col-end-10 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-700"
+          >
             <img
               src="/img/annualreport-5.webp"
               alt="To glade hjemløse personer til koncert"
@@ -566,7 +583,9 @@ import HeroCard from "../components/HeroCard.astro";
               >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
             >
           </div>
-          <div class="lg:col-start-10 lg:col-end-13">
+          <div
+            class="lg:col-start-10 lg:col-end-13 opacity-0 intersect:opacity-100 intersect:animate-fade-up intersect:delay-800"
+          >
             <img
               src="/img/annualreport-6.webp"
               alt="Nærbillede af hjemløs mand med bedrøvet blik"
