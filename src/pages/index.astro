@@ -372,12 +372,12 @@ import NewsCard from "../components/NewsCard.astro";
     <section id="gadeplansarbejde">
       <div
         class="px-4 lg:px-[60px]
-      py-[96px]
-      grid grid-cols-5 gap-6
-      lg:grid-cols-12 lg:gap-[20px] lg:items-start"
+    py-[96px]
+    grid grid-cols-5 gap-6
+    lg:grid-cols-12 lg:gap-[20px] lg:items-start"
       >
         <!-- TEKSTBLOK -->
-        <div class="col-span-5 lg:col-span-5 flex flex-col">
+        <div class="col-span-5 lg:col-span-5 flex flex-col max-w-[600px]">
           <Heading htmlheading="h3" size="h3"> Gadeplansarbejde </Heading>
 
           <Heading
@@ -401,30 +401,35 @@ import NewsCard from "../components/NewsCard.astro";
           <Link href="/lokationer"> Se alle lokationer </Link>
         </div>
 
-        <!-- BILLEDE -->
-        <div class="col-span-5 lg:col-span-4">
-          <img
-            src="/img/huggingHomeless.png"
-            alt="Gadeplansarbejde"
-            class="w-full object-cover"
-          />
-        </div>
-
-        <!-- TIDER-KORT -->
+        <!-- WRAPPER: BILLEDE + TIDER (2 kolonner i md, samme i mobil + lg) -->
         <div
-          class="col-span-5 lg:col-span-3
-        bg-off-white rounded-[10px]
-        px-[20px] py-[40px] flex flex-col gap-[10px]"
+          class="col-span-5 md:grid md:grid-cols-2 md:gap-6 lg:contents items-start"
         >
-          <Heading htmlheading="h6" size="h6" stylingclasses="text-red">
-            Tider for gadeplansarbejde
-          </Heading>
+          <!-- BILLEDE -->
+          <div class="lg:col-span-4">
+            <img
+              src="/img/huggingHomeless.png"
+              alt="Gadeplansarbejde"
+              class="w-full h-[400px] object-top md:h-full object-cover"
+            />
+          </div>
 
-          <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
-            Tirsdag: 13.30–19.00<br />
-            Onsdag: 12.30–16.30<br />
-            Torsdag: 13.00–19.30
-          </Text>
+          <!-- TIDER-KORT -->
+          <div
+            class="lg:col-span-3
+        bg-off-white rounded-[10px]
+        px-[20px] py-[40px] flex flex-col gap-[10px] mt-[20px] md:mt-0 max-w-[450px] md:max-w-none mx-auto md:mx-0"
+          >
+            <Heading htmlheading="h6" size="h6" stylingclasses="text-red">
+              Tider for gadeplansarbejde
+            </Heading>
+
+            <Text teksttype="p_base_reg" stylingclasses="text-dark-grey">
+              Tirsdag: 13.30–19.00<br />
+              Onsdag: 12.30–16.30<br />
+              Torsdag: 13.00–19.30
+            </Text>
+          </div>
         </div>
       </div>
     </section>
