@@ -4,7 +4,7 @@ import Heading from "../components/Heading.astro";
 interface Props {
   title: string;
   subtitle: string;
-  imageSrc: string;
+  imageSrc?: string;
   imageAlt?: string;
   className?: string;
 }
@@ -20,10 +20,11 @@ const {
 
 <section class={`w-full bg-off-white h-auto lg:h-[583px] ${className}`}>
   <div class="h-full px-4 pt-12 lg:px-[60px] lg:pt-[80px]">
-    <!-- Mobil: 1 kolonne / Desktop: 12 kolonner -->
+    <!-- Mobil: 1 kolonne | Desktop: 12 kolonner -->
     <div class="grid grid-cols-1 lg:grid-cols-12 lg:h-full">
-      <!-- TEKST: 6 kolonner -->
-      <div class="lg:col-span-6">
+      
+      <!-- TEKST -->
+      <div class={imageSrc ? "lg:col-span-6" : "lg:col-span-12"}>
         <Heading htmlheading="h1" size="h1">
           {title}
         </Heading>
@@ -31,24 +32,30 @@ const {
         <Heading htmlheading="h2" size="h2" stylingclasses="mt-[20px]">
           {subtitle}
         </Heading>
+
+        <!-- Slot til fx donation-form, CTA, content -->
+        <slot />
       </div>
 
-      <!-- TOM KOLONNE -->
-      <div class="hidden lg:block lg:col-span-1"></div>
+      {imageSrc && (
+        <>
+          <!-- Spacer-kolonne -->
+          <div class="hidden lg:block lg:col-span-1"></div>
 
-      <!-- BILLEDE: 5 kolonner -->
-      <div
-        class="lg:col-span-5 mt-8 lg:mt-0 flex justify-center lg:justify-end"
-      >
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          loading="lazy"
-          class="w-full max-w-[570px]
-            aspect-[570/710] object-cover
-            lg:w-[570px] lg:h-[710px]"
-        />
-      </div>
+          <!-- BILLEDE -->
+          <div class="lg:col-span-5 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              loading="lazy"
+              class="w-full max-w-[570px]
+                     aspect-[570/710] object-cover
+                     lg:w-[570px] lg:h-[710px]"
+            />
+          </div>
+        </>
+      )}
+
     </div>
   </div>
 </section>

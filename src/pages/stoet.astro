@@ -4,249 +4,581 @@ import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import NewsCard from "../components/NewsCard.astro";
+import Button from "../components/Button.astro";
+import HeroCard from "../components/HeroCard.astro";
 ---
 
 <MainLayout title="Støt">
   <main>
-    <section id="hero"></section>
-    <section id="anden_stoette" class="px-4 py-[96px] lg:px-[60px]">
-      {/* Heading */}
-      <div class="max-w-[900px] pb-[20px]">
-        <Heading>Andre måder at støtte på</Heading>
+    <body>
+      <section id="hero">
+        <HeroCard
+          title="Om Street Care"
+          subtitle="Hvad vi står for & hvem vi står med"
+        >
+          <article
+            class="mt-8 md:mt-0 md:col-start-6 md:col-end-13 lg:col-start-8
+           bg-red rounded-[10px]
+           pt-[40px] px-[12px] pb-[40px]
+           md:p-[40px]
+           w-full max-w-[590px]
+           mx-auto md:mx-0"
+          >
+            <Heading
+              htmlheading="h4"
+              size="h4"
+              stylingclasses="text-center text-off-white"
+            >
+              Vælg donation
+            </Heading>
 
-        <Heading htmlheading="statement" size="statement">
-          Ikke alle bidrag er økonomiske.
-          <span class="text-[var(--color-grey)]">
-            {" "}
-            Vi har brug for mange typer støtte.
-          </span>
-        </Heading>
-      </div>
+            <form class="mt-[28px] text-off-white">
+              <div
+                class="grid grid-cols-6 md:grid-cols-12 gap-x-[20px] gap-y-[12px]"
+              >
+                <!-- Personoplysninger -->
+                <p
+                  class="col-span-6 md:col-span-12 font-semibold mt-[12px] mb-[8px]"
+                >
+                  Personoplysninger
+                </p>
 
-      {/* Cards */}
-      <div>
-        {/* Mobil: horisontal scroll */}
-        <div
-          class="-mx-4 px-4
+                <label class="col-span-3 md:col-span-6 text-sm">
+                  <span class="block mb-[6px]">Navn*</span>
+                  <input
+                    type="text"
+                    required
+                    autocomplete="name"
+                    placeholder="Indtast navn"
+                    class="w-full rounded-[5px] bg-white px-[20px] py-[10px] text-dark-grey
+                   border border-grey/30 outline-none focus:border-grey/60"
+                  />
+                </label>
+
+                <label class="col-span-3 md:col-span-6 text-sm">
+                  <span class="block mb-[6px]">Firmanavn</span>
+                  <input
+                    type="text"
+                    autocomplete="organization"
+                    placeholder="Indtast firmanavn"
+                    class="w-full rounded-[5px] bg-white px-[20px] py-[10px] text-dark-grey
+                   border border-grey/30 outline-none focus:border-grey/60"
+                  />
+                </label>
+
+                <label class="col-span-3 md:col-span-6 text-sm">
+                  <span class="block mb-[6px]">E-mail*</span>
+                  <input
+                    type="email"
+                    required
+                    autocomplete="email"
+                    placeholder="Indtast E-mail"
+                    class="w-full rounded-[5px] bg-white px-[20px] py-[10px] text-dark-grey
+                   border border-grey/30 outline-none focus:border-grey/60"
+                  />
+                </label>
+
+                <label class="col-span-3 md:col-span-6 text-sm">
+                  <span class="block mb-[6px]">Telefon nummer*</span>
+                  <input
+                    type="tel"
+                    required
+                    autocomplete="tel"
+                    placeholder="Indtast telefonnummer"
+                    class="w-full rounded-[5px] bg-white px-[20px] py-[10px] text-dark-grey
+                   border border-grey/30 outline-none focus:border-grey/60"
+                  />
+                </label>
+
+                <!-- Donationstype -->
+                <p
+                  class="col-span-6 md:col-span-12 font-semibold mt-[12px] mb-[8px]"
+                >
+                  Hvordan vil du donere?
+                </p>
+
+                <div
+                  class="col-span-6 md:col-span-12 flex flex-wrap gap-x-[24px] gap-y-[8px] text-[16px]"
+                >
+                  <label class="inline-flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="donation-type"
+                      value="one-time"
+                      class="accent-white"
+                      required
+                      checked
+                    />
+                    <span>Engangsbeløb</span>
+                  </label>
+
+                  <label class="inline-flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="donation-type"
+                      value="monthly"
+                      class="accent-white"
+                      required
+                    />
+                    <span>Månedlig donation</span>
+                  </label>
+                </div>
+
+                <!-- Faste beløb -->
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="50"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                   bg-white text-dark-grey font-medium
+                   transition-colors
+                   hover:bg-grey/50 hover:text-off-white
+                   peer-checked:bg-red
+                   peer-checked:text-off-white
+                   peer-checked:border-off-white border border-grey/30"
+                  >
+                    50 kr
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="100"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                      bg-white text-dark-grey font-medium transition-colors
+                      hover:bg-grey/50 hover:text-off-white
+                      peer-checked:bg-red peer-checked:text-off-white
+                      peer-checked:border-off-white border border-grey/30"
+                  >
+                    100 kr
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="150"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                      bg-white text-dark-grey font-medium transition-colors
+                      hover:bg-grey/50 hover:text-off-white
+                      peer-checked:bg-red peer-checked:text-off-white
+                      peer-checked:border-off-white border border-grey/30"
+                  >
+                    150 kr
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="200"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                      bg-white text-dark-grey font-medium transition-colors
+                      hover:bg-grey/50 hover:text-off-white
+                      peer-checked:bg-red peer-checked:text-off-white
+                      peer-checked:border-off-white border border-grey/30"
+                  >
+                    200 kr
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="300"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                      bg-white text-dark-grey font-medium transition-colors
+                      hover:bg-grey/50 hover:text-off-white
+                      peer-checked:bg-red peer-checked:text-off-white
+                      peer-checked:border-off-white border border-grey/30"
+                  >
+                    300 kr
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-4 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="500"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-full rounded-[5px] px-[12px] py-[12px]
+                      bg-white text-dark-grey font-medium transition-colors
+                      hover:bg-grey/50 hover:text-off-white
+                      peer-checked:bg-red peer-checked:text-off-white
+                      peer-checked:border-off-white border border-grey/30"
+                  >
+                    500 kr
+                  </div>
+                </label>
+
+                <!-- Valgfrit beløb -->
+                <div
+                  class="col-span-6 md:col-span-12 flex items-center rounded-[5px] bg-white text-dark-grey
+                    border border-grey/30 mt-[4px]"
+                >
+                  <input
+                    type="number"
+                    name="custom-amount"
+                    min="1"
+                    inputmode="numeric"
+                    placeholder="Indtast valgfrit beløb"
+                    class="w-full flex-1 bg-transparent px-[20px] py-[10px] outline-none border-none"
+                  />
+                  <span class="pr-[12px] text-[16px]">Kr</span>
+                </div>
+
+                <!-- Betalingsform -->
+                <p
+                  class="col-span-6 md:col-span-12 font-semibold mt-[12px] mb-[8px]"
+                >
+                  Vælg betalingsform
+                </p>
+
+                <label class="col-span-3 md:col-span-6 cursor-pointer">
+                  <div
+                    class="w-full h-[88px] rounded-[10px] bg-white border border-grey/30 overflow-hidden"
+                  >
+                    <img
+                      src="img/payment.webp"
+                      class="w-full h-full object-cover"
+                      alt="Betalingskort"
+                    />
+                  </div>
+                  <div class="mt-[10px] inline-flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="payment"
+                      value="card"
+                      class="accent-white"
+                      required
+                    />
+                    <span>Betalingskort</span>
+                  </div>
+                </label>
+
+                <label class="col-span-3 md:col-span-6 cursor-pointer">
+                  <div
+                    class="w-full h-[88px] rounded-[10px] bg-white border border-grey/30 overflow-hidden mx-auto flex justify-center items-center"
+                  >
+                    <img
+                      src="img/mobilePay.webp"
+                      class="w-[63px] h-[63px] object-cover"
+                      alt="MobilePay"
+                    />
+                  </div>
+                  <div class="mt-[10px] inline-flex items-center gap-2">
+                    <input type="radio" name="payment" class="accent-white" />
+                    <span>MobilePay</span>
+                  </div>
+                </label>
+
+                <!-- Accept -->
+                <p
+                  class="col-span-6 md:col-span-12 font-semibold mt-[12px] mb-[8px]"
+                >
+                  Acceptér betingelser
+                </p>
+
+                <label
+                  class="col-span-6 md:col-span-12 inline-flex items-start gap-2 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    required
+                    class="mt-[3px] accent-white"
+                  />
+                  <span>Jeg accepterer handelsbetingelserne</span>
+                </label>
+
+                <label
+                  class="col-span-6 md:col-span-12 inline-flex items-start gap-2 cursor-pointer"
+                >
+                  <input type="checkbox" class="mt-[3px] accent-white" />
+                  <span>
+                    Jeg vil gerne modtage nyhedsbreve, så jeg kan følge med i
+                    Street Care’s arbejde og se, hvad min støtte går til.
+                  </span>
+                </label>
+
+                <!-- CTA -->
+                <div
+                  class="col-span-6 md:col-span-12 flex justify-end mt-[12px]"
+                >
+                  <Button variant="outline-light" type="submit">Betal</Button>
+                </div>
+              </div>
+            </form>
+          </article>
+        </HeroCard>
+      </section>
+
+      <section id="anden_stoette" class="px-4 py-[96px] lg:px-[60px]">
+        {/* Heading */}
+        <div class="max-w-[900px] pb-[20px]">
+          <Heading>Andre måder at støtte på</Heading>
+
+          <Heading htmlheading="statement" size="statement">
+            Ikke alle bidrag er økonomiske.
+            <span class="text-[var(--color-grey)]">
+              {" "}
+              Vi har brug for mange typer støtte.
+            </span>
+          </Heading>
+        </div>
+
+        {/* Cards */}
+        <div>
+          {/* Mobil: horisontal scroll */}
+          <div
+            class="-mx-4 px-4
         flex gap-4 overflow-x-auto
         snap-x snap-mandatory
         pb-2
         lg:mx-0 lg:px-0
         lg:overflow-visible lg:pb-0
         lg:flex lg:gap-[20px]"
-        >
-          <div class="snap-start shrink-0 lg:shrink lg:flex-1 pl-4 lg:pl-0">
-            <NewsCard
-              imageSrc="/img/anden-stoette1.webp"
-              imageAlt="Frivillig kvinde med Street Care t-shirt"
-              labelText="Frivillighed"
-              labelHref="/blivfrivillig"
-              subtitle="Bliv frivillig"
-              href="/blivfrivillig"
-              className="w-[315px] md:w-[440px] lg:w-full"
-            />
-          </div>
+          >
+            <div class="snap-start shrink-0 lg:shrink lg:flex-1 pl-4 lg:pl-0">
+              <NewsCard
+                imageSrc="/img/anden-stoette1.webp"
+                imageAlt="Frivillig kvinde med Street Care t-shirt"
+                labelText="Frivillighed"
+                labelHref="/blivfrivillig"
+                subtitle="Bliv frivillig"
+                href="/blivfrivillig"
+                className="w-[315px] md:w-[440px] lg:w-full"
+              />
+            </div>
 
-          <div class="snap-start shrink-0 lg:shrink lg:flex-1">
-            <NewsCard
-              imageSrc="/img/anden-stoette2.webp"
-              imageAlt="Køkkenbord med madvarer"
-              labelText="Anden donation"
-              labelHref="/andendonation"
-              subtitle="Donér mad, tøj eller udstyr"
-              href="/andendonation"
-              className="w-[315px] md:w-[440px] lg:w-full"
-            />
-          </div>
+            <div class="snap-start shrink-0 lg:shrink lg:flex-1">
+              <NewsCard
+                imageSrc="/img/anden-stoette2.webp"
+                imageAlt="Køkkenbord med madvarer"
+                labelText="Anden donation"
+                labelHref="/andendonation"
+                subtitle="Donér mad, tøj eller udstyr"
+                href="/andendonation"
+                className="w-[315px] md:w-[440px] lg:w-full"
+              />
+            </div>
 
-          <div class="snap-start shrink-0 lg:shrink lg:flex-1">
-            <NewsCard
-              imageSrc="/img/anden-stoette3.webp"
-              imageAlt="Kvinde med Street Care t-shirt taler i mikrofon foran en gruppe mennesker"
-              labelText="Samarbejde"
-              labelHref="/samarbejde"
-              subtitle="Samarbejde eller partnerskab?"
-              href="/samarbejde"
-              className="w-[315px] md:w-[440px] lg:w-full"
-            />
+            <div class="snap-start shrink-0 lg:shrink lg:flex-1">
+              <NewsCard
+                imageSrc="/img/anden-stoette3.webp"
+                imageAlt="Kvinde med Street Care t-shirt taler i mikrofon foran en gruppe mennesker"
+                labelText="Samarbejde"
+                labelHref="/samarbejde"
+                subtitle="Samarbejde eller partnerskab?"
+                href="/samarbejde"
+                className="w-[315px] md:w-[440px] lg:w-full"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section
-      id="vidste_du"
-      class="py-[96px] px-4 bg-off-white lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
-    >
-      <div
-        class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px]"
+      </section>
+      <section
+        id="vidste_du"
+        class="py-[96px] px-4 bg-off-white lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-[20px]"
       >
-        <Heading htmlheading="h5" size="h5" stylingclasses="mb-[20px] lg:mb-0">
-          Vidste du at?
-        </Heading>
-        <Link href="/om"> Læs mere om vores historie </Link>
-      </div>
+        <div
+          class="lg:col-start-1 lg:col-end-13 lg:flex justify-between lg:mb-[100px]"
+        >
+          <Heading
+            htmlheading="h5"
+            size="h5"
+            stylingclasses="mb-[20px] lg:mb-0"
+          >
+            Vidste du at?
+          </Heading>
+          <Link href="/om"> Læs mere om vores historie </Link>
+        </div>
 
-      <div
-        class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
-      >
-        <Heading
-          htmlheading="statement"
-          size="statement"
-          stylingclasses="mb-[16px]"
+        <div
+          class="border-b-grey70 border-b-[1px] pt-[40px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-1 lg:col-end-4 lg:pt-0 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
         >
-          1 ud af 3
-        </Heading>
-        <Text styllingclasses="text-dark-grey">
-          som vi møder på gaden, har ikke talt med nogen den dag — før vi kommer
-          forbi. Din støtte gør det muligt, at ingen behøver gå igennem dagen
-          uden et menneske, der ser dem.
-        </Text>
-      </div>
-      <div
-        class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
-      >
-        <Heading
-          htmlheading="statement"
-          size="statement"
-          stylingclasses="mb-[16px]"
-        >
-          150kr
-        </Heading>
-        <Text styllingclasses="text-dark-grey">
-          Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
-          kulden. For nogen er det deres første måltid i flere dage.
-        </Text>
-      </div>
-      <div
-        class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
-      >
-        <Heading
-          htmlheading="statement"
-          size="statement"
-          stylingclasses="mb-[16px]"
-        >
-          40 udsatte
-        </Heading>
-        <Text styllingclasses="text-dark-grey">
-          Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
-          behandling, bolig, økonomi. Mange af dem ville aldrig være nået frem
-          uden bisidderstøtte.
-        </Text>
-      </div>
-      <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
-        <Heading
-          htmlheading="statement"
-          size="statement"
-          stylingclasses="mb-[16px]"
-        >
-          7 ud af 10
-        </Heading>
-        <Text styllingclasses="text-dark-grey">
-          7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt af
-          resten af samfundet. Din støtte viser dem, at de ikke er alene.
-        </Text>
-      </div>
-    </section>
-    <section
-      id="pengene"
-      class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
-    >
-      <div class="lg:col-start-1 lg:col-end-6">
-        <div>
-          <Heading>Hvad går pengene til?</Heading>
           <Heading
             htmlheading="statement"
             size="statement"
-            stylingclasses="mb-[6px] lg:mb-[20px]"
+            stylingclasses="mb-[16px]"
           >
-            Din støtte er med til at holde dørene åbne – og hjertet varmt
+            1 ud af 3
           </Heading>
-        </div>
-        <div>
-          <Text stylingclasses="text-dark-grey my-[20px]">
-            Din støtte bliver til handling. Street Care arbejder hver uge blandt
-            Københavns mest udsatte. Når du donerer, er du med til at finansiere
-            punkterne nedenfor. I starten af året udgiver Street Care en
-            årsberetning, der beretter historier og fortæller om årets
-            resultater. Vores årsregnskab deles endvidere her, så alle ved hvad
-            vores indsamlinger går til - og kan se tallene bag.
+          <Text styllingclasses="text-dark-grey">
+            som vi møder på gaden, har ikke talt med nogen den dag — før vi
+            kommer forbi. Din støtte gør det muligt, at ingen behøver gå igennem
+            dagen uden et menneske, der ser dem.
           </Text>
-          <Link href="/aarsregnskab" variant="action"> Se årsregnskabet</Link>
         </div>
-      </div>
-      <div class="mt-[20px] lg:col-start-1 lg:col-end-7 lg:mt-0">
-        <img
-          src="/img/pengene1.webp"
-          alt="Kvinde cykler på ladcykel med Street Care logo"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
+        <div
+          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-4 lg:col-end-7 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
         >
-      </div>
-      <div class="lg:col-start-7 lg:col-end-10">
-        <img
-          src="/img/pengene2.webp"
-          alt="Værestedet Street Care"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >2 / Værested med gratis mad, varme drikke og fællesskab</Text
+          <Heading
+            htmlheading="statement"
+            size="statement"
+            stylingclasses="mb-[16px]"
+          >
+            150kr
+          </Heading>
+          <Text styllingclasses="text-dark-grey">
+            Med blot 150 kr. kan vi give varme drikke og mad til 5 mennesker i
+            kulden. For nogen er det deres første måltid i flere dage.
+          </Text>
+        </div>
+        <div
+          class="border-b-grey70 border-b-[1px] pb-[40px] mb-[6px] lg:mb-0 lg:col-start-7 lg:col-end-10 lg:border-b-0 lg:border-r-grey70 lg:border-r-[1px] lg:pr-[30px]"
         >
-      </div>
-      <div class="lg:col-start-10 lg:col-end-13">
-        <img
-          src="/img/pengene3.webp"
-          alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
-        >
-      </div>
-      <div class="lg:col-start-1 lg:col-end-4">
-        <img
-          src="/img/pengene4.webp"
-          alt="Fire glade frivillige med Street Care t-shirts"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem systemet</Text
-        >
-      </div>
-      <div class="lg:col-start-4 lg:col-end-10">
-        <img
-          src="/img/pengene5.webp"
-          alt="To glade hjemløse personer til koncert"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
-        >
-      </div>
-      <div class="lg:col-start-10 lg:col-end-13">
-        <img
-          src="/img/pengene6.webp"
-          alt="Nærbillede af hjemløs mand med bedrøvet blik"
-          class="w-full h-full object-cover"
-        />
-        <Text
-          teksttype="p_large_med"
-          stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
-          >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet brænder
-          på</Text
-        >
-      </div>
-    </section>
+          <Heading
+            htmlheading="statement"
+            size="statement"
+            stylingclasses="mb-[16px]"
+          >
+            40 udsatte
+          </Heading>
+          <Text styllingclasses="text-dark-grey">
+            Hver måned følger vi omkring 40 udsatte gennem systemet — møder,
+            behandling, bolig, økonomi. Mange af dem ville aldrig være nået frem
+            uden bisidderstøtte.
+          </Text>
+        </div>
+        <div class="lg:col-start-10 lg:col-end-13 lg:pr-[30px]">
+          <Heading
+            htmlheading="statement"
+            size="statement"
+            stylingclasses="mb-[16px]"
+          >
+            7 ud af 10
+          </Heading>
+          <Text styllingclasses="text-dark-grey">
+            7 ud af 10, vi hjælper, fortæller os, at de ofte føler sig glemt af
+            resten af samfundet. Din støtte viser dem, at de ikke er alene.
+          </Text>
+        </div>
+      </section>
+      <section
+        id="pengene"
+        class="py-[96px] px-4 lg:px-[60px] lg:grid lg:grid-cols-12 lg:gap-x-[20px] lg:gap-y-[72px] lg:items-start"
+      >
+        <div class="lg:col-start-1 lg:col-end-6">
+          <div>
+            <Heading>Hvad går pengene til?</Heading>
+            <Heading
+              htmlheading="statement"
+              size="statement"
+              stylingclasses="mb-[6px] lg:mb-[20px]"
+            >
+              Din støtte er med til at holde dørene åbne – og hjertet varmt
+            </Heading>
+          </div>
+          <div>
+            <Text stylingclasses="text-dark-grey my-[20px]">
+              Din støtte bliver til handling. Street Care arbejder hver uge
+              blandt Københavns mest udsatte. Når du donerer, er du med til at
+              finansiere punkterne nedenfor. I starten af året udgiver Street
+              Care en årsberetning, der beretter historier og fortæller om årets
+              resultater. Vores årsregnskab deles endvidere her, så alle ved
+              hvad vores indsamlinger går til - og kan se tallene bag.
+            </Text>
+            <Link href="/aarsregnskab" variant="action"> Se årsregnskabet</Link>
+          </div>
+        </div>
+        <div class="mt-[20px] lg:col-start-1 lg:col-end-7 lg:mt-0">
+          <img
+            src="/img/pengene1.webp"
+            alt="Kvinde cykler på ladcykel med Street Care logo"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >1 / Gadeplansarbejde med kaffe, tøj, samtaler og akut støtte</Text
+          >
+        </div>
+        <div class="lg:col-start-7 lg:col-end-10">
+          <img
+            src="/img/pengene2.webp"
+            alt="Værestedet Street Care"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >2 / Værested med gratis mad, varme drikke og fællesskab</Text
+          >
+        </div>
+        <div class="lg:col-start-10 lg:col-end-13">
+          <img
+            src="/img/pengene3.webp"
+            alt="Hygiejne kits, tøj, soveposer, medicin med mere på bord"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >3 / Tøj, soveposer og hygiejneartikler til mennesker i hjemløshed</Text
+          >
+        </div>
+        <div class="lg:col-start-1 lg:col-end-4">
+          <img
+            src="/img/pengene4.webp"
+            alt="Fire glade frivillige med Street Care t-shirts"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >4 / Mentor- og bisidderstøtte, der hjælper udsatte gennem systemet</Text
+          >
+        </div>
+        <div class="lg:col-start-4 lg:col-end-10">
+          <img
+            src="/img/pengene5.webp"
+            alt="To glade hjemløse personer til koncert"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >5 / Aktiviteter og ture, der skaber positive oplevelser og håb</Text
+          >
+        </div>
+        <div class="lg:col-start-10 lg:col-end-13">
+          <img
+            src="/img/pengene6.webp"
+            alt="Nærbillede af hjemløs mand med bedrøvet blik"
+            class="w-full h-full object-cover"
+          />
+          <Text
+            teksttype="p_large_med"
+            stylingclasses="mt-[8px] mb-[40px] lg:mb-[0px]"
+            >6 / Telefonrådgivning, så mennesker kan få hjælp, når livet brænder
+            på</Text
+          >
+        </div>
+      </section>
+    </body>
   </main>
 </MainLayout>
