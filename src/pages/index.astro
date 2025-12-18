@@ -92,43 +92,127 @@ import NewsCard from "../components/NewsCard.astro";
             </div>
 
             <!-- Beløbs-knapper -->
+            <!-- Beløbs-knapper -->
             <div class="mt-[30px] grid grid-cols-2 gap-[12px] lg:grid-cols-3">
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                50 kr
-              </button>
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                100 kr
-              </button>
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                150 kr
-              </button>
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                200 kr
-              </button>
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                300 kr
-              </button>
-              <button
-                type="button"
-                class="w-full rounded-[5px] bg-white text-grey text-[16px] py-[10px] font-medium"
-              >
-                500 kr
-              </button>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="50"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  50 kr
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="100"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  100 kr
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="150"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  150 kr
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="200"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  200 kr
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="300"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  300 kr
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="amount"
+                  value="500"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-full rounded-[5px] px-[12px] py-[12px] text-[16px] font-medium
+             bg-white text-grey border border-grey/30
+             transition-colors
+             hover:bg-grey/50 hover:text-off-white
+             peer-checked:bg-red
+             peer-checked:text-off-white
+             peer-checked:border-off-white"
+                >
+                  500 kr
+                </div>
+              </label>
             </div>
 
             <!-- Valgfrit beløb -->
