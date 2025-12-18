@@ -6,6 +6,7 @@ import Text from "../components/Text.astro";
 import NewsCard from "../components/NewsCard.astro";
 import Button from "../components/Button.astro";
 import HeroCard from "../components/HeroCard.astro";
+import SubtleLink from "../components/SubtleLink.astro";
 ---
 
 <MainLayout title="Støt">
@@ -321,7 +322,17 @@ import HeroCard from "../components/HeroCard.astro";
                 class="col-span-6 md:col-span-12 inline-flex items-start gap-2 cursor-pointer"
               >
                 <input type="checkbox" required class="mt-[3px] accent-white" />
-                <span>Jeg accepterer handelsbetingelserne</span>
+                <span>
+                  Jeg accepterer{" "}
+                  <SubtleLink
+                    href="/handelsbetingelser"
+                    display="inline"
+                    teksttype="p_base_reg"
+                    stylingclasses="text-off-white opacity-70 italic"
+                  >
+                    handelsbetingelserne
+                  </SubtleLink>
+                </span>
               </label>
 
               <label
